@@ -31,7 +31,7 @@
     font-weight: 900;
     text-transform: uppercase;
     height: 100%;
-    padding: 20px;
+    padding: 15px;
     margin: 15px;
     letter-spacing: 1px;
   }
@@ -108,8 +108,7 @@
     width: 50%;
     float: left;
     text-align: center;
-    border: 1px dotted black;
-    background-color: #dd5000;
+    border: 2px solid red;
     color: white;
     font-size: 25px;
     padding: 30px;
@@ -123,15 +122,14 @@
   width: 50%;
   float: left;
   text-align: center;
-  border: 1px dotted black;
-  background-color: #434344;
-  display: block; 
   font-size: 25px;
   opacity: 0.5;
   padding: 30px;
   color: white;
   background-image: url(/images/tarjetas-credito-carrito/tarjeta.jpg);
   background-size: cover;
+  height: 100%;
+  border: 2px solid black;
  
   
 }
