@@ -3,10 +3,14 @@
     font-family: Verdana, sans-serif
    }
 
+   header, nav, main, footer {
+    float: left;
+}
+
+
    html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
           
    }
 
@@ -53,16 +57,12 @@
     border: 1px solid black;
     width: 100%;
     height: 45%;
-    min-height: 80vh; /* cubre 100% del viewport. */
+    min-height: 79vh; /* cubre 100% del viewport. */
+    
+  }
+
+ 
   
-  }
-
-  article img {
-    width: 150px;
-    height: 184.61px;
-  }
-
-
   footer {
     background-color: #001f3f;
     border: 1px thick black;
@@ -70,13 +70,15 @@
     color: white;
   }
 
-  header, nav, main, footer {
-      float: left;
+  h3 {
+      padding: 0;
+      margin: 0;
   }
-  
 
+  form {
+      padding: 10px;
+  }
 
- 
   
   /* IDs del header */
 
@@ -106,13 +108,14 @@
   }
 
 
+
    /* IDs del nav */
 
    #tus-productos {
+    border: 2px solid black;
     width: 50%;
     float: left;
     text-align: center;
-    border: 2px solid red;
     color: white;
     font-size: 25px;
     padding: 30px;
@@ -123,6 +126,7 @@
 
 
 #fin-transaccion {
+    border: 2px solid red;
   width: 50%;
   float: left;
   text-align: center;
@@ -133,48 +137,105 @@
   background-image: url(/images/tarjetas-credito-carrito/tarjeta.jpg);
   background-size: cover;
   height: 100%;
-  border: 2px solid black;
- 
+  opacity: 1;
   
 }
 
 
-#fin-transaccion:hover {
-background-color: #434344;
-color: black;
-opacity: 1;
+
+
+/* IDs del main */
+
+#texto-main {
+  margin: 60px 40px;
+  text-align: center;
+}
+
+#texto-main h2 {
+  font-size: 50px;
+  margin: 10px;
+  
+}
+
+#texto-main p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-left: 5px;
+}
+#texto-main button {
+  border: 2px solid black;
+  font-family: "Gotham-Medium",sans-serif;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 30px;
+  background: transparent;
+}
+
+#texto-main button:hover {
+background-color: grey;
 }
 
 
-/* IDs y classes del main */
-
-
-  .productos  {
-      border: 1px solid black;
-      margin: 30px 50px 30px 50px;
-      padding: 10px;
-      width: 25%;
-      background-color: #CCBCA4;
-      display: inline-block;
-
-  }
-
-
-  #eliminar {
-      display: block;
-      margin: 3px;
-  }
-
-
-#precio-producto {
-float: right;
-background-color: #7F7566;
-border-radius: 5px;
-color: white;
-border: 2px solid black;
+#texto-main button:active {
+background-color: grey;
+box-shadow: 0 2px #666;
 }
 
+#texto-main img {
+  height: 150px;
+  width: 200px;
+}
+  
+.seccion-resumen{
+ width: 70%;
+ float: left;
+ padding: 10px;
+      
+  }
+
+  #total {
+      width: 30%;
+      float: left;
+      border-left: 1px solid black;
+      padding-left: 10px;
+      margin-top: 3px;
+  }
+  
+  .columna {
+    float: left;
+    width: 50%;
+  }
+  
+  
+  /* Clear floats after the columns */
+  .fila:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
  
+ .thumbnails {
+     width: 100px;
+     height: 100px;
+ }
+
+ .productos {
+    border: 1px solid black;
+    margin: 0px 10px 10px 10px;
+    padding: 10px;
+    width: 25%;
+    background-color: #CCBCA4;
+    display: inline-block;
+ }
+
+ h6 {
+    
+     margin: 5px;
+ }
+
+ #finalizar-compra {
+     text-align: center;
+ }
 
   /* IDs del footer */
 
