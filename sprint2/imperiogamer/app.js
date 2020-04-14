@@ -11,6 +11,8 @@ var productosRouter = require('./routes/productos');
 var carritoRouter = require('./routes/carrito');
 var carritoProductoRouter = require('./routes/carrito-producto');
 var carritoFinCompraRouter = require('./routes/carrito-fin-compra');
+var carritoConfirmaDatosRouter = require('./routes/carrito-confirmar-datos');
+var carritoAgradecimientoRouter = require('./routes/carrito-gracias');
 var formularioRegistoRouter = require('./routes/formulario-registro');
 var cargaProductoRouter = require('./routes/carga-producto');
 
@@ -35,7 +37,8 @@ app.use('/registrate', formularioRegistoRouter);
 app.use('/carga-producto', cargaProductoRouter);
 app.use('/carrito/tus-productos', carritoProductoRouter);
 app.use('/carrito/fin-compra', carritoFinCompraRouter);
-
+app.use('/carrito/confirmar-datos', carritoConfirmaDatosRouter);
+app.use('/carrito/gracias', carritoAgradecimientoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

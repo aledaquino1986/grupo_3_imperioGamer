@@ -31,46 +31,48 @@
     
     <main>
       <section>
-        
+        <div id="resumen-compra">
           
             <div class="datos-comprador"> 
-            
+            <h3>Datos del comprador</h3>
             <form action=""> 
-              <h3>Datos del comprador</h3>
-                <label class="label-datos-comprador">*Nombre y apellido</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="nombre" name="nombre" placeholder="Luis López" required><br>
-                <label class="label-datos-comprador">*DNI</label><br>
-                <input class="formulario-datos-usuario" type="numner" id="dni" name="DNI" placeholder="32496405" required> <br>
-                <label class="label-datos-comprador">*Dirección</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="direccion" name="direccion" placeholder="Gorostiaga 1234" required> <br>
-                <label>*Localidad/Barrio</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="localidad" name="localidad" placeholder="Almagro" required> <br>
-                <label class="label-datos-comprador">*Provincia</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="provincia" name="provincia" placeholder="Buenos Aires" required> <br>
-                <label class="label-datos-comprador">*Teléfono</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="telefono" name="telefono" placeholder="45467893" required> <br>
-                <label class="label-datos-comprador">*Correo electrónico</label>  <br>
-                <input class="formulario-datos-usuario" type="text" id="email" name="email" placeholder="luis@lopez.com.ar" required> <br>
+                <label>*Nombre y apellido</label> <br>
+                <input type="text" id="nombre" name="nombre" required><br>
+                <label>*DNI</label><br>
+                <input type="text" id="nombre" name="DNI" required> <br>
+                <label>*Dirección</label> <br>
+                <input type="text" id="nombre" name="direccion" required> <br>
+                <label>*Ciudad</label> <br>
+                <input type="text" id="nombre" name="direccion" required> <br>
+                <label>*Provincia</label> <br>
+                <input type="text" id="nombre" name="direccion" required> <br>
+                <label>*Teléfono</label> <br>
+                <input type="text" id="nombre" name="direccion" required> <br>
+                <label>*Correo electrónico</label>  <br>
+                <input type="text" id="nombre" name="direccion" required> <br>
                 <br>
-              
+            </form>
+          </div>
 
-              
-                <h4>Modos de pago:</h4>
+            
+            <div class="formulario-pago">
+              <form> 
+              <h4>Modos de pago:</h4>
            <input type="radio" id="tarjeta-credito" name="modo-pago" value="tarjeta-de-credito">
            <label>Tarjeta de crédito</label> <br>
            <input type="radio" id="tarjeta-credito" name="modo-pago" value="tarjeta-de-credito">
            <label>Tarjeta de débito</label> <br>
            <input type="radio" id="tarjeta-credito" name="modo-pago" value="tarjeta-de-credito">
            <label>Mercado Pago</label> <br>
-           <button class="finalizar-transaccion">Hacé clic para confirmar tus datos</button>
-            </form>
-          
 
-            
-          </div>
+           </form>
+
+           <button class="finalizar-transaccion"><a href ="http://localhost:3000/carrito/gracias">Hacé clic para confirmar tu compra </a></button> 
+
+         </div>
 
         
-      
+        </div>
 
        
       </section>
@@ -85,7 +87,6 @@
 
              <div class="seccion-resumen"> 
               <h4> Estos son tus productos </h4>
-              <div> 
               <div class="productos"> 
               <h6 class ="nombre-juego"> Final Fantasy VII</h5>
                   <img src="\images\productos-usuario\FINAL-FANTASY-VII-Remake-Deluxe-Edition.JPG" alt="Final Fntasy" class="thumbnails"> <br>
@@ -103,30 +104,9 @@
                   <img src="\images\productos-usuario\resident-evi-3-ps4.PNG" alt="" class="thumbnails"> <br>
                   <span>Precio: $ 7500</span>
               </div>
-            </div>
-
-            <div> 
-              <div class="productos"> 
-              <h6 class ="nombre-juego"> Final Fantasy VII</h5>
-                  <img src="\images\productos-usuario\FINAL-FANTASY-VII-Remake-Deluxe-Edition.JPG" alt="Final Fntasy" class="thumbnails"> <br>
-                  <span>Precio: $ 7500</span>
-              </div>
-    
-              <div class="productos"> 
-              <h6> Platinum Headset</h6>
-              <img src="\images\productos-usuario\headset.jpg" alt="Platinum Headset" class="thumbnails"> <br>
-              <span>Precio: $ 7500</span>
-              </div>
-    
-              <div class="productos">
-              <h6> Final Fantasy VII</h6>
-                  <img src="\images\productos-usuario\resident-evi-3-ps4.PNG" alt="" class="thumbnails"> <br>
-                  <span>Precio: $ 7500</span>
-              </div>
-            </div>
 
               <div id="costo-total">
-                <span id="monto-total"><strong> Total:</strong>$22500<span>   
+                <span><strong> Total:</strong> $22500 <span>   
                </div>
 
           </div>
@@ -163,3 +143,4 @@
   
     </body>
   </html>
+

@@ -5,6 +5,7 @@
     <link rel='stylesheet' href='\stylesheets\carrito\carrito-productos.css' />
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
   </head>
     <body>
   <div class ="container"> 
@@ -30,23 +31,28 @@
     
     <main>
         <section> 
+          
+          <div class="productos-container">
         <article id ="producto1" class= "productos">
-            <div class ="imagen-producto"> 
-                <img src="\images\productos-usuario\resident-evi-3-ps4.PNG" alt="resident evil 3">
+            <div class ="imagen-producto-container"> 
+                <img class="imagen-producto" src="\images\productos-usuario\resident-evi-3-ps4.PNG" alt="resident evil 3">
 
                 <div class="datos-producto">
                     <span> Juego: Resident evil 3</span><br>
                     <span> Plataforma: Playstation 4</span><br>
+                    <span>Precio por unidad: $6999</span><br>
                     <span>Cantidad:</span>
-                    <input type="number" value="1" min="1" max="10" id = "number-button">
-                    <input type="button" value="Eliminar producto" id="eliminar"></input>
+                    
+                    <input type="number" value="1" min="1" max="10" id = "number-button"> <br>
+                    <input class ="button" type="button" value="Eliminar producto" id="eliminar"></input>
                 </div>
 
                 <div id ="precio-producto"> 
-                    <span>Precio</span>
+                    <span>Total</span>
                     <span> $6999</span>
                 </div>
             </div>
+          
                 
     
                
@@ -54,19 +60,20 @@
 
 
         <article id ="producto2" class= "productos">
-            <div class ="imagen-producto"> 
-                <img src="\images\productos-usuario\FINAL-FANTASY-VII-Remake-Deluxe-Edition.jpg" alt="Final Fantasy VII">
+            <div class ="imagen-producto-container"> 
+                <img class= "imagen-producto" src="\images\productos-usuario\FINAL-FANTASY-VII-Remake-Deluxe-Edition.jpg" alt="Final Fantasy VII">
 
                 <div class="datos-producto">
                     <span> Juego: Final Fantasy VII</span><br>
                     <span> Plataforma: Playstation 4</span><br>
+                    <span>Precio por unidad: $7500</span><br>
                     <span>Cantidad:</span>
-                    <input type="number" value="1" min="1" max="10" id = "number-button">
-                    <input type="button" value="Eliminar producto" id="eliminar"></input>
+                    <input type="number" value="1" min="1" max="10" id = "number-button"> <br>
+                    <input class ="button" type="button" value="Eliminar producto" id="eliminar"></input>
                 </div>
 
                 <div id ="precio-producto"> 
-                    <span>Precio</span>
+                    <span>Total</span>
                     <span> $7500 </span>
                 </div>
             </div>
@@ -75,28 +82,56 @@
 
 
         <article id ="producto3" class= "productos">
-            <div class ="imagen-producto"> 
-                <img src="\images\productos-usuario\headset.jpg" alt="headset">
+          <div class ="imagen-producto-container"> 
+              <img class="imagen-producto" src="\images\productos-usuario\headset.jpg" alt="headset">
 
-                <div class="datos-producto">
-                    <span> Accesorio: Platinum Headset Ps4</span><br>
-                    <span> Plataforma: Playstation 4</span><br>
-                    <span>Cantidad:</span>
-                    <input type="number" value="1" min="1" max="10" id = "number-button">
-                    <input type="button" value="Eliminar producto" id="eliminar"></input>
-                </div>
+              <div class="datos-producto">
+                  <span> Accesorio: Platinum Headset</span><br>
+                  <span> Plataforma: Playstation 4</span><br>
+                  <span>Precio por unidad: $6200</span><br>
+                  <span>Cantidad:</span>
+                  <input type="number" value="1" min="1" max="10" id = "number-button"> <br>
+                  <input class ="button" type="button" value="Eliminar producto" id="eliminar"></input>
+              </div>
 
-                <div id ="precio-producto"> 
-                    <span>Precio</span>
-                    <span> $6200 </span>
-                </div>
-            </div>
-               
-        </article>
-        
+              <div id ="precio-producto"> 
+                  <span>Total</span>
+                  <span> $6200 </span>
+              </div>
+          </div>
+             
+      </article>
 
-        
+      
+      </div>
+<aside id="total">
+  
+        <h3> Total</h2>
+
+          <div id="cupon">
+            <h4>¿Tenés códigos promocionales? </h4>
+            <input type="text" placeholder="Ingresalo acá" id="btn-aplicar" > 
+            <input type="button" value="Aplicar" id="boton-Aplicar"> 
+           </div>
+
+           <div id="total-descuentos">
+            <span><strong> Subtotal:</strong> $22500 <span><br>
+              <span><strong>Descuentos:</strong> 0 <span> <br>
+                <hr>
+                <span><strong>Total:</strong> $22500<span><br>
+           </div>
+
+           <button class="finalizar-transaccion"> <a href="http://localhost:3000/carrito/fin-compra#"> Continuar con el pago </a></button> 
+
+           <div id="codigos">
+            <h6>¿Querés seguir comprando? </h6>
+            <input class ="button" type="button" value="Ver Más" id="ver-mas"></input> 
+           </div>
+
+        </aside>
       </section>
+
+      
       
     </main>
  
