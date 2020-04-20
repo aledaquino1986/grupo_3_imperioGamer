@@ -1,0 +1,68 @@
+.contenedor{
+    margin: 10vh;
+    width: 90%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    overflow: hidden;
+    background-color: #ffffe6;
+    position: absolute;
+}
+.contenedor1, .contenedor2, .contenedor3{
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color:#ffffe6;
+}
+.contenedor3{
+    background-color: #ffffe6;
+    margin: 0px auto;
+    padding-top: 2%;
+    border-top: solid 2px blanchedalmond;
+}
+.sugerencias span{
+
+    display: block;
+}
+.sugerencias section{
+    background-color: blanchedalmond;
+    margin: 1%;
+    border-radius: 30px;
+}
+.sugerencias article{
+    display: inline-block;
+    margin: 25px;
+    padding: 0;
+    border: solid 3px black;
+    width: 15.4%;
+    height: 35vh;
+}
+#sug1 {
+    background-image: url(../img/sugerencias/sug1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sug2 {
+    background-image: url(../img/sugerencias/sug2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sug3 {
+    background-image: url(../img/sugerencias/sug3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sug4 {
+    background-image: url(../img/sugerencias/sug4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sug5 {
+    background-image: url(../img/sugerencias/sug5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sugerencias span{
+    font-weight: bold;
+    font-size: 140%;
+}

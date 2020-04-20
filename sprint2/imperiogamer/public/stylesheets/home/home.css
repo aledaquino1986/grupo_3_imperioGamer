@@ -1,0 +1,244 @@
+body{
+    background: rgb(2,0,36);
+}
+
+/*--------------------Header----------------*/
+header nav.menu{
+    background-color: black;
+}
+
+header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen-menus{
+    border: 1px solid red;
+}
+
+@media(min-width: 768px){
+    
+    div.collapse input.barra-busqueda{
+        width: 350px;
+    }
+}
+
+@media(min-width: 1450px){
+    
+    div.collapse input.barra-busqueda{
+        width:800px
+    }
+}
+
+        /*--menu-hamburguesa--*/
+
+form button.btn-buscar{
+    color:white;
+    border: 1px solid red;
+}
+
+form button.btn-buscar:hover{
+    background-color: red;
+    border: 1px solid red;
+}
+
+/*-----------------Carrucel------------*/
+div.imagenes-principales{
+    margin: 20px 0;
+}
+
+/*------------Main-----------------*/
+
+div.producto h3{
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+div.producto img.producto-img{
+    width: 100%;
+}
+
+div.producto img.producto-img:hover{
+    opacity: 0.3;
+}
+
+div.titulo-ofertas h2{
+    text-align: center;
+    margin: 10px;
+    color: white;
+}
+
+.esconder{
+    display: none;
+}
+
+@media(min-width:  767.98px) {
+
+    
+    div.producto h3{
+        
+        font-size: 25px;
+    }
+
+    div.imagenes-principales{
+        width: 75%;
+        margin: 10px auto;
+    }
+}
+
+@media(min-width: 992px){
+    
+    .esconder{
+        display: block;
+    }
+    
+}
+
+/*--------Carrucel Multiple-----------*/
+
+.carousel-ofertas {
+    width: 100%;
+    margin: 15px auto;
+    position: relative;
+}
+  
+.slide-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+ div.carousel-item img.icono-oferta{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+}
+
+  
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .slide-box img {
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+}
+
+    div.carousel-item img.icono-oferta, div.carousel-item img.icono-oferta2 {
+        width: 90px;
+    }
+    
+    div.carousel-ofertas div.carousel-item img.icono-oferta{
+        position: absolute;
+        top: 0;
+        right: 0;
+}
+
+
+    div.carousel-ofertas div.carousel-item img.icono-oferta2{
+        position: absolute;
+        top: 0;
+        right: 49%;
+}
+}
+  
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    div.carousel-item img.icono-oferta, div.carousel-item img.icono-oferta2, div.carousel-item img.icono-oferta3{
+        width: 90px;
+    }
+    
+    div.carousel-ofertas div.carousel-item img.icono-oferta{
+        position: absolute;
+        top: 0;
+        right: 0;
+}
+
+
+    div.carousel-ofertas div.carousel-item img.icono-oferta2{
+        position: absolute;
+        top: 0%;
+        right: 32%;
+}
+
+    div.carousel-ofertas div.carousel-item img.icono-oferta3{
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+
+    .slide-box img {
+      -ms-flex: 0 0 33.3333%;
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;    
+}
+}
+  
+@media (min-width: 992px)
+  {
+
+    div.carousel-item img.icono-oferta, div.carousel-item img.icono-oferta2, div.carousel-item img.icono-oferta3, div.carousel-item img.icono-oferta4{
+        width: 90px;
+    }
+    
+    div.carousel-ofertas div.carousel-item img.icono-oferta{
+        position: absolute;
+        top: 0;
+        left: 16%;
+}
+
+
+    div.carousel-ofertas div.carousel-item img.icono-oferta2{
+        position: absolute;
+        top: 0%;
+        left: 41%;
+}
+
+    div.carousel-ofertas div.carousel-item img.icono-oferta3{
+        position: absolute;
+        top: 0;
+        right: 24%;
+}
+
+    div.carousel-ofertas div.carousel-item img.icono-oferta4{
+        position: absolute;
+        top: 0;
+        right: 0;
+}
+    .slide-box img {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+}
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: .5rem;
+}
+
+div.slide-box img{
+    margin: 0 2px;
+   }
+
+/*------------FOOTER------------*/
+#tarjetas-de-credito {
+    display: inline-block;
+  }
+  
+  #tarjetas-de-credito p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #tarjetas-de-credito img {
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+
+footer {
+    background-color: #001f3f;
+    border-top: 1px solid black;
+    width: 100%;
+    color: white;
+    padding: 5px;
+}
+
