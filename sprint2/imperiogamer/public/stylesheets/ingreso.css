@@ -1,0 +1,38 @@
+.usuario{
+    background: rgb(2,0,36);
+    background:linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(47,47,79,1) 48%, rgba(0,212,255,1) 100%);
+}
+.ingreso-usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+}
+.ingreso-usuario article{
+    padding-top: 8%;
+    color: white;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+.ingreso-usuario .formulario-usuario{
+    text-align: center;
+    margin-bottom: 20px;
+    width: 300px;
+    border-radius: 20px;
+}
+#btn-usuario{
+    width: 160px;
+}
+.span-usuario{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 7%;
+}
+.span-usuario a{
+    color: white;
+}

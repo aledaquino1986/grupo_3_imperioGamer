@@ -1,0 +1,20 @@
+#registro-usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    padding: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(47,47,79,1) 48%, rgba(0,212,255,1) 100%);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
+    color: white;
+}
+#registro-usuario .formulario-datos-usuario{
+    border-radius: 20px;
+    width: 300px;
+}
+#registro-usuario #password{
+    margin-bottom: 20px;
+}

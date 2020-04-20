@@ -1,11 +1,243 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="/stylesheets/header.css" rel="stylesheet">
+    <link href="/stylesheets/producto/producto.css" rel="stylesheet">
+    <link href="/stylesheets/producto/caracteristicas.css" rel="stylesheet">
+    <link href="/stylesheets/producto/metodos.css" rel="stylesheet">
+    <link href="/stylesheets/producto/sugerencias.css" rel="stylesheet">
+    <link href="/stylesheets/footer.css" rel="stylesheet">
+    <link href="/stylesheets/hamburguesa.css" rel="stylesheet">
     <title>Imperio Gamer</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>El producto que elegiste</h1>
-    <p>Acá podés ver la descripción del producto que elegiste</p>
-  </body>
+</head>
+<body>
+    <header class="row">
+        <div class="col-12">
+            <div class="buscador row">
+                <div class="col-2">
+                    <img src="/images/lucas/img/logo.jpeg" alt="logo" width="130" height="60">
+                </div>
+                <nav class="col-4">
+                    <ul class="navegador">
+                        <a href="">Inicio</a>
+                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Consolas</a>
+                        <a class="dropdown-item" href="#">Video-juegos</a>
+                        <a class="dropdown-item" href="#">Computadoras</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Ver mas..</a>
+                        </div>
+                    </ul>
+                    <ul class="navegador">
+                        <a href="">Ofertas</a>
+                        <a href="">Ayuda</a>
+                    </ul>
+                </nav>
+                <input class="col-3"type="search" name="buscador" id="buscador" placeholder="Buscar productos">
+                <nav class=" usuario col-3">
+                    <a href="">Ingresá</a><a href="">Carrito</a>
+                </nav>
+            </div>
+            <div class="hamburguesa row">
+                <div class="col-12">
+                    <nav class="navbar navbar-dark bg-dark">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </nav>
+                    <div class="pos-f-t">
+                        <div class="collapse" id="navbarToggleExternalContent">
+                          <div class="menu p-4">
+                            <nav class="usuario">
+                                <a href="">Iniciár</a><a href="">Carrito</a>
+                            </nav>
+                            <nav class="navegador">
+                                <ul >
+                                    <li><a href="">Inicio</a></li>
+                                    <li><a href="">Categorias</a></li>
+                                    <li><a href="">Ofertas</a></li>
+                                    <li><a href="">Ayuda</a></li>
+                                </ul>
+                            </nav>
+                          </div>
+                        </div>
+                  </div></div>
+            </div>
+        </div>
+    </header>
+    <div class="container" id="contenedor">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-8">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="images/lucas/img/residentEvil3.jpg" class="d-block w-100" alt="residentEvil3">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="images/lucas/img/producto/imagen1.jpg" class="d-block w-100" alt="imagen1">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="images/lucas/img/producto/imagen2.jpg" class="d-block w-100" alt="imagen2">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="images/lucas/img/producto/imagen3.jpg" class="d-block w-100" alt="imagen3">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        </div>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-4" id="producto">
+                    <section>
+                        <h2>Resident Evil 3: Remake</h2>
+                        <span id="precio">$ 6.700</span>
+                        <span class="otros">Métodos de pago: Débito y Crédito</span>
+                        <span class="otros">Envíos a Cápital Federal: Gratis</span>
+                        <span class="otros">Stock disponible: Si</span>
+                        <form action="">
+                            <div id="cantidad">
+                                <label for="stock">Cantidad:</label>
+                                <select name="cantidad" id="stock">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <button type="submit" id="comprar">Comprar Ahora</button>
+                            <button type="submit" id="carrito">Agregar al Carrito</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="caracteristicas">
+                    <h2>Características</h2>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-6" id="caracteristicas">
+                    <ul class="ul">
+                        <li>
+                            <strong>Franquicia:</strong><br>
+                            <span>Resident Evil</span>
+                        </li>
+                        <li>
+                            <strong>Título:</strong><br>
+                            <span>Resident Evil 3 Remake</span>
+                        </li>
+                        <li>
+                            <strong>Formato:</strong><br>
+                            <span>Físico</span>
+                        </li>
+                        <li>
+                            <strong>Saga:</strong><br>
+                            <span>Resident Evil</span>
+                        </li>
+                        <li>
+                            <strong>Plataforma:</strong><br>
+                            <span>PS4</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-6" id="caracteristicas">
+                    <ul class="ul2">
+                        <li><strong>Desarrollador:</strong><br><span>Capcom</span></li>
+                        <li><strong>Tamaño del archivo:</strong><br><span>50 GB</span></li>
+                        <li><strong>Multijugador:</strong><br><span>Sí</span></li>
+                        <li><strong>Clasificación del juego:</strong><br><span>M</span></li>
+                        <li><strong>Año del lanzamiento:</strong><br><span>2020</span></li>
+                        <li><strong>Géneros:</strong><br><span>Acción,Terror</span></li>
+                        <li><strong>En línea:</strong><br><span>Sí</span></li>
+                        <li><strong>Cantidad máxima de jugadores:</strong><br><span>5</span></li>
+                    </ul>
+                </div>  
+            </div>
+            <div class="row" id="metodos">
+                <div class="col-12">
+                    <span id="medios">Medios de pago</span>
+                </div>
+                <div class="col-12 col-sm-6" id="credito">
+                    <span class="tarjetas">Tarjetas de crédito</span>
+                    <span class="cuotas">Cuotas sin interes</span>
+                    <article id="credito1"></article>
+                    <article id="credito2"></article>
+                    <article id="credito3"></article>
+                </div>
+                <div class="col-12 col-sm-6" id="debito">
+                    <span class="tarjetas">Tarjetas de débito</span>
+                    <article id="debito1"></article>
+                    <article id="debito2"></article>
+                </div> 
+            </div>
+        </div>
+        <div class="container" id="sugerencias">
+            <div class="row">
+                <div class="col-12">
+                    <span>Quienes vieron este producto también compraron</span>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="col-6 col-sm-3 col-lg-2">    
+                        <article id="sug1"></article>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">       
+                        <article id="sug2"></article>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">        
+                        <article id="sug3"></article>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">
+                        <article id="sug4"></article>
+                </div>
+                <div class="col-6 col-sm-2 col-lg-2">
+                    <article id="sug5"></article>
+                </div>
+                <div class="col-6 col-sm-2 col-lg-2">
+                    <article id="sug6"></article>
+                </div>     
+            </div>
+        </div>
+    </div>
+    <footer class="row">
+        <article class="col-12 col-lg-4">
+            <div>
+            <span>Encontranos en:</span>    
+            <img src="images/lucas/img/footer/facebook.jpg" alt="facebook" width="30" height="30">
+            <img src="images/lucas/img/footer/instagram.jpg" alt="instagram" width="30" height="30">
+            <img src="images/lucas/img/footer/twitter.jpg" alt="twitter" width="30" height="30">
+            </div>
+            <span>© Imperio Gamer 2020 - Todos los derechos reservados</span>
+        </article>
+        <article class="col-12 col-lg-4">
+            <a href="">Nosotros</a>
+            <a href="">Ayuda</a>
+            <a href="">Politicas de privacidad</a>
+        </article>
+        <article class="tarjetas col-12 col-lg-4">
+            <svg class="bi bi-credit-card" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z" clip-rule="evenodd"/>
+                <rect width="3" height="3" x="2" y="9" rx="1"/>
+                <path d="M1 5h14v2H1z"/>
+            </svg>
+            <p>Podes pagar con nuestras tarjetas seleccionadas en cuotas y sin interes!!</p>
+        </article>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 </html>

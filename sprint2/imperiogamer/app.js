@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
-var listadoProductosRouter = require('./routes/listado-productos');
+var ingresoUsuarioRouter = require('./routes/ingreso-usuario');
 var productosRouter = require('./routes/productos');
 var carritoRouter = require('./routes/carrito-vacio');
 var carritoProductoRouter = require('./routes/carrito-producto');
@@ -30,9 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
-app.use('/listado-productos', listadoProductosRouter);
+app.use('/ingreso-usuario', ingresoUsuarioRouter);
 app.use('/listado-productos', productosRouter);
 app.use('/carrito', carritoRouter);
+app.use('/productos',productosRouter);
 app.use('/registrate', formularioRegistoRouter);
 app.use('/carga-producto', cargaProductoRouter);
 app.use('/carrito/tus-productos', carritoProductoRouter);
