@@ -34,8 +34,6 @@
                 <a class="dropdown-item" href="#">Monitores</a>
                 <a class="dropdown-item" href="#">Sillas</a>
                 <a class="dropdown-item" href="#">Accesorios</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
               </div>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contactanos</a>
@@ -51,6 +49,9 @@
     </header>
     
     <div id="carouselExampleIndicators" class="carousel slide imagenes-principales" data-ride="carousel">
+      <div class="titulo-principal">
+        <h1>Ultimos Lanzamientos</h1>
+      </div>
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -58,13 +59,13 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="#"><img src="./imagenes-home/residentevil3remake.jpg" class="d-block w-100" alt="..."></a> 
+          <a href="#"><img src="./imagenes-home/residentevil3remake.png" class="d-block w-100" alt="..."></a> 
         </div>
         <div class="carousel-item">
           <a href="#"><img src="./imagenes-home/halowallpaper.jpg" class="d-block w-100" alt="..."></a> 
         </div>
         <div class="carousel-item">
-          <a href="#"><img src="./imagenes-home/Destiny2wallpaper.png" class="d-block w-100" alt="..."></a> 
+          <a href="#"><img src="./imagenes-home/Destiny2wallpaper.jpg" class="d-block w-100" alt="..."></a> 
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -75,6 +76,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div>
+
+    <div class="titulo-secundario">
+      <h2>Los Mas Populares</h2>
     </div>
 
     <div class="container">
@@ -230,22 +235,30 @@
     </div>
   </div>
 
-  <footer>    
-    <div id="tarjetas-de-credito">
-     <p> Pagá al contado o en cuotas con las siguientes tarjetas de crédito:
-     </p>  
-     <img src="/images/tarjetas-credito-carrito/american.PNG" alt ="logo american express">
-     <img src="/images/tarjetas-credito-carrito/mastercard.png" alt ="logo mastercard">
-     <img src="/images/tarjetas-credito-carrito/visa.PNG" alt ="logo visa">
-    </div>
- 
-
-   <div id="copyright">
-     <span>
-       © 2019 TODOS LOS DERECHOS RESERVADOS. 
-     </span>
-   </div>
-   </footer>
+  <footer class="row">
+    <article class="col-12 col-lg-4">
+        <div>
+        <span>Encontranos en:</span>    
+        <img src="images/lucas/img/footer/facebook.jpg" alt="facebook" width="30" height="30">
+        <img src="images/lucas/img/footer/instagram.jpg" alt="instagram" width="30" height="30">
+        <img src="images/lucas/img/footer/twitter.jpg" alt="twitter" width="30" height="30">
+        </div>
+        <span>© Imperio Gamer 2020 - Todos los derechos reservados</span>
+    </article>
+    <article class="col-12 col-lg-4">
+        <a href="">Nosotros</a>
+        <a href="">Ayuda</a>
+        <a href="">Politicas de privacidad</a>
+    </article>
+    <article class="tarjetas col-12 col-lg-4">
+        <svg class="bi bi-credit-card" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z" clip-rule="evenodd"/>
+            <rect width="3" height="3" x="2" y="9" rx="1"/>
+            <path d="M1 5h14v2H1z"/>
+        </svg>
+        <p>Podes pagar con nuestras tarjetas seleccionadas en cuotas y sin interes!!</p>
+    </article>
+</footer>
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
