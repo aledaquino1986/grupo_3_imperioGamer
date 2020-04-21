@@ -11,6 +11,16 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     border: 1px solid red;
 }
 
+.icono-carrito{
+    display: none;
+}
+
+#carrito{
+    width: 50px;
+    position: absolute;
+    top: 36px;
+    right: 50px;
+}
 
 
 @media(min-width: 721px){
@@ -21,27 +31,48 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
 
     form.barra{
         margin: 0 5px;
+        display: inline;
+    }
+
+    
+}
+
+@media(min-width: 992px){
+    
+    .icono-carrito{
+        display: block;
+    }
+
+    .ocultar-carrito{
+        display: none;
     }
 }
 
 @media(min-width: 1024px){
     
     div.collapse input.barra-busqueda{
-        width: 234px;
+        width: 220px;
     }
 
     form.barra{
-        margin: 0 10px;
+        margin: 0 30px;
+    }
+    .ocultar-menu{
+        display: none;
     }
 }
 
 @media(min-width: 1200px) and (max-width:1439px){
     div.collapse input.barra-busqueda{
-        width: 500px;
+        width: 400px;
     }
 
     form.barra{
         margin: 0 40px;
+    }
+
+    .ocultar-menu{
+        display: none;
     }
 }
 
@@ -56,17 +87,17 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     }
 }
 
-ul.barra-menu{
-    margin: 0 10px 0 0;
-}
+    ul.barra-menu{
+        margin: 0 10px 0 0;
+    }
 
-.icono-login{
-    width: 30px;
-}
+    .ocultar-menu{
+        display: none;
+    }
 
-.icono-carrito{
-    width: 50px;
-}
+
+
+
 
         /*--menu-hamburguesa--*/
 
