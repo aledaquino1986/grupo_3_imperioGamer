@@ -1,0 +1,40 @@
+body{
+    background: blanchedalmond;
+}
+
+header{
+    
+    background-color: rgb(51, 168, 177);
+    text-align: center;
+    font-family: 'Bangers', cursive;
+}
+
+img.mando{
+    width: 8%;
+}
+
+h2{
+    text-align: center ;
+    margin: 20px 10px;
+    font-family: 'Bangers', cursive;
+}
+div.row{
+    margin: 10px 10px;
+}
+
+button.boton-enviar{
+    background: rgb(57, 207, 57);
+    width: 10%;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 45%;
+    margin-right: auto;
+}
+
+div.historial{
+    border: 2px solid rgb(26, 5, 119);
+    height: 200px;
+    margin-top: 20px;
+    
+}
