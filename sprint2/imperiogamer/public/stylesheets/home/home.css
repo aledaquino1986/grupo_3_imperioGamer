@@ -42,6 +42,11 @@ div.imagenes-principales{
     margin: 20px 0;
 }
 
+div.titulo-principal{
+    text-align: center;
+    color: white;
+    margin: 10px 0;
+}
 /*------------Main-----------------*/
 
 div.producto h3{
@@ -51,12 +56,17 @@ div.producto h3{
     font-size: 20px;
 }
 
+div.titulo-secundario{
+    text-align: center;
+    color: white;
+}
+
 div.producto img.producto-img{
     width: 100%;
 }
 
 div.producto img.producto-img:hover{
-    opacity: 0.3;
+    opacity: 0.8;
 }
 
 div.titulo-ofertas h2{
@@ -219,26 +229,41 @@ div.slide-box img{
    }
 
 /*------------FOOTER------------*/
-#tarjetas-de-credito {
-    display: inline-block;
-  }
-  
-  #tarjetas-de-credito p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  #tarjetas-de-credito img {
-    height: 40px;
-    border-radius: 10px;
-    border: 2px solid black;
-  }
-
-footer {
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+@media(min-width: 990px){
+    footer{
+        flex-direction: row;
+    }
+}
+footer article{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
     background-color: #001f3f;
-    border-top: 1px solid black;
-    width: 100%;
     color: white;
-    padding: 5px;
+}
+footer article img{
+    cursor: pointer;
+    border-radius: 100%;
+}
+footer article div{
+    margin-bottom: 20px;
+}
+footer article a{
+    color: white;
+}
+footer article a:hover{
+    color: red;
+    text-decoration: none;
+}
+footer .tarjetas{
+    display: flex;
+    align-items: center;
 }
 
