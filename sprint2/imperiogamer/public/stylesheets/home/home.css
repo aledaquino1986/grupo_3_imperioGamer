@@ -11,18 +11,61 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     border: 1px solid red;
 }
 
-@media(min-width: 768px){
+
+
+@media(min-width: 721px){
     
     div.collapse input.barra-busqueda{
-        width: 350px;
+        width: 221px;
+    }
+
+    form.barra{
+        margin: 0 5px;
     }
 }
 
-@media(min-width: 1450px){
+@media(min-width: 1024px){
     
     div.collapse input.barra-busqueda{
-        width:800px
+        width: 234px;
     }
+
+    form.barra{
+        margin: 0 10px;
+    }
+}
+
+@media(min-width: 1200px) and (max-width:1439px){
+    div.collapse input.barra-busqueda{
+        width: 500px;
+    }
+
+    form.barra{
+        margin: 0 40px;
+    }
+}
+
+
+@media(min-width: 1440px){
+    
+    div.collapse input.barra-busqueda{
+        width:535px;
+    }
+    form.barra{
+        margin: 0 60px;
+    }
+}
+
+ul.barra-menu{
+    margin: 0 10px 0 0;
+}
+
+.icono-login{
+    width: 30px;
+}
+
+.icono-carrito{
+    width: 50px;
 }
 
         /*--menu-hamburguesa--*/
