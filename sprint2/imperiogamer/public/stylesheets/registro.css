@@ -18,3 +18,10 @@ form {
 #registro-usuario #password{
     margin-bottom: 20px;
 }
+form button a{
+    color: white;
+}
+form button a:hover{
+    text-decoration: none;
+    color: white;
+}

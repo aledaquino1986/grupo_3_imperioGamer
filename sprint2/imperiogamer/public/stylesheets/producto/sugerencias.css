@@ -29,7 +29,7 @@
     height: 30vh;
 }
 #sug5{
-    background-image: url(/images/lucas/img/sugerencias/sug5.jpg);
+    background-image: url(/images/lucas/img/sugerencias/sug7.jpg);
     transform: translateX(-200%);
 }
 #sug6{
@@ -39,6 +39,11 @@
 @media(min-width: 350px){
     #sugerencias #sug1, #sug2, #sug3, #sug4{
         height: 40vh;
+    }
+}
+@media(min-width: 480px){
+    #sugerencias #sug1, #sug2, #sug3, #sug4{
+        height: 50vh;
     }
 }
 @media(min-width: 575px){
