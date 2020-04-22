@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -11,6 +10,7 @@ body {
 
 a {
   text-decoration: none;
+  color: brown;
 }
 
 header {
@@ -24,11 +24,10 @@ header a {
   text-align: right;
   padding: 15px;
   margin-top: 15px;
-  font-family: "Press Start 2P", cursive;
 }
 
 header a:hover {
-  background-color: red;
+  color: gray;
 }
 
 nav {
@@ -97,7 +96,7 @@ footer {
   border: 2px solid red;
   color: white;
   font-size: 25px;
-  padding: 30px;
+  padding: 31px;
   background-image: url(/images/tarjetas-credito-carrito/gamepad.jpg);
   background-size: cover;
 }
@@ -108,7 +107,7 @@ footer {
   text-align: center;
   font-size: 25px;
   opacity: 0.5;
-  padding: 30px;
+  padding: 31px;
   color: white;
   background-image: url(/images/tarjetas-credito-carrito/tarjeta.jpg);
   background-size: cover;
@@ -148,11 +147,13 @@ footer {
   background: transparent;
   color: brown;
   background-color: white;
+  transition: 1s;
 }
 
 #texto-main button:hover {
   background-color: white;
   font-size: 20px;
+  
 }
 
 #texto-main button:active {
@@ -186,6 +187,10 @@ footer {
   float: right;
 }
 
+.button a {
+  color: brown;
+}
+
 @media (max-width: 607px) {
   #logo-container {
     position: absolute;
@@ -193,6 +198,6 @@ footer {
 
   #logo {
     position: relative;
-    top: 59px;
+    top: 20px;
   }
 }

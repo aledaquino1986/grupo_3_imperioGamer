@@ -5,8 +5,6 @@
     <link rel="stylesheet" href="\stylesheets\carrito\carrito-datos-usuario.css">
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
     <body>
   <div class ="container"> 
@@ -17,9 +15,9 @@
         </div>  
         
         <div id= "links">
-        <a href="#"> Ingreso </a>
-        <a href="#"> Registro </a>
-        <a href="#"> Inicio </a>
+          <a href="/ingreso-usuario"> Ingresar </a>
+          <a href="/registrate"> Registro </a>
+          <a href="/"> Inicio </a>
       </div>
 
     </header>
@@ -39,21 +37,21 @@
             <form action="" method ="GET"> 
               <h3>Datos del comprador</h3>
                 <label class="label-datos-comprador">*Nombre y apellido</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="nombre" name="nombre" placeholder="Luis López" required><br>
+                <input class="formulario-datos-usuario" type="text" id="nombre" name="nombre" placeholder="Luis López"><br>
                 <label class="label-datos-comprador">*DNI</label><br>
-                <input class="formulario-datos-usuario" type="text" id="dni" name="DNI" placeholder="32496405" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="dni" name="DNI" placeholder="32496405"> <br>
                 <label class="label-datos-comprador">*Dirección</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="direccion" name="direccion" placeholder="Gorostiaga 1234" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="direccion" name="direccion" placeholder="Gorostiaga 1234"> <br>
                 <label class="label-datos-comprador">*Código Postal</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="CP" name="CP" placeholder="1884" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="CP" name="CP" placeholder="1884"> <br>
                 <label class="label-datos-comprador"></labelclass>*Localidad/Barrio</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="localidad" name="localidad" placeholder="Almagro" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="localidad" name="localidad" placeholder="Almagro"> <br>
                 <label class="label-datos-comprador">*Provincia</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="provincia" name="provincia" placeholder="Buenos Aires" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="provincia" name="provincia" placeholder="Buenos Aires"> <br>
                 <label class="label-datos-comprador">*Teléfono</label> <br>
-                <input class="formulario-datos-usuario" type="text" id="telefono" name="telefono" placeholder="45467893" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="telefono" name="telefono" placeholder="45467893"> <br>
                 <label class="label-datos-comprador">*Correo electrónico</label>  <br>
-                <input class="formulario-datos-usuario" type="text" id="email" name="email" placeholder="luis@lopez.com.ar" required> <br>
+                <input class="formulario-datos-usuario" type="text" id="email" name="email" placeholder="luis@lopez.com.ar"> <br>
               
               <div class=formulario-pago>
                   <h4>Modos de pago:</h4>
@@ -66,7 +64,7 @@
                           <input class="radio" type="radio" id="mercado-pago" name="modo-pago" value="mercado-pago">
                             
                       </div>
-                          <button class="finalizar-transaccion">Hacé clic para confirmar tus datos</button>
+                          <button class="finalizar-transaccion"> <a href = "/carrito/confirmar-datos" class="confirmar-datos-link">Hacé clic para confirmar tus datos</a></button>
             </form>
           </div>
           

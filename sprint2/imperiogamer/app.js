@@ -4,17 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var homeRouter = require('./routes/home');
+var homeRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ingresoUsuarioRouter = require('./routes/ingreso-usuario');
-var productosRouter = require('./routes/productos');
-var carritoRouter = require('./routes/carrito-vacio');
+var productosRouter = require('./routes/productDetail');
+var carritoRouter = require('./routes/productCart');
 var carritoProductoRouter = require('./routes/carrito-producto');
 var carritoDatosUsuarioRouter = require('./routes/carrito-datos-usuario');
 var carritoConfirmaDatosRouter = require('./routes/carrito-confirmar-datos');
 var carritoAgradecimientoRouter = require('./routes/carrito-gracias');
-var formularioRegistoRouter = require('./routes/formulario-registro');
-var cargaProductoRouter = require('./routes/carga-producto');
+var formularioRegistoRouter = require('./routes/register');
+var cargaProductoRouter = require('./routes/productAdd');
 
 var app = express();
 
