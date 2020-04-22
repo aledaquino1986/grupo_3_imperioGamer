@@ -15,7 +15,7 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     display: none;
 }
 
-#carrito{
+#img-carrito{
     width: 50px;
     position: absolute;
     top: 36px;
