@@ -11,66 +11,65 @@
     <link href="/stylesheets/producto/sugerencias.css" rel="stylesheet">
     <link href="/stylesheets/footer.css" rel="stylesheet">
     <link href="/stylesheets/hamburguesa.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/home/home.css">
     <title>Imperio Gamer</title>
 </head>
 <body>
-    <header class="row">
-        <div class="col-12">
-            <div class="buscador row">
-                <div class="col-2">
-                    <img src="/images/lucas/img/logo.jpeg" alt="logo" width="130" height="60">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark menu  ">
+          <a class="navbar-brand" href="#"><img src="../imagenes-home/icono.jpg" alt=""></a>
+          <button class="navbar-toggler boton-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon imagen-menu"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  barra-menu">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ofertas</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorías
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Juegos</a>
+                  <a class="dropdown-item" href="#">Consolas</a>
+                  <a class="dropdown-item" href="#">Monitores</a>
+                  <a class="dropdown-item" href="#">Sillas</a>
+                  <a class="dropdown-item" href="#">Accesorios</a>
                 </div>
-                <nav class="col-4">
-                    <ul class="navegador">
-                        <a href="">Inicio</a>
-                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Consolas</a>
-                        <a class="dropdown-item" href="#">Video-juegos</a>
-                        <a class="dropdown-item" href="#">Computadoras</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Ver mas..</a>
-                        </div>
-                    </ul>
-                    <ul class="navegador">
-                        <a href="">Ofertas</a>
-                        <a href="">Ayuda</a>
-                    </ul>
-                </nav>
-                <input class="col-3"type="search" name="buscador" id="buscador" placeholder="Buscar productos">
-                <nav class=" usuario col-3">
-                    <a href="">Ingresá</a><a href="">Carrito</a>
-                </nav>
-            </div>
-            <div class="hamburguesa row">
-                <div class="col-12">
-                    <nav class="navbar navbar-dark bg-dark">
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                    </nav>
-                    <div class="pos-f-t">
-                        <div class="collapse" id="navbarToggleExternalContent">
-                          <div class="menu p-4">
-                            <nav class="usuario">
-                                <a href="">Iniciár</a><a href="">Carrito</a>
-                            </nav>
-                            <nav class="navegador">
-                                <ul >
-                                    <li><a href="">Inicio</a></li>
-                                    <li><a href="">Categorias</a></li>
-                                    <li><a href="">Ofertas</a></li>
-                                    <li><a href="">Ayuda</a></li>
-                                </ul>
-                            </nav>
-                          </div>
-                        </div>
-                  </div></div>
-            </div>
-        </div>
-    </header>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contactanos</a>
+                </li>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link" href="/ingreso-usuario">Ingresar</a>
+              </li>
+              <ul class="navbar-nav barra-menu ocultar-carrito">
+                <li class="nav-item">
+                  <a class="nav-link" href="/carrito">Carrito</a>
+                </li>
+              </ul> 
+            </ul>
+            <form class="form-inline my-2 my-lg-0 barra">
+              <input class="form-control mr-sm-2  barra-busqueda" type="search" placeholder="Escribe Aquí" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0 btn-buscar" type="submit">Buscar</button>
+            </form>
+            </ul>  
+            <ul class="navbar-nav barra-menu icono-carrito">
+              <li class="nav-item">
+                <a class="nav-link" href="/carrito"><img id="carrito-nav" src="../imagenes-home/icono-carrito.svg" alt="icono-login"></a>
+              </li>
+            </ul> 
+            
+          </ul>
+          </div>
+        </nav>
+      </header>
     <div class="container" id="contenedor">
         <div class="container">
             <div class="row">
@@ -232,7 +231,7 @@
                 <rect width="3" height="3" x="2" y="9" rx="1"/>
                 <path d="M1 5h14v2H1z"/>
             </svg>
-            <p>Podes pagar con nuestras tarjetas seleccionadas en cuotas y sin interes!!</p>
+            <p>¡Podés pagar con nuestras tarjetas seleccionadas en cuotas y sin interés!</p>
         </article>
     </footer>
 

@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -24,13 +23,11 @@ header a {
   text-align: right;
   padding: 15px;
   margin-top: 15px;
-  font-family: "Press Start 2P", cursive;
 }
 
 header a:hover {
-  background-color: red;
+  color: gray;
 }
-
 nav {
   border: 2px solid black;
   width: 100%;
@@ -108,7 +105,7 @@ img {
   border: 2px solid red;
   color: white;
   font-size: 25px;
-  padding: 30px;
+  padding: 31px;
   background-image: url(/images/tarjetas-credito-carrito/gamepad.jpg);
   background-size: cover;
 }
@@ -119,7 +116,7 @@ img {
   text-align: center;
   font-size: 25px;
   opacity: 0.5;
-  padding: 30px;
+  padding: 31px;
   color: white;
   background-image: url(/images/tarjetas-credito-carrito/tarjeta.jpg);
   background-size: cover;
@@ -315,6 +312,6 @@ input[type="text"] {
 
   #logo {
     position: relative;
-    top: 59px;
+    top: 20px;
   }
 }
