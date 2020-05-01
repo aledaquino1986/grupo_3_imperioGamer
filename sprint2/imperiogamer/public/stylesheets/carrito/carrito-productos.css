@@ -147,6 +147,7 @@ img {
   background-color: #faead2;
   display: inline-block;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
+  color: black;
 }
 
 .button {
@@ -201,7 +202,7 @@ section {
   text-align: center;
 }
 
-.cupon {
+#total .cupon {
   background: #fafafa;
   padding-left: 10px;
   padding-bottom: 10px;
@@ -210,6 +211,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
 }
 
 #total-descuentos {
@@ -220,9 +222,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
 }
 
-.finalizar-transaccion {
+#total .finalizar-transaccion {
   padding: 10px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: 10px;

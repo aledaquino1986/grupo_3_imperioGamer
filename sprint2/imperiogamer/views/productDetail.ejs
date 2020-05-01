@@ -1,75 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="/stylesheets/header.css" rel="stylesheet">
-    <link href="/stylesheets/producto/producto.css" rel="stylesheet">
-    <link href="/stylesheets/producto/caracteristicas.css" rel="stylesheet">
-    <link href="/stylesheets/producto/metodos.css" rel="stylesheet">
-    <link href="/stylesheets/producto/sugerencias.css" rel="stylesheet">
-    <link href="/stylesheets/footer.css" rel="stylesheet">
-    <link href="/stylesheets/hamburguesa.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/home/home.css">
-    <title>Imperio Gamer</title>
-</head>
+<%- include('../partials/head') %> 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark menu  ">
-          <a class="navbar-brand" href="#"><img src="../imagenes-home/icono.jpg" alt=""></a>
-          <button class="navbar-toggler boton-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon imagen-menu"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  barra-menu">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Ofertas</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Categorías
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Juegos</a>
-                  <a class="dropdown-item" href="#">Consolas</a>
-                  <a class="dropdown-item" href="#">Monitores</a>
-                  <a class="dropdown-item" href="#">Sillas</a>
-                  <a class="dropdown-item" href="#">Accesorios</a>
-                </div>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contactanos</a>
-                </li>
-              </li>
-  
-              <li class="nav-item">
-                <a class="nav-link" href="/ingreso-usuario">Ingresar</a>
-              </li>
-              <ul class="navbar-nav barra-menu ocultar-carrito">
-                <li class="nav-item">
-                  <a class="nav-link" href="/carrito">Carrito</a>
-                </li>
-              </ul> 
-            </ul>
-            <form class="form-inline my-2 my-lg-0 barra">
-              <input class="form-control mr-sm-2  barra-busqueda" type="search" placeholder="Escribe Aquí" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0 btn-buscar" type="submit">Buscar</button>
-            </form>
-            </ul>  
-            <ul class="navbar-nav barra-menu icono-carrito">
-              <li class="nav-item">
-                <a class="nav-link" href="/carrito"><img id="carrito-nav" src="../imagenes-home/icono-carrito.svg" alt="icono-login"></a>
-              </li>
-            </ul> 
-            
-          </ul>
-          </div>
-        </nav>
-      </header>
+    <%- include('../partials/header') %> 
     <div class="container" id="contenedor">
         <div class="container">
             <div class="row">
@@ -210,30 +143,7 @@
             </div>
         </div>
     </div>
-    <footer class="row">
-        <article class="col-12 col-lg-4">
-            <div>
-            <span>Encontranos en:</span>    
-            <img src="\images\lucas\img\footer\facebook.jpg" alt="facebook" width="30" height="30">
-            <img src="\images\lucas\img\footer\instagram.jpg" alt="instagram" width="30" height="30">
-            <img src="\images\lucas\img\footer\twitter.jpg" alt="twitter" width="30" height="30">
-            </div>
-            <span>© Imperio Gamer 2020 - Todos los derechos reservados</span>
-        </article>
-        <article class="col-12 col-lg-4">
-            <a href="">Nosotros</a>
-            <a href="">Ayuda</a>
-            <a href="">Politicas de privacidad</a>
-        </article>
-        <article class="tarjetas col-12 col-lg-4">
-            <svg class="bi bi-credit-card" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z" clip-rule="evenodd"/>
-                <rect width="3" height="3" x="2" y="9" rx="1"/>
-                <path d="M1 5h14v2H1z"/>
-            </svg>
-            <p>¡Podés pagar con nuestras tarjetas seleccionadas en cuotas y sin interés!</p>
-        </article>
-    </footer>
+    <%- include('../partials/footer') %> 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
