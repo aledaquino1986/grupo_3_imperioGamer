@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/headCarrito') %> 
-  <body>
+  <!-- head-->
+  <%- include('./partials/headCarritoVacio') %>
+  <!-- head-->
+    <body>
   <div class ="container"> 
-
-    <%- include('../partials/headerCarrito') %> 
-  
-    <div> 
-      <a href="#" id="tus-productos"> <div>  Esta es tu compra </div> </a>
-      <a href="#" id="fin-transaccion" > <div>  Finalizá tu compra  </div> </a>
-    </div>
+<!-- header navBar-->
+<%- include('./partials/headerCarrito') %>
+<!-- headernavBar-->  
 
     
     <main>
@@ -19,18 +17,17 @@
       <p> No te pierdas lo último en entretenimiento digital. </p>
 
       <form action="https://google.com">
-      <button type="button"><a id="iniciar-compra" href="/">¡Hacé clic acá para empezar tu compra!</a></button>
+      <button type="button"><a href="/">¡Hacé clic acá para empezar tu compra!</a></button>
       </form>
 
       
     </div>
     </main>
  
-    <%- include('../partials/footerCarrito') %> 
-  
-  
-  
-  </div>
+<!-- footer begins-->
+<%- include('./partials/footerCarrito') %>
+<!-- footer ends-->
+   
   
     </body>
   </html>

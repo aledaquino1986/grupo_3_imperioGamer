@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/headCarrito') %> 
-    <body>
+ <!-- head-->
+ <%- include('./partials/headCarritoProductos') %>
+ <!-- head-->
+<body>
   <div class ="container"> 
 
-    <%- include('../partials/headerCarrito') %> 
-  
-    <div> 
-      <a href="#" id="tus-productos"> <div>  Esta es tu compra </div> </a>
-      <a href="#" id="fin-transaccion" > <div>  Finaliza tu compra  </div> </a>
-    </div>
+<!-- header navBar-->
+<%- include('./partials/headerCarrito') %>
+<!-- headernavBar-->  
 
     
     <main>
@@ -119,10 +118,10 @@
       
       
     </main>
-    <%- include('../partials/footerCarrito') %> 
-  
-  
-  </div>
+    
+<!-- footer begins-->
+<%- include('./partials/footerCarrito') %>
+<!-- footer ends-->
   
     </body>
   </html>

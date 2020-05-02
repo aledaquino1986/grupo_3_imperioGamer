@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/headCarrito') %> 
+  <!-- head begins-->
+  <%- include('./partials/headCarritoVacio') %>
+  <!-- head ends-->
     <body>
   <div class ="container"> 
+<!-- headernavBar begins-->
+<%- include('./partials/headerCarrito') %>
+<!-- headernavBar ends-->  
 
-    <%- include('../partials/headerCarrito') %> 
-  
-    <div> 
-      <a href="#" id="tus-productos"> <div>  Esta es tu compra </div> </a>
-      <a href="#" id="fin-transaccion" > <div>  Finalizá tu compra  </div> </a>
-    </div>
-
-    
     <main>
       <div id="texto-main"> 
       <h2> ¡Muchas gracias por tu compra!</h2>
@@ -19,18 +16,18 @@
       <p> Disfrutá los productos que adquiriste en Imperio Gamer </p>
 
       <form action="https://google.com">
-      <button type="button"><a id="iniciar-compra" href="/">¡Hacé clic acá para seguir comprando!</a></button>
+      <button type="button"><a href="/">¡Hacé clic acá para seguir comprando!</a></button>
       </form>
 
       
     </div>
     </main>
  
-    <%- include('../partials/footerCarrito') %> 
   
+<!-- footer begins-->
+<%- include('./partials/footerCarrito') %>
+<!-- footer ends-->
   
-  
-  </div>
   
     </body>
   </html>
