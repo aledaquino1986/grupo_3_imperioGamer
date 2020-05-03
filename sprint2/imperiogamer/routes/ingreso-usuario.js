@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var ingresoUsuarioController = require("../controllers/ingresoUsuarioController");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('ingreso-usuario');
-});
+
+/* GET página de logueo */
+router.get('/', ingresoUsuarioController.mostrarPaginaLogin); 
 
 module.exports = router;

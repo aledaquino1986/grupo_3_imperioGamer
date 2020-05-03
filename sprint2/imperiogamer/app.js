@@ -9,12 +9,9 @@ var usersRouter = require('./routes/users');
 var ingresoUsuarioRouter = require('./routes/ingreso-usuario');
 var productosRouter = require('./routes/productDetail');
 var carritoRouter = require('./routes/productCart');
-var carritoProductoRouter = require('./routes/carrito-producto');
-var carritoDatosUsuarioRouter = require('./routes/carrito-datos-usuario');
-var carritoConfirmaDatosRouter = require('./routes/carrito-confirmar-datos');
-var carritoAgradecimientoRouter = require('./routes/carrito-gracias');
 var formularioRegistoRouter = require('./routes/register');
 var cargaProductoRouter = require('./routes/productAdd');
+var listadoProductosAdmin = require('./routes/listado-productos');
 
 var app = express();
 
@@ -31,15 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/ingreso-usuario', ingresoUsuarioRouter);
-app.use('/listado-productos', productosRouter);
+app.use('/productos', productosRouter);
 app.use('/carrito', carritoRouter);
-app.use('/productos',productosRouter);
 app.use('/registrate', formularioRegistoRouter);
 app.use('/carga-producto', cargaProductoRouter);
-app.use('/carrito/tus-productos', carritoProductoRouter);
-app.use('/carrito/datos-usuario', carritoDatosUsuarioRouter);
-app.use('/carrito/confirmar-datos', carritoConfirmaDatosRouter);
-app.use('/carrito/gracias', carritoAgradecimientoRouter);
+app.use('/listado-productos', listadoProductosAdmin);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

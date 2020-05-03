@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var listadoProdsController= require("../controllers/listadoProdsController");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('listado-productos');
-});
+/* GET listado productos para el admin. */
+router.get('/', listadoProdsController.mostrarListadoProds);
 
 module.exports = router;
