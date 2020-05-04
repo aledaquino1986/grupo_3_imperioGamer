@@ -129,6 +129,12 @@ div.producto h3{
     margin: 20px 0;
     font-size: 20px;
 }
+div.producto .precio{
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+    background-color: blanchedalmond;
+}
 
 div.titulo-secundario{
     text-align: center;
