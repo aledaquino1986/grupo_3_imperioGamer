@@ -9,7 +9,7 @@
   <title>Panel</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container" >
     <header>
       <div class="container-fluid">
         <div class="row">
@@ -22,7 +22,7 @@
     </header>
 
     <h2>Informacion Del Producto</h2>
-    <form class="was-validated">
+    <form class="was-validated" enctype="multipart/form-data" method="POST" action="/carga-producto">
 
       <div class="row">
         <div class="col-4">
@@ -32,102 +32,107 @@
 
         <div class="col-8">
           <label for="titulo">Titulo</label>
-          <input type="text" class="form-control is-invalid" id="codigo" required>
+          <input type="text" class="form-control is-invalid" id="codigo" name="name" required>
         </div>  
       </div>
 
       <div class="row">
         <div class="col-4">
-          <label for="marca">Marca</label>
-          <input type="text" class="form-control is-invalid" id="marca" name="marca"  required>
-        </div>  
+          <label for="categoria">Categoria</label>
+          
+            <select class="custom-select" name="categoria"required>
+              <option value="" >Seleccion la Categoria</option>
+              <option >Juego</option>
+              <option >Consola</option>
+              <option >Monitores</option>
+              <option >Sillas</option>
+              <option >Accesorios</option>
+            </select>
+            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
+          
+        </div>   
 
-        <div class="col-4">
-          <label for="modelo">Modelo</label>
-          <input type="text" class="form-control is-invalid" id="modelo" required>
-        </div>  
+        <div class="col-8">
+          <label for="validationTextarea">Descripcion</label>
+          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Ingresa Aqui la Descripcion" name="description" required></textarea>
+        </div>
 
         <div class="col-4">
           <label for="color">Color</label>
           <div class="form-group">
-            <select class="custom-select" required>
+            <select class="custom-select" name="color"required>
               <option value="">Seleccion tu color</option>
-              <option value="1">Amarillo</option>
-              <option value="2">Azul</option>
-              <option value="3">Blanco</option>
-              <option value="4">Celeste</option>
-              <option value="5">Dorado</option>
-              <option value="6">Fucsia</option>
-              <option value="7">Gris Claro</option>
-              <option value="8">Gris Oscuro</option>
-              <option value="9">Marron</option>
-              <option value="10">Naranja</option>
-              <option value="11">Negro</option>
-              <option value="12">Plateado</option>
-              <option value="13">Rojo</option>
-              <option value="14">Verde</option>
-              <option value="15">Violeta</option>
-              <option value="16">Otro</option>
+              <option >Amarillo</option>
+              <option >Azul</option>
+              <option >Blanco</option>
+              <option >Celeste</option>
+              <option >Dorado</option>
+              <option >Fucsia</option>
+              <option >Gris Claro</option>
+              <option >Gris Oscuro</option>
+              <option >Marron</option>
+              <option >Naranja</option>
+              <option >Negro</option>
+              <option >Plateado</option>
+              <option>Rojo</option>
+              <option >Verde</option>
+              <option >Violeta</option>
+              <option >Otro</option>
             </select>
             <div class="invalid-feedback">Por favor Selecciona Uno</div>
           </div>
         </div>  
-      </div>
-
-      <div class="row">
 
         <div class="col-4">
-          <label for="Precio">Precio</label>
-          <input type="text" class="form-control is-invalid " id="Precio" name="Precio"  required>
+          <label for="proveedor">Proveedor</label>
+          <div class="form-group">
+            <select class="custom-select" name="proveedor"required>
+              <option value="" >Seleccion la Categoria</option>
+              <option >Microfost</option>
+              <option >Nintendo</option>
+              <option >Sony</option>
+            </select>
+            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
+          </div>
         </div> 
 
         <div class="col-4">
-            <label for="proveedor">Proveedor</label>
+          <label for="Precio">Precio</label>
+          <input type="text" class="form-control is-invalid " id="Precio" name="price"  required>
+        </div> 
 
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="Microsoft" name="radio-stacked" required>
-              <label class="custom-control-label" for="Microsoft">Microsoft</label>
-            </div>
-
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="Sony" name="radio-stacked" required>
-              <label class="custom-control-label" for="Sony">Sony</label>
-            </div>
-
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="Nintendo" name="radio-stacked" required>
-              <label class="custom-control-label" for="Nintendo">Nintendo</label>
-              <div class="invalid-feedback">Seleccion Uno</div>
-            </div>
-        </div>
-
-        <div class="col-4">
-          <label for="si">¿Tiene Garantia?</label><br>
-          <input type="radio" id="Si" name="garantia" required>Si<br>
-          <input type="radio" id="Si" name="garantia" required>No<br>
-        </div>  
+          
       </div>
 
       <div class="row">
-        <div class="col-4">
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlFile1">Imagenes</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-          </form>
-        </div>
 
         <div class="col-4">
-          <form>
-            <div class="form-group">
-              <label for="exampleFormControlFile1">Video</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            <button class="boton-enviar" type="submit">Enviar</button>
-          </form>
-        </div>
+          <label for="garantia">¿Garantia?</label>
+          <div class="form-group">
+            <select class="custom-select" name="garantia"required>
+              <option value="" >Seleccion Si tiene garantia</option>
+              <option >Si</option>
+              <option >No</option>
+            </select>
+            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
+          </div>
+        </div>  
+
+        <div class="col-4">
+          <label for="Precio">Oferta</label>
+          <input type="text" class="form-control is-invalid " id="oferta" name="discount"  required>
+        </div> 
       </div>
+
+      <div class="col-4">
+          <label for="exampleFormControlFile1">Imagenes</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1" >
+      </div>   
+
+        <div class="col-4">
+            <button class="boton-enviar" type="submit">Guardar producto</button>
+        </div>
+      
       
     </form>
 
@@ -135,6 +140,20 @@
       <div class="row">
         <div class="col-12">
           <h2 class="titulo-historial">Historial Subida De Productos</h2>
+        </div>
+        <div class="col-12">
+          <table class="scope">
+            <tr>
+              <th>Codigo</th>
+              <th>Titulo</th>
+              <th>Categoria</th>
+              <th>Descripcion</th>
+              <th>Color</th>
+              <th>Proveedor</th>
+              <th>Precio</th>
+              <th>Garantia</th>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
