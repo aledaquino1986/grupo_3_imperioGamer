@@ -40,7 +40,7 @@
         <div class="col-4">
           <label for="categoria">Categoria</label>
           
-            <select class="custom-select" name="categoria"required>
+            <select class="custom-select" name="category"required>
               <option value="" >Seleccion la Categoria</option>
               <option >Juego</option>
               <option >Consola</option>
@@ -98,7 +98,7 @@
 
         <div class="col-4">
           <label for="Precio">Precio</label>
-          <input type="text" class="form-control is-invalid " id="Precio" name="price"  required>
+          <input type="number" class="form-control is-invalid " id="Precio" name="price"  required>
         </div> 
 
           
@@ -120,13 +120,13 @@
 
         <div class="col-4">
           <label for="Precio">Oferta</label>
-          <input type="text" class="form-control is-invalid " id="oferta" name="discount"  required>
+          <input type="number" class="form-control is-invalid " id="oferta" name="discount"  required>
         </div> 
       </div>
 
       <div class="col-4">
-          <label for="exampleFormControlFile1">Imagenes</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" >
+          <label for="image">Imagenes</label>
+          <input type="file"  name="image" required>
       </div>   
 
         <div class="col-4">
@@ -138,21 +138,32 @@
 
     <div class="container historial">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12"></div>
           <h2 class="titulo-historial">Historial Subida De Productos</h2>
         </div>
         <div class="col-12">
           <table class="scope">
             <tr>
-              <th>Codigo</th>
               <th>Titulo</th>
-              <th>Categoria</th>
+             
               <th>Descripcion</th>
-              <th>Color</th>
-              <th>Proveedor</th>
               <th>Precio</th>
-              <th>Garantia</th>
             </tr>
+            <div class="row">
+            <% products.forEach(element=>{ %>
+              <tr>
+                  <div class="col-4">
+                    <th><%= element.name%></th>
+                  </div>
+                  <div class="col-4">
+                    <th><%= element.description%></th>
+                  </div>
+                  <div class="col-4">
+                    <th><%= element.price%></th>
+                  </div>
+              </tr>
+            <% }) %>
+          </div>
           </table>
         </div>
       </div>

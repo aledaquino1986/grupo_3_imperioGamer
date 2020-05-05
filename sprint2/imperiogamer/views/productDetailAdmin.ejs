@@ -39,10 +39,16 @@
                         <span class="otros">Métodos de pago: Débito y Crédito</span>
                         <span class="otros">Envíos a Cápital Federal: Gratis</span>
                         <span class="otros">Stock disponible: Si</span>
-                        <form action="">
+
+                        <form method="get" action="/carga-producto/<%= product.id%>/edit">
                             <button type="submit" id="comprar">Editar</button>
+                        </form>
+
+                        <form action="">
                             <button type="submit" id="carrito">Eliminar</button>
                         </form>
+
+                        
                     </section>
                 </div>
             </div>

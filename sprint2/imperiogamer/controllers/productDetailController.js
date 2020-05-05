@@ -11,12 +11,17 @@ let productDetailController = {
        },
 
        mostrarDetalleProducto: function(req, res, next){
-        res.render('productDetailAdmin', {
-            productos: products
-        });
-    
-    }
 
+        let producto =  products.find(function(element){
+            return  element.id == req.params.id
+            
+        })
+        res.render('productDetailAdmin', {
+            product: producto
+        });
+        
+       
+    },
 }
     
     module.exports = productDetailController

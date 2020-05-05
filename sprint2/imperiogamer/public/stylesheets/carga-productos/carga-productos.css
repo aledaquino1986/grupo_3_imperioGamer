@@ -12,6 +12,9 @@ header{
 img.mando{
     width: 8%;
 }
+img.carga{
+    width: 100%;
+}
 
 h2{
     text-align: center ;
