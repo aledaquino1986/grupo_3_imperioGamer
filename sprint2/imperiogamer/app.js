@@ -7,6 +7,7 @@ var logger = require('morgan');
 var homeRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ingresoUsuarioRouter = require('./routes/ingreso-usuario');
+var productosUserRouter = require('./routes/productDetailUser');
 var productosRouter = require('./routes/productDetail');
 var carritoRouter = require('./routes/productCart');
 var formularioRegistoRouter = require('./routes/register');
@@ -33,7 +34,7 @@ app.use('/carrito', carritoRouter);
 app.use('/registrate', formularioRegistoRouter);
 app.use('/carga-producto', cargaProductoRouter);
 app.use('/listado-productos', listadoProductosAdmin);
-
+app.use("/detalle-producto", productosUserRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
