@@ -11,12 +11,12 @@
     <div class="row">
       <%productos.forEach(function(producto){%>
         <div class="col-3">
-          <a href="">
+          <a href="/productos/<%= producto.id %> ">
             <div class="producto">
               <h3><%= producto.name %> </h3>
-              <img src="" alt="<%= producto.name %> ">
+              <img class="producto-img" src="/images/productos/<%= producto.image %>" alt="<%= producto.name %> ">
               <div class="precio">
-                <span><%= producto.price %> </span>
+                <span>$<%= producto.price %> </span>
                 <% if (producto.discount > 0) { %>
                   <span><%= producto.discount %>% OFF</span>
                 <% } %>
