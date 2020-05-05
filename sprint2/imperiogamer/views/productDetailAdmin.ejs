@@ -10,9 +10,9 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="\images\lucas\img\residentEvil3.jpg" class="d-block w-100" alt="residentEvil3">
+                            <img src="/images/productos/<%=producto.image%>" class="d-block w-100" alt="residentEvil3">
                             </div>
-                            <div class="carousel-item">
+                            <!-- <div class="carousel-item">
                             <img src="\images\lucas\img\producto\imagen5.jpg" class="d-block w-100" alt="imagen1">
                             </div>
                             <div class="carousel-item">
@@ -20,7 +20,7 @@
                             </div>
                             <div class="carousel-item">
                             <img src="\images\lucas\img\producto\imagen6.jpg" class="d-block w-100" alt="imagen3">
-                            </div>
+                            </div> -->
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,20 +34,21 @@
                 </div>
                 <div class="col-12 col-sm-12 col-lg-4" id="producto">
                     <section>
-                        <h2>Resident Evil 3: Remake</h2>
-                        <span id="precio">$ 6.700</span>
+                        <h2><%=producto.name%></h2>
+                        <span id="precio">Precio $ <%=producto.price%></span>
+                        <span id="precio">Off: <%=producto.discount%>%</span>
+                       <% let precioFinal = producto.price - ((producto.discount*producto.price)/100)
+							precioFinal = Math.round(precioFinal) %>
+                        <span id="precio">Precio con descuento: <%=precioFinal%></span>
+                        
                         <span class="otros">Métodos de pago: Débito y Crédito</span>
                         <span class="otros">Envíos a Cápital Federal: Gratis</span>
-                        <span class="otros">Stock disponible: Si</span>
-
-                        <form method="get" action="/carga-producto/<%= product.id%>/edit">
+                        <form method="GET" action="/carga-producto/<%= producto.id%>/edit">
                             <button type="submit" id="comprar">Editar</button>
                         </form>
-
-                        <form action="">
-                            <button type="submit" id="carrito">Eliminar</button>
-                        </form>
-
+                            <form action="/productos/<%= producto.id %>?_method=DELETE" method="POST">
+                                <button type="submit" id="carrito" class="action-button delete">ELIMINAR</button>
+                            </form>
                         
                     </section>
                 </div>
@@ -56,44 +57,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12" id="caracteristicas">
-                    <h2>Características</h2>
+                    <h2></h2>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-6" id="caracteristicas">
-                    <ul class="ul">
-                        <li>
-                            <strong>Franquicia:</strong><br>
-                            <span>Resident Evil</span>
-                        </li>
-                        <li>
-                            <strong>Título:</strong><br>
-                            <span>Resident Evil 3 Remake</span>
-                        </li>
-                        <li>
-                            <strong>Formato:</strong><br>
-                            <span>Físico</span>
-                        </li>
-                        <li>
-                            <strong>Saga:</strong><br>
-                            <span>Resident Evil</span>
-                        </li>
-                        <li>
-                            <strong>Plataforma:</strong><br>
-                            <span>PS4</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-6" id="caracteristicas">
-                    <ul class="ul2">
-                        <li><strong>Desarrollador:</strong><br><span>Capcom</span></li>
-                        <li><strong>Tamaño del archivo:</strong><br><span>50 GB</span></li>
-                        <li><strong>Multijugador:</strong><br><span>Sí</span></li>
-                        <li><strong>Clasificación del juego:</strong><br><span>M</span></li>
-                        <li><strong>Año del lanzamiento:</strong><br><span>2020</span></li>
-                        <li><strong>Géneros:</strong><br><span>Acción,Terror</span></li>
-                        <li><strong>En línea:</strong><br><span>Sí</span></li>
-                        <li><strong>Cantidad máxima de jugadores:</strong><br><span>5</span></li>
-                    </ul>
-                </div>  
+                
             </div>
         </div>
     </div>
