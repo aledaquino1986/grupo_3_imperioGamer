@@ -17,5 +17,5 @@ router.get('/', productAddController.mostrarCargaProd);
 router.post('/', upload.any(), productAddController.cargaProducto);
 
 router.get('/:id/edit', productAddController.formEdit);
-router.post('/:id/edit',upload.any(), productAddController.edit);
+router.put('/:id/edit',upload.any(), productAddController.edit);
 module.exports = router;
