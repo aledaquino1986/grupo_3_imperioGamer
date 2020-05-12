@@ -7,7 +7,8 @@ let productDetailController = {
     /*renderea la lista de productos del lado del ADMINiSTRADOR*/
     listadoDeProductos: function(req, res, next){
         res.render('products', {
-            productos: products
+            productos: products,
+            title: "Listado Productos"
         });
         
     },

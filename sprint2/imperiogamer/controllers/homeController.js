@@ -9,7 +9,7 @@ let homeController = {
 
     mostrarHome: function(req, res, next) {
         res.render('index',{
-
+          title: "Imperio Gamer"
         });
 
    }

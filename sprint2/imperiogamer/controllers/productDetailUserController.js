@@ -4,8 +4,10 @@ const products = JSON.parse(fs.readFileSync('../imperiogamer/data/productos.json
 let productDetailController = {
     /* Renderea página detalle de producto. VISTA DEL USUARIO*/
         mostrarDetalleProducto: function(req, res, next) {
-            res.render('productDetail');
-    
+            res.render('productDetail', {
+                title: "Resident Evil 3"
+            });
+            
        }
 
     }
