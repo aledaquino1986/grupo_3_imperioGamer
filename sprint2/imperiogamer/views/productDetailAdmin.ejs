@@ -43,10 +43,10 @@
                         
                         <span class="otros">Métodos de pago: Débito y Crédito</span>
                         <span class="otros">Envíos a Cápital Federal: Gratis</span>
-                        <form method="GET" action="/carga-producto/<%= producto.id%>/edit">
+                        <form method="GET" action="/products/<%= producto.id%>/edit">
                             <button type="submit" id="comprar">Editar</button>
                         </form>
-                            <form action="/productos/<%= producto.id %>?_method=DELETE" method="POST">
+                            <form action="/products/<%= producto.id %>?_method=DELETE" method="POST">
                                 <button type="submit" id="carrito" class="action-button delete">ELIMINAR</button>
                             </form>
                         

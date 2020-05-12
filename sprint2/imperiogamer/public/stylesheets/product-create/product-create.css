@@ -25,14 +25,22 @@ div.row{
     margin: 10px 10px;
 }
 
+div.container-bt{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+   
+
+}
+
 button.boton-enviar{
-    background: rgb(57, 207, 57);
-    width: 10%;
-    padding: 5px;
-    font-size: 15px;
-    text-align: center;
-    margin-left: 45%;
-    margin-right: auto;
+    background: red;
+    width: 100%;
+    font-size: 25px;
+    padding: 15px;
+    font-weight: bold;
+   
+    
 }
 
 div.historial{

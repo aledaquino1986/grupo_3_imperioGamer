@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../stylesheets/carga-productos/carga-productos.css">
+  <link rel="stylesheet" href="../../stylesheets/product-create/product-create.css">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <title>Panel</title>
 </head>
@@ -22,17 +22,17 @@
     </header>
 
     <h2>Informacion Del Producto</h2>
-    <form class="was-validated" enctype="multipart/form-data" method="POST" action="/carga-producto/<%=products.id%>/edit?_method=PUT">
+    <form class="was-validated" enctype="multipart/form-data" method="POST" action="/products/<%=products.id%>?_method=PUT">
 
       <div class="row">
         <div class="col-4">
           <label for="codigo">Codigo</label>
-          <input type="text" value="<%= products.codigo %> " class="form-control is-invalid " id="codigo" name="codigo"  >
+          <input type="text" value="<%if( products.codigo != ""){ %><%= products.codigo %><% } %>" class="form-control is-invalid " id="codigo" name="codigo"  >
         </div>  
 
         <div class="col-8">
           <label for="titulo">Titulo</label>
-          <input type="text" value="<%= products.name %>" class="form-control is-invalid" id="codigo" name="name" required>
+        <input type="text" value="<%if( products.name != ""){ %><%= products.name %><% } %>" class="form-control is-invalid" id="codigo" name="name" required>
         </div>  
       </div>
 
@@ -141,8 +141,8 @@
       <% }%>
 
 
-        <div class="col-4">
-            <button class="boton-enviar" type="submit">Guardar producto</button>
+        <div class="container-bt col-4 ">
+            <button class="boton-enviar" type="submit">Guarda producto</button>
         </div>
       
       

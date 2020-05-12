@@ -1,15 +1,47 @@
 const fs = require('fs')
 const path = require('path');
-const multer=require('multer')
 const productosFilePath=path.join(__dirname,'../data/productos.json')
 let products = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 
-let productAddController = {
+let productDetailController = {
+    /*renderea la lista de productos del lado del ADMINiSTRADOR*/
+    listadoDeProductos: function(req, res, next){
+        res.render('products', {
+            productos: products
+        });
+        
+    },
 
-    /* Renderea página de carga de productos del admin */
+    mostrarDetalleProducto: function(req, res, next){
+    if(req.params.id != undefined){
+     let producto = products.find(function(element) {
+         return element.id == req.params.id
+     });
+     let title = producto.name;
+     res.render("productDetailAdmin", {
+         title: title,
+         producto: producto,
+
+     });
+
+    }
+    },
+
+    delete: (req, res, next) => {
+        let productsQueQuedan = products.filter(function(element) {
+            return element.id != req.params.id
+        });
+    
+        let productosModificadosJson = JSON.stringify(productsQueQuedan);
+        fs.writeFileSync('../imperiogamer/data/productos.json', productosModificadosJson)
+    
+        res.redirect("/products");
+    
+
+    },
 
     mostrarCargaProd: function(req, res, next) {
-        res.render('productAdd',{
+        res.render('product-create',{
             products: products
         });
 
@@ -23,9 +55,7 @@ let productAddController = {
 		}else{
 			let ultimoProducto =  products[products.length-1]
             nuevoProducto.id= ultimoProducto.id + 1
-           console.log(ultimoProducto)
 		};
-        
         
         nuevoProducto.name = req.body.name,
         nuevoProducto.discount = req.body.discount,
@@ -37,11 +67,10 @@ let productAddController = {
         nuevoProducto.color = req.body.color,
         nuevoProducto.proveedor = req.body.proveedor,
         nuevoProducto.image = req.files[0].filename
-        console.log(nuevoProducto)
         products.push(nuevoProducto)
         let productoSubirJSON = JSON.stringify(products)
 		fs.writeFileSync(productosFilePath,productoSubirJSON)
-        res.redirect('productos')
+        res.redirect('products')
         
     },
 
@@ -51,8 +80,7 @@ let productAddController = {
             return  element.id == req.params.id
             
         })
-        console.log(producto)
-        res.render('productEdit', {
+        res.render('product-Edit', {
             products: producto
         });
         
@@ -78,10 +106,11 @@ let productAddController = {
        
         let productoModificadoJSON= JSON.stringify(products)
         fs.writeFileSync(productosFilePath, productoModificadoJSON)
-        res.redirect('/productos/'+req.params.id)
+        res.redirect('/products/'+req.params.id)
         
        
     }
-}
 
-module.exports = productAddController;
+}
+    
+    module.exports = productDetailController

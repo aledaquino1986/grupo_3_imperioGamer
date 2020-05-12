@@ -6,14 +6,12 @@ var logger = require('morgan');
 var methodOverride = require("method-override");
 
 var homeRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 var ingresoUsuarioRouter = require('./routes/ingreso-usuario');
 var productosUserRouter = require('./routes/productDetailUser'); 
-var productosRouter = require('./routes/productDetail'); //acá
 var carritoRouter = require('./routes/productCart');
 var formularioRegistoRouter = require('./routes/register');
-var cargaProductoRouter = require('./routes/productAdd'); //acá 
-var listadoProductosAdmin = require('./routes/listado-productos');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -29,13 +27,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-app.use('/users', usersRouter);
+
 app.use('/ingreso-usuario', ingresoUsuarioRouter);
-app.use('/productos', productosRouter);
 app.use('/carrito', carritoRouter);
 app.use('/registrate', formularioRegistoRouter);
-app.use('/carga-producto', cargaProductoRouter);
-app.use('/listado-productos', listadoProductosAdmin);
+app.use('/products', productsRouter);
 app.use("/detalle-producto", productosUserRouter);
 
 // catch 404 and forward to error handler
