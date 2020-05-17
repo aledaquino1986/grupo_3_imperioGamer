@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/stylesheets/registro.css" rel="stylesheet">
 <body>
-    <form action="" id="registro-usuario"> 
+    <form action="/registrate" id="registro-usuario" method="POST" enctype="multipart/form-data"> 
         <h3>Ingrese sus datos</h3>
+        <% if (typeof errors != "undefined") { %>
+            <ul>
+           <% for(var i= 0; i < errors.length; i++) { %>
+             <li><%= errors[i].msg %></li>
+            <% } %>
+            </ul>
+        <% } %> 
         <label class="label-datos-comprador">Nombres</label>
         <input class="formulario-datos-usuario" type="text" id="nombre" name="nombre">
         <label class="label-datos-comprador">Apellido</label>
@@ -17,18 +24,14 @@
         <input class="formulario-datos-usuario" type="numner" id="dni" name="DNI">
         <label class="label-datos-comprador">Dirección</label>
         <input class="formulario-datos-usuario" type="text" id="direccion" name="direccion">
-        <label>Localidad/Barrio</label>
-        <input class="formulario-datos-usuario" type="text" id="localidad" name="localidad">
-        <label class="label-datos-comprador">Provincia</label>
-        <input class="formulario-datos-usuario" type="text" id="provincia" name="provincia">
         <label class="label-datos-comprador">Teléfono</label>
         <input class="formulario-datos-usuario" type="text" id="telefono" name="telefono">
         <label class="label-datos-comprador">Correo electrónico</label>
         <input class="formulario-datos-usuario" type="text" id="email" name="email">
         <label class="label-datos-comprador">Contraseña</label>
         <input class="formulario-datos-usuario" type="password" id="password" name="password">
+        <input type="file" name="avatar">
         <button class="btn btn-primary">Registrarse</button><br>
-        <button class="btn btn-primary"><a href="/">Volver a Inicio</a></button>
     </form>
 
 
