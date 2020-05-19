@@ -26,6 +26,9 @@ let registerController = {
 
            nuevoUsuario.nombre = req.body.nombre;
            nuevoUsuario.apellido= req.body.apellido;
+           nuevoUsuario.dni= req.body.dni;
+           nuevoUsuario.direccion= req.body.direccion;
+           nuevoUsuario.telefono= req.body.telefono;
            nuevoUsuario.email= req.body.email;
            nuevoUsuario.contrasenia= encriptado;
            nuevoUsuario.avatar = req.files[0].filename;
