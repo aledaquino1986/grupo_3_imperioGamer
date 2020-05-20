@@ -11,9 +11,11 @@ let ingresoUsuarioController = {
 
    postLogin: function(req, res, next) {
     res.redirect("/");
-
+  
 }
 
 }
+
+
 
 module.exports = ingresoUsuarioController

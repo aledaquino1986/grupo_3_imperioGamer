@@ -10,7 +10,13 @@ let homeController = {
 
     /* Renderea el home. */
 
+  
     mostrarHome: function(req, res, next) {
+
+      if (req.session.login != undefined) {
+        var usuarioLogueado = req.session.login
+      }
+      
       var populares = products.filter(function(producto){
         return producto.codigo == "populares";
       })
@@ -21,7 +27,8 @@ let homeController = {
           title: "Imperio Gamer",
           productos: products,
           populares: populares,
-          ofertas: ofertas
+          ofertas: ofertas,
+          user: usuarioLogueado
         });
 
    }

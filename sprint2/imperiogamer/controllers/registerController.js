@@ -15,31 +15,50 @@ let registerController = {
        if(!errors.isEmpty()){
         return res.render('register', {errors: errors.errors})
        }
-       let nuevoUsuario = {};
-       let encriptado = bcrypt.hashSync(req.body.password,10);
-    if( usuarios == "" ){
-        nuevoUsuario.id = 1
-    }else{
-        let ultimoUsuario =  usuarios[usuarios.length-1]
-        nuevoUsuario.id= ultimoUsuario.id + 1
-    }; 
+       
+       //for -->
+       // si el mail registrado está en la base datos --> usuario[i].email  
+       // comprarar con req.body.email
 
-           nuevoUsuario.nombre = req.body.nombre;
-           nuevoUsuario.apellido= req.body.apellido;
-           nuevoUsuario.dni= req.body.dni;
-           nuevoUsuario.direccion= req.body.direccion;
-           nuevoUsuario.telefono= req.body.telefono;
-           nuevoUsuario.email= req.body.email;
-           nuevoUsuario.contrasenia= encriptado;
-           nuevoUsuario.avatar = req.files[0].filename;
-           
+       //redireccionar/indicar mensaje de que ya está en la base
 
-           usuarios.push(nuevoUsuario)
-        let usuarioSubirJSON = JSON.stringify(usuarios)
-        fs.writeFileSync(usuariosFilePath,usuarioSubirJSON)
+      let usuarioEnBase = usuarios.find(function (element) {
+          return element.email == req.body.email
+        
+      })
 
-        res.redirect('/ingreso-usuario')
+        if (usuarioEnBase != undefined) {
+            res.redirect("ingreso-usuario");
+    } else { 
+       
+            let nuevoUsuario = {};
+            let encriptado = bcrypt.hashSync(req.body.password,10);
+            if( usuarios == "" ){
+                nuevoUsuario.id = 1
+            }else{
+                let ultimoUsuario =  usuarios[usuarios.length-1]
+                nuevoUsuario.id= ultimoUsuario.id + 1
+            }; 
+        
+                nuevoUsuario.nombre = req.body.nombre;
+                nuevoUsuario.apellido= req.body.apellido;
+                nuevoUsuario.dni= req.body.dni;
+                nuevoUsuario.direccion= req.body.direccion;
+                nuevoUsuario.telefono= req.body.telefono;
+                nuevoUsuario.email= req.body.email;
+                nuevoUsuario.contrasenia= encriptado;
+                nuevoUsuario.avatar = req.files[0].filename;
+                
+        
+                usuarios.push(nuevoUsuario)
+                let usuarioSubirJSON = JSON.stringify(usuarios)
+                fs.writeFileSync(usuariosFilePath,usuarioSubirJSON)
+        
+                res.redirect('/ingreso-usuario')
+        }
+       
    }
+      
 
 }
 
