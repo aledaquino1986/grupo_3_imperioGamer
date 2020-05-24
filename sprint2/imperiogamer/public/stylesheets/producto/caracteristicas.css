@@ -5,6 +5,10 @@
     padding-top: 20px;
     border-top: solid 2px blanchedalmond;
 }
+#caracteristicas p{
+    font-weight: bold;
+    font-size: 18px;
+}
 #caracteristicas ul{
     list-style: none;
 }
