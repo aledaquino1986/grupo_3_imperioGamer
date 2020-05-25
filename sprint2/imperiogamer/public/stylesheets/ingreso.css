@@ -36,3 +36,7 @@
 .span-usuario a{
     color: white;
 }
+
+span.mgs-error{
+    color: rgb(214, 11, 11);
+}

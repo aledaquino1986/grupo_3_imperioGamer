@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var productsController= require("../controllers/productsController");
+var userCheckLogin = require("../middlewares/userCheckLogin");
 var path = require('path')
 const multer = require('multer');
 var storage = multer.diskStorage({
@@ -16,13 +17,13 @@ var upload = multer({storage:storage});
 
 router.get('/', productsController.listadoDeProductos);
 
-router.get('/create', productsController.mostrarCargaProd);
+router.get('/create',userCheckLogin, productsController.mostrarCargaProd);
 router.post('/', upload.any(), productsController.cargaProducto);
 
-router.get('/:id', productsController.mostrarDetalleProducto);
+router.get('/:id', userCheckLogin, productsController.mostrarDetalleProducto);
 router.delete('/:id', productsController.delete);
 
-router.get('/:id/edit', productsController.formEdit);
+router.get('/:id/edit', userCheckLogin, productsController.formEdit);
 router.put('/:id',upload.any(), productsController.edit);
 
 

@@ -31,7 +31,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
-
 app.use('/ingreso-usuario', ingresoUsuarioRouter);
 app.use('/carrito', carritoRouter);
 app.use('/registrate', formularioRegistoRouter);
