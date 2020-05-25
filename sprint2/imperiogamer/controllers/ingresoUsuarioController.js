@@ -53,6 +53,11 @@ let ingresoUsuarioController = {
     //console.log(usuarioQueSeLoguea);
     //console.log(usuarioQueSeLoguea.contrasenia);
 
+    },
+
+    adminPanel: function(req, res, next) {
+        res.render('adminPanel');
+
     }
 }
 
