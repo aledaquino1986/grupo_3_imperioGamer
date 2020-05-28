@@ -12,7 +12,7 @@ const { check, validationResult, body} = require("express-validator");
  
 
 /* GET página de logueo */
-router.get('/', userCheckLogin, ingresoUsuarioController.mostrarPaginaLogin); 
+router.get('/', ingresoUsuarioController.mostrarPaginaLogin); 
 router.post('/',[
     check("email").isEmail().withMessage('Debe ingresar un mail valido'),
     ],[

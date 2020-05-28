@@ -11,8 +11,16 @@ let ingresoUsuarioController = {
     /* Renderea página de login. */
 
     mostrarPaginaLogin: function(req, res, next) {
+        let usuarioRegistrado = req.session.login
+        if(req.session.login == undefined){
+            console.log("No hay usuario")
+        } else {
+            console.log(usuarioRegistrado)
+        }
+
         res.render('ingreso-usuario', {
-            title: "Ingresá a tu cuenta"
+            title: "Ingresá a tu cuenta",
+            usuario: req.session.login
             
         });
 
@@ -27,10 +35,10 @@ let ingresoUsuarioController = {
 
     if (usuarioQueSeLoguea != undefined) {
         if (bcrypt.compareSync(req.body.password, usuarioQueSeLoguea.contrasenia)) {
-            req.session.login = usuarioQueSeLoguea;
-            let usuarioLogueado = req.session.login
+            req.session.login = usuarioQueSeLoguea.email;
+            console.log(usuarioQueSeLoguea.email)
             if(req.body.check != undefined){
-                res.cookie(bcrypt.hashSync('recordame',10)), (usuarioLogueado);
+                res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge: 60000})
             }
             res.redirect("/")
             //if checkbox tildado (creamos cookie) --> res.cookie("usuario logueado", "Usuarioid")

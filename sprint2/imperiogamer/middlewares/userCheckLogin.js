@@ -6,7 +6,7 @@ const usuariosFilePath=path.join(__dirname,'../data/usuarios.json');
 var {check, validationResult, body} = require('express-validator');
 
 function userCheck(req,res,next){
-
+    console.log(req.session.log)
     if(req.session.login == undefined){
         next();
     } else {
