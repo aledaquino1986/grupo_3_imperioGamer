@@ -22,7 +22,7 @@ router.post('/',upload.any(),[
     check("nombre").isLength({min:1}).withMessage('El nombre no puede estar vacio'),
     check("apellido").isLength({min:1}).withMessage('El apellido no puede estar vacio'),
     check("email").isEmail().withMessage('Debe ingresar un mail valido'),
-    check("password").isLength({min:8}).withMessage('La contraseña debe tener un minimo de 8 caaracteres'),
+    check("password").isLength({min:8}).withMessage('La contraseña debe tener un minimo de 8 caracteres'),
 ],registerController.nuevoUsuario)
 
 module.exports = router;

@@ -11,6 +11,7 @@ let registerController = {
         res.render('register');    
    },
    nuevoUsuario: function(req, res, next){
+   
        let errors = validationResult(req);
        if(!errors.isEmpty()){
         return res.render('register', {errors: errors.errors})
@@ -39,6 +40,8 @@ let registerController = {
                 let ultimoUsuario =  usuarios[usuarios.length-1]
                 nuevoUsuario.id= ultimoUsuario.id + 1
             }; 
+
+          
         
                 nuevoUsuario.nombre = req.body.nombre;
                 nuevoUsuario.apellido= req.body.apellido;
@@ -47,7 +50,12 @@ let registerController = {
                 nuevoUsuario.telefono= req.body.telefono;
                 nuevoUsuario.email= req.body.email;
                 nuevoUsuario.contrasenia= encriptado;
-                nuevoUsuario.avatar = req.files[0].filename;
+                if (req.file === undefined) {
+                    nuevoUsuario.avatar = "Aun no has subido una imagen"
+                } else {
+                    nuevoUsuario.avatar = req.files[0].filename;
+                }
+                
                 
         
                 usuarios.push(nuevoUsuario)

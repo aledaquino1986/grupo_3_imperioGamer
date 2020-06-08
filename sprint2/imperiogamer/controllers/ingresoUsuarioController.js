@@ -11,19 +11,21 @@ let ingresoUsuarioController = {
     /* Renderea página de login. */
 
     mostrarPaginaLogin: function(req, res, next) {
+        
         let usuarioRegistrado = req.session.login
-        if(req.session.login == undefined){
-            console.log("No hay usuario")
+        if(usuarioRegistrado){
+           res.redirect("/ingreso-usuario/perfil/")
         } else {
-            console.log(usuarioRegistrado)
+            res.render('ingreso-usuario', {
+                title: "Ingresá a tu cuenta",
+                usuario: req.session.login
+                
+            });
         }
 
-        res.render('ingreso-usuario', {
-            title: "Ingresá a tu cuenta",
-            usuario: req.session.login
-            
-        });
+        
 
+        console.log(req.session.login)
    },
 
    login: function (req, res, next) {
@@ -38,7 +40,7 @@ let ingresoUsuarioController = {
             req.session.login = usuarioQueSeLoguea.email;
             console.log(usuarioQueSeLoguea.email)
             if(req.body.check != undefined){
-                res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge: 60000})
+                res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge: 60000 * 1000})
             }
             res.redirect("/")
             //if checkbox tildado (creamos cookie) --> res.cookie("usuario logueado", "Usuarioid")
@@ -65,6 +67,14 @@ let ingresoUsuarioController = {
 
     adminPanel: function(req, res, next) {
         res.render('adminPanel');
+
+    },
+
+    perfilUsuario: function(req, res, next) {
+        res.render("profile", {
+            title: "Perfil",
+            usuario: req.session.login
+        })
 
     }
 }
