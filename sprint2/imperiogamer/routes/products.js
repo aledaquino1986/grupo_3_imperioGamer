@@ -15,9 +15,9 @@ var storage = multer.diskStorage({
 var upload = multer({storage:storage});
 /* GET listado productos para el admin. */
 
-router.get('/', productsController.listadoDeProductos);
+router.get('/', userCheckLogin, productsController.listadoDeProductos);
 
-router.get('/create',userCheckLogin, productsController.mostrarCargaProd);
+router.get('/create', userCheckLogin, productsController.mostrarCargaProd);
 router.post('/', upload.any(), productsController.cargaProducto);
 
 router.get('/:id', userCheckLogin, productsController.mostrarDetalleProducto);

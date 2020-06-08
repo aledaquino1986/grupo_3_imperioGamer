@@ -45,6 +45,5 @@ router.post('/',[
 
 
 router.get('/panel-admin', ingresoUsuarioController.adminPanel); 
-router.get('/perfil/', ingresoUsuarioController.perfilUsuario); 
 
 module.exports = router;

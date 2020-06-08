@@ -28,10 +28,12 @@ let homeController = {
     },
 
     mostrarPerfil: function(req, res, next) {
+     
+
       let usuario =  users.find(function(element){
         return  element.id == req.params.id
-        
-    })
+      });
+      
         res.render('profile',{
           title: "Imperio Gamer",
           usuario: usuario,

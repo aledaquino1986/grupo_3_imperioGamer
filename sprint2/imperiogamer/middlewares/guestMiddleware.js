@@ -5,14 +5,14 @@ const usuarios = JSON.parse(fs.readFileSync('../imperiogamer/data/usuarios.json'
 const usuariosFilePath=path.join(__dirname,'../data/usuarios.json');
 var {check, validationResult, body} = require('express-validator');
 
-function userCheck(req,res,next){
-    
-    if(req.session.login == undefined){
-         res.redirect('/')
-    } else {
+function guesMiddleware(req,res,next){
+    console.log("req.session.login", req.session.login)
+    if(req.session.login === undefined){
         next();
+    } else {
+        res.redirect('/')
     }
  
 }
 
-module.exports = userCheck
+module.exports = guesMiddleware;

@@ -11,10 +11,11 @@ let ingresoUsuarioController = {
     /* Renderea página de login. */
 
     mostrarPaginaLogin: function(req, res, next) {
+       
         
         let usuarioRegistrado = req.session.login
         if(usuarioRegistrado){
-           res.redirect("/ingreso-usuario/perfil/")
+           res.redirect("/user/profile/"+usuarioRegistrado)
         } else {
             res.render('ingreso-usuario', {
                 title: "Ingresá a tu cuenta",
@@ -37,8 +38,7 @@ let ingresoUsuarioController = {
 
     if (usuarioQueSeLoguea != undefined) {
         if (bcrypt.compareSync(req.body.password, usuarioQueSeLoguea.contrasenia)) {
-            req.session.login = usuarioQueSeLoguea.email;
-            console.log(usuarioQueSeLoguea.email)
+            req.session.login = usuarioQueSeLoguea.id;
             if(req.body.check != undefined){
                 res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge: 60000 * 1000})
             }
@@ -70,13 +70,6 @@ let ingresoUsuarioController = {
 
     },
 
-    perfilUsuario: function(req, res, next) {
-        res.render("profile", {
-            title: "Perfil",
-            usuario: req.session.login
-        })
-
-    }
 }
 
 
