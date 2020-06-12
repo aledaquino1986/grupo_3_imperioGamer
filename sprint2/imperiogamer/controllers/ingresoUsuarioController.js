@@ -23,10 +23,6 @@ let ingresoUsuarioController = {
                 
             });
         }
-
-        
-
-        console.log(req.session.login)
    },
 
    login: function (req, res, next) {

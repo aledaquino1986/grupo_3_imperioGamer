@@ -15,12 +15,13 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     display: none;
 }
 
-#carrito-nav{
-    width: 50px;
-    position: absolute;
-    top: 36px;
-    right: 50px;
+div.img-carrito{
+    position: relative;
+    width: 70px;
+    right: -20px;
 }
+
+
 
 
 @media(min-width: 721px){
@@ -48,14 +49,16 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     }
 }
 
-@media(min-width: 1024px){
+
+
+@media(min-width: 1000px) and (max-width:1199px){
     
     div.collapse input.barra-busqueda{
         width: 220px;
     }
 
     form.barra{
-        margin: 0 30px;
+        margin: 0 10px;
     }
     .ocultar-menu{
         display: none;
@@ -68,7 +71,7 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
     }
 
     form.barra{
-        margin: 0 40px;
+        margin: 0 10px;
     }
 
     .ocultar-menu{
@@ -80,7 +83,7 @@ header nav.menu button.boton-menu, header nav.menu button.boton-menu span.imagen
 @media(min-width: 1440px){
     
     div.collapse input.barra-busqueda{
-        width:535px;
+        width:400px;
     }
     form.barra{
         margin: 0 60px;

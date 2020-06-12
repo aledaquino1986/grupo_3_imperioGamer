@@ -51,7 +51,7 @@ let registerController = {
                 nuevoUsuario.email= req.body.email;
                 nuevoUsuario.contrasenia= encriptado;
                 if (req.file === undefined) {
-                    nuevoUsuario.avatar = "Aun no has subido una imagen"
+                    nuevoUsuario.avatar = "unnamed.png"
                 } else {
                     nuevoUsuario.avatar = req.files[0].filename;
                 }

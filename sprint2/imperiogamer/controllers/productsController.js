@@ -66,7 +66,7 @@ let productDetailController = {
         nuevoProducto.price = req.body.price,
         nuevoProducto.garantia = req.body.garantia,
         nuevoProducto.color = req.body.color,
-        nuevoProducto.proveedor = req.body.proveedor,
+        nuevoProducto.plataforma = req.body.plataforma,
         nuevoProducto.image = req.files[0].filename
         products.push(nuevoProducto)
         let productoSubirJSON = JSON.stringify(products)

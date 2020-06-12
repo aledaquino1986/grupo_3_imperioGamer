@@ -4,24 +4,24 @@ USE imperio;
 
 CREATE TABLE localidades (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-localidad VARCHAR(255) NOT NULL,
-id_provincia INT NOT NULL
+localidad VARCHAR(255) NOT NULL,--Tendria YES NULL por que en el registro no colocamos localidad 
+id_provincia INT NOT NULL--Tendria YES NULL por que en el registro no colocamos provincia 
 );
 
 CREATE TABLE provincias (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-provincia_nombre VARCHAR(255) NOT NULL
+provincia_nombre VARCHAR(255) NOT NULL--Tendria YES NULL por que en el registro no colocamos localidad
 );
 
 CREATE TABLE usuarios (
 id INT AUTO_INCREMENT PRIMARY KEY,
 first_name VARCHAR (255) NOT NULL,
 last_name VARCHAR (255) NOT NULL,
-dni INT,
+dni INT,-- INT de 9 digitos 
 email VARCHAR (255) NOT NULL,
-address VARCHAR (255),
-tel INT,
-password VARCHAR(1000),
+address VARCHAR (255),--no no esta tomando como una funcion de mysql?
+tel INT, --int de 10 digitos
+password VARCHAR(1000),--para mi varchar de 600 esta bien
 avatar VARCHAR(255),
 created_at timestamp NULL DEFAULT NULL,
 updated_at timestamp NULL DEFAULT NULL,
@@ -32,26 +32,26 @@ FOREIGN KEY(provincia_id) REFERENCES provincias(id)
 );
 
 CREATE TABLE platforms (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT AUTO_INCREMENT PRIMARY KEY,--deberia ser not null
 platform_name VARCHAR (255) NOT NULL
 );
 
 
 CREATE TABLE languages (
-id INT AUTO_INCREMENT PRIMARY KEY,
-lang VARCHAR (255) NOT NULL
+id INT AUTO_INCREMENT PRIMARY KEY,----deberia ser not null
+lang VARCHAR (255) NOT NULL--lang?, no deberia ser lenguage_name
 );
 
 CREATE TABLE categories (
-id INT AUTO_INCREMENT PRIMARY KEY,
-category VARCHAR (255) NOT NULL
+id INT AUTO_INCREMENT PRIMARY KEY,--deberia ser not null
+category VARCHAR (255) NOT NULL--no deberia ser category_name
 );
 
 
 
 
 CREATE TABLE products (
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT AUTO_INCREMENT PRIMARY KEY,--deberia ser not null
 product_name VARCHAR (255) NOT NULL,
 price INT NOT NULL,
 prod_description VARCHAR (2000) NOT NULL,
@@ -68,13 +68,13 @@ FOREIGN KEY(language_id) REFERENCES languages(id)
 );
 
 CREATE TABLE carritos (
-id INT PRIMARY KEY AUTO_INCREMENT,
+id INT PRIMARY KEY AUTO_INCREMENT,--deberia ser not null
 usuario_id INT,
 FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
 CREATE TABLE carrito_producto (
-id INT PRIMARY KEY AUTO_INCREMENT,
+id INT PRIMARY KEY AUTO_INCREMENT,--deberia ser not null
 carrito_id INT NOT NULL,
 product_id INT NOT NULL,
 FOREIGN KEY (carrito_id) REFERENCES carritos(id),
