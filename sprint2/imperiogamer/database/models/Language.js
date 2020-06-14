@@ -1,14 +1,13 @@
 module.exports =(sequelize,dataType) => {
-    const Provincia = sequelize.define("provincias",{
-
-        provincia_nombre:{
+    const Lenguage = sequelize.define("lenguages",{
+        language_name:{
             type: dataType.STRING
         }
-        
-    },{
+    },
+    {
         timestamps: false
     }
     )
-    return Provincia
+    return Lenguage
 }
     

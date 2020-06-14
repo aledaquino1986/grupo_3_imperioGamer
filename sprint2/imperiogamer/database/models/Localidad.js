@@ -3,10 +3,6 @@ module.exports =(sequelize,dataType) => {
 
         localidad:{
             type: dataType.STRING
-        },
-
-        id_provincia:{
-            type: dataType.STRING
         }
         
     },{
@@ -14,12 +10,6 @@ module.exports =(sequelize,dataType) => {
         timestamps: false
     }
     )
-    Localidad.associate = function(models){
-        Locadidad.hasMany(models.Provincia,{
-            as:'provincias',
-            foreignKey: 'id_provincia'
-        })
-    }
     return Localidad
 }
     

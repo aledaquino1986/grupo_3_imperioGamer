@@ -34,28 +34,25 @@ module.exports =(sequelize,dataType) => {
 
         avatar:{
             type: dataType.STRING,
+        },
+
+        createdAt:{
+            type: dataType.DATE
+        },
+
+        updatedAt:{
+            type: dataType.DATE
+        },
+
+        localidad_id: {
+            type: dataType.INTEGER
+        },
+
+        provincia_id:{
+            type: dataType.INTEGER
         }
-        
-    },{
-        timestamps: false
     }
     )
-    Usuario.associate = function(models){
-        Locadidad.belongsTo(models.Locadidad,{
-            as:'localidad_id',
-            foreignKey: 'localidad_id'
-        },  
-        )
-    }
-
-    Usuario.associate = function(models){
-        Locadidad.belongsTo(models.Locadidad,{
-            as:'localidad_id',
-            foreignKey: 'localidad_id'
-        },  
-        )
-    }
-    
     return Usuario
 }
     

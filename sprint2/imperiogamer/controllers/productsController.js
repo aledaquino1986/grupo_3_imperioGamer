@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path');
 const productosFilePath=path.join(__dirname,'../data/productos.json')
+let db = require('../database/models')
 let products = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 
 let productDetailController = {
@@ -50,7 +51,7 @@ let productDetailController = {
 
    cargaProducto:function(req, res, next){
     
-        let nuevoProducto = {}
+       /* let nuevoProducto = {}
         if( products == "" ){
 			nuevoProducto.id = 1
 		}else{
@@ -72,8 +73,26 @@ let productDetailController = {
         let productoSubirJSON = JSON.stringify(products)
 		fs.writeFileSync(productosFilePath,productoSubirJSON)
         res.redirect('products')
+        */
         
+        db.products.create({
+            product_name: req.body.name,
+            price: req.body.price,
+            prod_description: req.body.description,
+            discount: req.body.discount,
+            platform_id: 1,
+            language_id: 10,
+            category_id: 20,
+            image: req.files[0].filename
+
+        })
+        res.redirect('/')
+
+        
+
     },
+
+
 
     formEdit:function(req, res, next){
          //traigo el producto que me viene por la url
