@@ -15,7 +15,7 @@ let ingresoUsuarioController = {
         
         let usuarioRegistrado = req.session.login
         if(usuarioRegistrado){
-           res.redirect("/user/profile/"+usuarioRegistrado)
+           res.redirect("/user/profile/"+usuarioRegistrado.id)
         } else {
             res.render('ingreso-usuario', {
                 title: "Ingresá a tu cuenta",
@@ -34,12 +34,13 @@ let ingresoUsuarioController = {
 
     if (usuarioQueSeLoguea != undefined) {
         if (bcrypt.compareSync(req.body.password, usuarioQueSeLoguea.contrasenia)) {
-            req.session.login = usuarioQueSeLoguea.id;
+            req.session.login = usuarioQueSeLoguea;
+            console.log(req.session.login)
             if(req.body.check != undefined){
+                 //if checkbox tildado (creamos cookie) --> res.cookie("usuario logueado", "Usuarioid")
                 res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge: 60000 * 1000})
             }
             res.redirect("/")
-            //if checkbox tildado (creamos cookie) --> res.cookie("usuario logueado", "Usuarioid")
         } else {
             res.render("ingreso-usuario",{
                 title: "Ingresá a tu cuenta", 

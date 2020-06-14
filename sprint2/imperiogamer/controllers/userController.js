@@ -54,8 +54,6 @@ let homeController = {
               return usuarioUp = element
         }
     });
-    console.log(req.body.email)
-   console.log(usuarioUp)
     let userModificadoJSON= JSON.stringify(users)
     fs.writeFileSync(usuariosFilePath, userModificadoJSON)
     res.redirect('/user/profile/'+req.params.id)

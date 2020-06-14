@@ -40,9 +40,6 @@ let registerController = {
                 let ultimoUsuario =  usuarios[usuarios.length-1]
                 nuevoUsuario.id= ultimoUsuario.id + 1
             }; 
-
-          
-        
                 nuevoUsuario.nombre = req.body.nombre;
                 nuevoUsuario.apellido= req.body.apellido;
                 nuevoUsuario.dni= req.body.dni;
@@ -55,14 +52,14 @@ let registerController = {
                 } else {
                     nuevoUsuario.avatar = req.files[0].filename;
                 }
-                
-                
-        
+
                 usuarios.push(nuevoUsuario)
                 let usuarioSubirJSON = JSON.stringify(usuarios)
                 fs.writeFileSync(usuariosFilePath,usuarioSubirJSON)
-        
-                res.redirect('/ingreso-usuario')
+                req.session.login = nuevoUsuario
+                console.log(req.session.login);
+                
+                res.render('/user/profile/'+ nuevoUsuario.id)
         }
        
    }
