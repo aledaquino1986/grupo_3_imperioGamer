@@ -81,8 +81,8 @@ let productDetailController = {
             prod_description: req.body.description,
             discount: req.body.discount,
             platform_id: 1,
-            language_id: 10,
-            category_id: 20,
+            language_id: 3,
+            category_id: 3,
             image: req.files[0].filename
 
         })

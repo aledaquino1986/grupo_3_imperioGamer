@@ -8,6 +8,14 @@ module.exports =(sequelize,dataType) => {
         timestamps: false
     }
     )
+
+    Platform.associate = function(modelos) {
+        Platform.hasMany(modelos.products, {
+            as: "products",
+            foreignKey: "platform_id"
+        })
+    }
     return Platform
 }
+
     

@@ -44,5 +44,23 @@ module.exports =(sequelize,dataType) => {
         
     },
     )
+
+    Product.associate = function(modelos) {
+        Product.belongsTo(modelos.platforms, {
+            as: "platforms",
+            foreignKey: "platform_id"
+        });
+        
+        Product.belongsTo(modelos.languages, {
+            as: "languages",
+            foreignKey: "language_id"
+        });
+
+        Product.belongsTo(modelos.categories, {
+            as: "categories",
+            foreignKey: "category_id"
+        });
+
+    }
     return Product
 }
