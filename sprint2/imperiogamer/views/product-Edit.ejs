@@ -32,7 +32,7 @@
 
         <div class="col-8">
           <label for="titulo">Titulo</label>
-        <input type="text" value="<%if( products.name != ""){ %><%= products.name %><% } %>" class="form-control is-invalid" id="codigo" name="name" required>
+        <input type="text" value="<%if( products.producto_name != ""){ %><%= products.producto_name %><% } %>" class="form-control is-invalid" id="codigo" name="name" required>
         </div>  
       </div>
 
@@ -42,11 +42,11 @@
           
             <select class="custom-select" name="category"required>
               <option value="" >Seleccion la Categoria</option>
-              <option <%if( products.category == "Juego"){ %> selected <% } %>>Juego</option>
-              <option <%if( products.category == "consola"){ %> selected <% } %>>Consola</option>
-              <option <%if( products.category == "Consola"){ %> selected <% } %>>Monitores</option>
-              <option <%if( products.category == "Sillas"){ %> selected <% } %>>Sillas</option>
-              <option <%if( products.category == "Accesorios"){ %> selected <% } %>>Accesorios</option>
+              <option value= "1" <%if( products.category_id == 1){ %> selected <% } %> >Juegos</option>
+              <option <%if( products.category_id == 2){ %> selected <% } %> value= "2">Consolas</option>
+              <option <%if( products.category_id == 3){ %> selected <% } %> value= "3">Monitores</option>
+              <option <%if( products.category_id == 4){ %> selected <% } %> value= "4">Sillas</option>
+              <option <%if( products.category_id == 5){ %> selected <% } %> value= "5">Accesorios</option>
             </select>
             <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
           
@@ -57,7 +57,7 @@
           <textarea class="form-control is-invalid" id="validationTextarea" name="description" required><%= products.description %></textarea>
         </div>
 
-        <div class="col-4">
+       <div class="col-4">
           <label for="color">Color</label>
           <div class="form-group">
             <select class="custom-select" name="color"required>
@@ -88,9 +88,9 @@
           <div class="form-group">
             <select class="custom-select" name="proveedor"required>
               <option value="" >Seleccion el Proveedor</option>
-              <option <%if( products.proveedor == "Microfost"){ %>selected <% } %>>Microfost</option>
-              <option <%if( products.proveedor == "Nintendo"){ %>selected <% } %>>Nintendo</option>
-              <option <%if( products.proveedor == "Sony"){ %>selected <% } %>>Sony</option>
+              <option <%if( products.platform_id == 1){ %>selected <% } %>>Microsoft</option>
+              <option <%if( products.platform_id == 2){ %>selected <% } %>>Nintendo</option>
+              <option <%if( products.platform_id == 3){ %>selected <% } %>>Sony</option>
             </select>
             <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
           </div>
@@ -134,7 +134,7 @@
 
       <div class="col-4">
           <label for="image">Imagen</label><br>
-          <img class="carga" src="/images/productos/<%= products.image %>" alt="<%= products.name %>">
+          <img class="carga" src="/images/productos/<%= products.image %>" alt="<%= products.producto_name %>">
           <input type="file"  name="image" required>
       </div>  
 

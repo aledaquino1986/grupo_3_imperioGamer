@@ -10,7 +10,7 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="/images/productos/<%= producto.image %> " class="d-block w-100" alt="<%= producto.name %> ">
+                            <img src="/images/productos/<%= producto.image %> " class="d-block w-100" alt="<%= producto.product_name %> ">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -25,7 +25,8 @@
                 </div>
                 <div class="col-12 col-sm-12 col-lg-4" id="producto">
                     <section>
-                        <h2><%= producto.name %> </h2>
+                        <p> Hola capos, cómo va?</p>
+                     
                         <% let precioFinal = producto.price - (producto.price * producto.discount/100) %> 
                         <% if(producto.discount > 0){ %>
                         <span id="conDescuento">$<%= producto.price %> <%= producto.discount %>% </span>

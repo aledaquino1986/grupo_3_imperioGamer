@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-12 col-sm-12 col-lg-4" id="producto">
                     <section>
-                        <h2><%=producto.name%></h2>
+                        <h2><%=producto.product_name%></h2>
                         <span id="precio">Precio $ <%=producto.price%></span>
                         <span id="precio">Off: <%=producto.discount%>%</span>
                        <% let precioFinal = producto.price - ((producto.discount*producto.price)/100)
