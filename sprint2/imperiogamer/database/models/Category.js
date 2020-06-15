@@ -13,5 +13,14 @@ module.exports =(sequelize,dataType) => {
         timestamps: false
     }
     )
+
+    Category.associate = function(models){
+
+        Category.hasMany(models.products,{
+        as:"products",
+        foreignKey: "category_id"
+        })
+
+    }
     return Category
 }

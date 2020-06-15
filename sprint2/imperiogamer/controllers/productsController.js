@@ -7,10 +7,18 @@ let products = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' 
 let productDetailController = {
     /*renderea la lista de productos del lado del ADMINiSTRADOR*/
     listadoDeProductos: function(req, res, next){
-        res.render('products', {
+        /*res.render('products', {
             productos: products,
             title: "Listado Productos"
-        });
+        });*/
+
+        db.products .findAll()
+        .then(function(products){
+            return res.render('products', {
+                productos: products,
+                title: "Listado Productos"
+            })
+        })
         
     },
 
@@ -74,6 +82,7 @@ let productDetailController = {
 		fs.writeFileSync(productosFilePath,productoSubirJSON)
         res.redirect('products')
         */
+       
         
         db.products.create({
             product_name: req.body.name,
@@ -84,7 +93,6 @@ let productDetailController = {
             language_id: 10,
             category_id: 20,
             image: req.files[0].filename
-
         })
         res.redirect('/')
 

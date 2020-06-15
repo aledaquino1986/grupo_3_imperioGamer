@@ -10,6 +10,13 @@ module.exports =(sequelize,dataType) => {
         timestamps: false
     }
     )
+
+    Localidad.associate = function(models){
+        Localidad.hasMany(models.usuarios,{
+            as:"usuarios",
+            foreignKey: "localidad_id"
+        })
+    }
     return Localidad
 }
     

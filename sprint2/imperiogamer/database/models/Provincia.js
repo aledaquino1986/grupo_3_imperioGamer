@@ -9,6 +9,13 @@ module.exports =(sequelize,dataType) => {
         timestamps: false
     }
     )
+
+    Provincia.associate = function(models){
+        Provincia.hasMany(models.usuarios,{
+            as:"usuarios",
+            foreignKey: "provincia_id"
+        })
+    }
     return Provincia
 }
     

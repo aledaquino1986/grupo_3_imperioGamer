@@ -53,6 +53,17 @@ module.exports =(sequelize,dataType) => {
         }
     }
     )
+    Usuario.associate = function(models){
+        Usuario.belongsTo(models.localidades,{
+            as:"localidad",
+            foreignKey: "localidad_id"
+        })
+
+        Usuario.hasMany(models.carritos,{
+            as:"carritos",
+            foreignKey: "usuario_id"
+        })
+    }
     return Usuario
 }
     
