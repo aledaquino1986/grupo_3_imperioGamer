@@ -45,7 +45,6 @@ module.exports =(sequelize,dataType) => {
     },
     )
 
-<<<<<<< HEAD
     Product.associate = function(models){
         Product.belongsToMany(models.carritos,{
             as:"carritos",
@@ -70,24 +69,6 @@ module.exports =(sequelize,dataType) => {
             as:"categories",
             foreignKey: "category_id"
         })
-=======
-    Product.associate = function(modelos) {
-        Product.belongsTo(modelos.platforms, {
-            as: "platforms",
-            foreignKey: "platform_id"
-        });
-        
-        Product.belongsTo(modelos.languages, {
-            as: "languages",
-            foreignKey: "language_id"
-        });
-
-        Product.belongsTo(modelos.categories, {
-            as: "categories",
-            foreignKey: "category_id"
-        });
-
->>>>>>> e2d50b0130dbf8c5e100e205ebf4006363374fc2
     }
     return Product
 }

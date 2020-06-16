@@ -12,7 +12,7 @@ let productDetailController = {
             title: "Listado Productos"
         });*/
 
-        db.products .findAll()
+        db.products.findAll()
         .then(function(products){
             return res.render('products', {
                 productos: products,
@@ -23,7 +23,17 @@ let productDetailController = {
     },
 
     mostrarDetalleProducto: function(req, res, next){
-    if(req.params.id != undefined){
+
+        db.products.findByPk(req.params.id,{include:
+             [{association: "carritos"}, {association: "platforms"}, {association: "languages"}, {association: "categories"}]})
+             .then(function(product){
+                res.render("productDetailAdmin", {
+                    title: product.product_name,
+                    producto: product,
+           
+                });
+             })
+    /*if(req.params.id != undefined){
      let producto = products.find(function(element) {
          return element.id == req.params.id
      });
@@ -34,7 +44,8 @@ let productDetailController = {
 
      });
 
-    }
+    }*/
+
     },
 
     delete: (req, res, next) => {
