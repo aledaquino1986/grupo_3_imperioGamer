@@ -38,7 +38,8 @@ let ingresoUsuarioController = {
             console.log(req.session.login)
             if(req.body.check != undefined){
                  //if checkbox tildado (creamos cookie) --> res.cookie("usuario logueado", "Usuarioid")
-                res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge: 60000 * 1000})
+                 let tiempo = 1000 * 60 * 60
+                res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge:tiempo})
             }
             res.redirect("/")
         } else {
