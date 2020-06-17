@@ -9,7 +9,6 @@ let productDetailController = {
     /*renderea la lista de productos del lado del ADMINiSTRADOR*/
     
     listadoDeProductos: function(req, res, next){
-<<<<<<< HEAD
         /*res.render('products', {
             productos: products,
             title: "Listado Productos"
@@ -22,27 +21,10 @@ let productDetailController = {
                 title: "Listado Productos"
             })
         })
-=======
-         
-        db.products.findAll()
-        .then(function(products){
-            return res.render('products', {
-                productos: products,
-                title: "Listado Productos"
-            })
-        })
-
-
-        /*res.render('products', {
-            productos: products,
-            title: "Listado Productos"
-        });*/ 
->>>>>>> e28f25c2e928ce93cc052a8a400e56b5c5f9031d
         
     },
 
     mostrarDetalleProducto: function(req, res, next){
-<<<<<<< HEAD
 
         db.products.findByPk(req.params.id,{include:
              [{association: "carritos"}, {association: "platforms"}, {association: "languages"}, {association: "categories"}]})
@@ -54,20 +36,6 @@ let productDetailController = {
                 });
              })
     /*if(req.params.id != undefined){
-=======
-       
-        db.products.findByPk(req.params.id, {include: [{association: "platforms"}, {association: "categories"}]}).then(function(producto){
-            res.render("productDetailAdmin", {
-                title: producto.product_name,
-                producto: producto
-            }
-            )
-           
-        }) 
-    
-
-        /* if(req.params.id != undefined){
->>>>>>> e28f25c2e928ce93cc052a8a400e56b5c5f9031d
      let producto = products.find(function(element) {
          return element.id == req.params.id
      });
@@ -78,12 +46,8 @@ let productDetailController = {
 
      });
 
-<<<<<<< HEAD
     }*/
 
-=======
-    } */
->>>>>>> e28f25c2e928ce93cc052a8a400e56b5c5f9031d
     },
 
     delete: (req, res, next) => {
