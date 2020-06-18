@@ -18,3 +18,10 @@ INSERT INTO categories (id, category_name) VALUES
 (4, "Sillas"),
 (5, "Accesorios");
 
+Insert into provincias (id, provincia_nombre)
+VALUES
+(1, "Buenos Aires");
+Insert into localidades (id, localidad)
+VALUES
+(1, "Avellaneda");
+

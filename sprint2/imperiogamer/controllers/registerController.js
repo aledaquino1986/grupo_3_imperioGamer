@@ -19,12 +19,10 @@ let registerController = {
         if(!errors.isEmpty()){
             return res.render('register', {errors: errors.errors})
            } else {
-           db.usuarios.findOne({ where: { email: email } }).then(function(resultado){
-
-            if(resultado.dataValues.email ==  email){
-                res.redirect('/ingreso-usuario')
-               } else {
-
+           db.usuarios.findOne({ where: { email: email } })
+            .then(function(resultado){
+            if(resultado == null){
+                
                 let encriptado = bcrypt.hashSync(req.body.password, 10);
 
                 let avatar;
@@ -48,34 +46,32 @@ let registerController = {
                   provincia_id: 1, 
                  }).then(function(usuarioCreado){
 
-                    if(!errors.isEmpty()){
-                        return res.render('register', {errors: errors.errors})
-                    } else {
+                if(!errors.isEmpty()){
+                    return res.render('register', {errors: errors.errors})
+                } else {
 
-                        db.usuarios.findOne({ where: { email: email } }).then(function(resultado){
-                            req.session.login = resultado.dataValues.id
-                            res.redirect('/user/profile/'+ resultado.dataValues.id)
-                        })
-                    }
+                    db.usuarios.findOne({ where: { email: email } }).then(function(resultado){
+                        req.session.login = resultado.dataValues.id
+                        res.redirect('/user/profile/'+ resultado.dataValues.id)
+                    })
+                }
 
                       
     
                  })
           
-                 
-          
-           
+                
+            } else {
+            if(resultado.dataValues.email ==  email){
+                res.redirect('/ingreso-usuario')
+               }
+
                  //req.session.login = id+1
-          
-                 
-             
                  /* req.session.login = 
                           console.log(req.session.login);
                           
                           res.render('/user/profile/'+ nuevoUsuario.id) */
-                 
-          
-          
+
               //   let usuarioEnBase = usuarios.find(function (element) {
               //       return element.email == req.body.email
                   
@@ -116,9 +112,9 @@ let registerController = {
                   } */
                 
                }
-            
-        
-
+    })
+    .catch(err =>{
+        console.log(err)
     })
       
 
