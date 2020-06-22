@@ -5,7 +5,9 @@ let users = JSON.parse(fs.readFileSync(usuariosFilePath,{ encoding: 'utf-8' }))
 const productosFilePath=path.join(__dirname,'../data/productos.json')
 let productos = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+let db = require('../database/models');
+var {check, validationResult, body} = require('express-validator');
+const bcrypt = require('bcrypt');
 
 let homeController = {
 
@@ -28,38 +30,112 @@ let homeController = {
     },
 
     mostrarPerfil: function(req, res, next) {
-     
-
-      let usuario =  users.find(function(element){
-        return  element.id == req.params.id
+    db.usuarios.findByPk(req.params.id).then(function (usuario){
+      res.render('profile',{
+        title: usuario.first_name,
+        usuario: usuario,
+        mgs:""
       });
-      
-        res.render('profile',{
-          title: "Imperio Gamer",
-          usuario: usuario,
-          mgs:""
-        });
-
+    })
+ 
    },
 
    editPerfil:function(req, res, next) {
-    let usuarioUp=[]
-      users.forEach(element => {
-          if(element.id == req.params.id){
-              element.name = req.body.nombre,
-              element.apellido = req.body.apellido,
-              element.dni = req.body.dni,
-              element.direccion = req.body.direccion,
-              element.telefono = req.body.telefono
-              return usuarioUp = element
-        }
-    });
-    let userModificadoJSON= JSON.stringify(users)
-    fs.writeFileSync(usuariosFilePath, userModificadoJSON)
-    res.redirect('/user/profile/'+req.params.id)
-    
-   }
+     
+    let errors = validationResult(req)
+   let password; 
+   let password2 = req.body.password2;
 
+   
+   if(!errors.isEmpty()){
+     
+    db.usuarios.findByPk(req.params.id).then(function (usuario){
+      console.log("errors " + errors.errors[0].msg)
+      res.render('profile',{
+        title: usuario.first_name,
+        usuario: usuario,
+        mgs:"",
+        errors: errors.errors
+      });
+    })
+    
+  } else { 
+   
+   if (req.body.password == password2) {
+    if (req.body.password == "") {
+      db.usuarios.findByPk(req.params.id).then(function(usuario){
+       password = usuario.password;
+  
+      })
+     } else {
+       password = bcrypt.hashSync(req.body.password, 10);
+     } 
+   } 
+    
+   
+
+   
+   db.usuarios.update({
+     first_name: req.body.first_name,
+     last_name: req.body.last_name,
+     dni: req.body.dni,
+     email: req.body.email,
+     tel: req.body.tel,
+     password: password,
+   },
+   
+   {
+            
+    where: {
+        id: req.params.id
+    }
+
+  })
+   res.redirect("/user/profile/"+ req.params.id)
+  
+ 
+  }
+
+
+/**********Funciona***********/
+
+    /*  let confirmado;
+
+
+
+   db.usuarios.findByPk(req.params.id)
+    .then(function(usuario){
+      console.log("este es el usuario:", usuario)
+      
+      if (usuario.first_name != req.body.first_name) {
+
+         confirmado = true;
+        } else {
+          confirmado = false;
+        }
+
+        if (confirmado == true ) {
+          db.usuarios.update({
+            first_name: req.body.first_name
+          },
+  
+          {
+            
+            where: {
+                id: req.params.id
+            }
+  
+          
+     
+          })
+
+
+        }
+        v
+  /**********Funciona**************/
+
+
+  }
 }
 
 

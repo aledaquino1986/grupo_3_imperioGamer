@@ -12,7 +12,7 @@
                 <article class="menu-edit" >
                     <div class="avatar">
                     <img src="/users/avatars/<%= usuario.avatar%>" alt="Avatar Usuario">
-                    <p class="nameuser"><%= usuario.nombre %></p>
+                    <p class="nameuser"><%= usuario.first_name %></p>
                     </div>
                     <div class="menu-editar">
                     <ul>
@@ -27,8 +27,19 @@
             <div class="col-8 derecha">
                 <div class="mensaje-DTS">
                     <p>Mis Datos</p>
+
+                    <% if (typeof errors != "undefined") { %>
+                        <ul>
+                       <% for(var i= 0; i < errors.length; i++) { %>
+                         <li><%= errors[i].msg %></li>
+                        <% } %>
+                        </ul>
+                    <% } %> 
+                    
                 </div>
-                <form action="/user/profile/<%= usuario.id %>" method="POST">
+
+                
+                <form action="/user/profile/<%= usuario.id %>" method="POST" >
                     <div class="row">
                         <div class="col-12">
                             <label for="email">Correo</label>
@@ -49,11 +60,11 @@
                     <div class="row">
                         <div class="col-6">
                             <label for="nombre">Nombre</label>
-                            <input type="text" value="<%if( usuario.name != ""){ %><%= usuario.nombre %><% } %>" class="form-control" id="name" name="nombre" required>
+                            <input type="text" value="<%if( usuario.first_name != ""){ %><%= usuario.first_name %><% } %>" class="form-control" id="name" name="first_name" required>
                         </div>    
                         <div class="col-6">
                             <label for="contraseñia">Apellido</label>
-                            <input type="text" value="<%if( usuario.surname != ""){ %><%= usuario.apellido %><% } %>" class="form-control" id="apellido" name="apellido" required>
+                            <input type="text" value="<%if( usuario.last_name != ""){ %><%= usuario.last_name %><% } %>" class="form-control" id="apellido" name="last_name" required>
                         </div>    
                     </div>
 
@@ -64,7 +75,7 @@
                         </div>    
                         <div class="col-6">
                             <label for="telefono">Telefono</label>
-                            <input type="text" value="<%if( usuario.telefono != ""){ %><%= usuario.telefono %><% } %>" class="form-control" id="telefono" name="telefono" required>
+                            <input type="text" value="<%if( usuario.tel != ""){ %><%= usuario.tel %><% } %>" class="form-control" id="telefono" name="tel" required>
                         </div>      
                     </div>
 
