@@ -8,7 +8,7 @@ var {check, validationResult, body} = require('express-validator');
 router.get('/products',userController.listarProductos);
 router.get('/detail/:id',userController.mostrarDetalleProducto)
 router.get('/profile/:id', userCheckLogin, userController.mostrarPerfil);
-router.post('/profile/:id', [
+router.post('/profile/edit/:id', [
   check('password').custom((value, { req }) => {
     if(value.length !== 0 && req.body.password !== 0) {
       if (value !== req.body.password2) {
@@ -35,11 +35,5 @@ router.post('/profile/:id', [
 ],
  userController.editPerfil);
 
-
-
-
-
-
-
-
+ router.post('/profile/deslog/:id', userController.deslogUser )
 module.exports = router;

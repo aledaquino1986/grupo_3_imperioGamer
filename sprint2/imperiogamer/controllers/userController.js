@@ -82,6 +82,7 @@ let homeController = {
      email: req.body.email,
      tel: req.body.tel,
      password: password,
+     direccion: req.body.direccion
    },
    
    {
@@ -135,7 +136,14 @@ let homeController = {
   /**********Funciona**************/
 
 
+  },
+
+  deslogUser: function(req,res, next){
+    req.session.destroy();
+    console.log('hola')
+    res.redirect('/');
   }
+
 }
 
 
