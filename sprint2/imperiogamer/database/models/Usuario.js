@@ -50,6 +50,10 @@ module.exports =(sequelize,dataType) => {
 
         provincia_id:{
             type: dataType.INTEGER
+        },
+
+        is_admin: {
+            type: dataType.STRING
         }
     }
     )

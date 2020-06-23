@@ -10,7 +10,9 @@ let registerController = {
 /* Renderea página de registro. */
     mostrarPaginaRegistro: function(req, res, next) {
         
-        res.render('register');    
+        res.render('register',{
+            user: req.session.login
+        });    
    },
    nuevoUsuario: function(req, res, next){
     let email = req.body.email
@@ -44,17 +46,14 @@ let registerController = {
                   avatar: avatar,
                   localidad_id: 1,
                   provincia_id: 1, 
-                 }).then(function(usuarioCreado){
-
-                if(!errors.isEmpty()){
-                    return res.render('register', {errors: errors.errors})
-                } else {
-
+                  is_admin: "no"
+                 })
+                 .then(function(usuarioCreado){
                     db.usuarios.findOne({ where: { email: email } }).then(function(resultado){
-                        req.session.login = resultado.dataValues.id
-                        res.redirect('/user/profile/'+ resultado.dataValues.id)
+                    req.session.login = resultado
+                    res.redirect('/user/profile/'+ req.session.login.id)
                     })
-                }
+                
 
                       
     

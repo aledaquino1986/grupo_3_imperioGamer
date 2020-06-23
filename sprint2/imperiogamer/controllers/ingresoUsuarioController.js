@@ -20,7 +20,7 @@ let ingresoUsuarioController = {
         } else {
             res.render('ingreso-usuario', {
                 title: "Ingresá a tu cuenta",
-                usuario: req.session.login
+                user: req.session.login,
                 
             });
         }
@@ -28,11 +28,6 @@ let ingresoUsuarioController = {
 
    login: function (req, res, next) {
     let errors = validationResult(req)
-    
-    
-    
-
-    
     let email =req.body.email;
     
     db.usuarios.findOne({ where: { email: email} })
@@ -42,7 +37,7 @@ let ingresoUsuarioController = {
 
         if (bcrypt.compareSync(req.body.password, resultado.dataValues.password)) {
 
-            req.session.login = resultado.dataValues.id
+            req.session.login = resultado.dataValues
                 if(req.body.check != undefined){
                     let tiempo = 1000 * 60 * 60
                 res.cookie('recordame', resultado.dataValues.id,{ maxAge:tiempo})

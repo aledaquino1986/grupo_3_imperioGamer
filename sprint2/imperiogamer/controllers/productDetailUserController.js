@@ -5,7 +5,8 @@ let productDetailController = {
     /* Renderea página detalle de producto. VISTA DEL USUARIO*/
         mostrarDetalleProducto: function(req, res, next) {
             res.render('productDetail', {
-                title: "Resident Evil 3"
+                title: "Resident Evil 3",
+                user: req.session.login
             });
             
        }

@@ -6,6 +6,7 @@ const productosFilePath=path.join(__dirname,'../data/productos.json')
 let productos = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db = require('../database/models');
+let checkLogin = require('../middlewares/userCheckLogin')
 var {check, validationResult, body} = require('express-validator');
 const bcrypt = require('bcrypt');
 
@@ -25,7 +26,8 @@ let homeController = {
     listarProductos: function(req, res, next){
       res.render('productsUsers',{
         title: "Imperio Gamer",
-        productos: productos
+        productos: productos,
+        user: req.session.login
     })
     },
 
@@ -34,7 +36,8 @@ let homeController = {
       res.render('profile',{
         title: usuario.first_name,
         usuario: usuario,
-        mgs:""
+        mgs:"",
+        user: req.session.login
       });
     })
  
@@ -55,7 +58,8 @@ let homeController = {
         title: usuario.first_name,
         usuario: usuario,
         mgs:"",
-        errors: errors.errors
+        errors: errors.errors,
+        user: req.session.login
       });
     })
     
@@ -140,7 +144,6 @@ let homeController = {
 
   deslogUser: function(req,res, next){
     req.session.destroy();
-    console.log('hola')
     res.redirect('/');
   }
 

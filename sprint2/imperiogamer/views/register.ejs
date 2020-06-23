@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/stylesheets/registro.css" rel="stylesheet">
 <body>
-    <form action="/registrate" id="registro-usuario" method="POST" enctype="multipart/form-data"> 
+    <% if(typeof (user) == 'object') { %>
+      <% if(user.is_admin == 'yes') { %>
+        <form action="/admin/register"  id="registro-usuario" method="POST" enctype="multipart/form-data"> 
+      <% } %>
+    <% } else {%>
+      <form action="/registrate"   id="registro-usuario" method="POST" enctype="multipart/form-data"> 
+    <% } %>
         <h1>Ingrese sus datos</h1>
         <% if (typeof errors != "undefined") { %>
             <ul>

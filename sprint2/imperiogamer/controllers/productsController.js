@@ -16,9 +16,11 @@ let productDetailController = {
 
         db.products.findAll()
         .then(function(products){
+            console.log(products)
             return res.render('products', {
-                productos: products,
-                title: "Listado Productos"
+                products: products,
+                title: "Listado Productos",
+                user: req.session.login
             })
         })
         
@@ -32,7 +34,7 @@ let productDetailController = {
                 res.render("productDetailAdmin", {
                     title: product.product_name,
                     producto: product,
-           
+                    user: req.session.login
                 });
              })
     /*if(req.params.id != undefined){
@@ -74,7 +76,8 @@ let productDetailController = {
 
     mostrarCargaProd: function(req, res, next) {
         res.render('product-create',{
-            products: products
+            products: products,
+            user: req.session.login
         });
 
    },
@@ -134,7 +137,8 @@ let productDetailController = {
 
         db.products.findByPk(req.params.id).then(function(producto) {
             res.render('product-Edit', {
-                products: producto
+                products: producto,
+                user: req.session.login
             });
         })
         

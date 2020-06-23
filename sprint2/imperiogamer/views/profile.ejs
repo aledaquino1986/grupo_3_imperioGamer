@@ -19,7 +19,7 @@
                         <li><a href="/user/profile">Mi Perfil</a></li>
                         <li><a href="/carrito">Mis Compras</a></li>
                         <form action="/user/profile/deslog/<%= usuario.id%>" method="POST">
-                        <button><li>Salir</li></button>
+                        <button type="submit"><li><p>Salir</p></li></button>
                         </form>
                     </ul>
                     </div>
@@ -96,5 +96,6 @@
         </div>
     </div>
     <%-include('./partials/footer') %>
+    <%-include('./partials/scripts') %>
 </body>
 </html>
