@@ -23,12 +23,14 @@ let ingresoUsuarioController = {
                 user: req.session.login,
                 
             });
+
+            console.log("entré a user: " + user)
         }
    },
 
    login: function (req, res, next) {
     let errors = validationResult(req)
-    let email =req.body.email;
+    let email = req.body.email;
     
     db.usuarios.findOne({ where: { email: email} })
     .then(function(resultado){

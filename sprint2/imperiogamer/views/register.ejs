@@ -14,7 +14,12 @@
     <% } else {%>
       <form action="/registrate"   id="registro-usuario" method="POST" enctype="multipart/form-data"> 
     <% } %>
+
+    <% if (!user) { %>
         <h1>Ingrese sus datos</h1>
+        <%  } else if (user && user.is_admin == "yes") {  %>
+         <h1>Creación de usuarios admin.</h1>
+          <%  } %>
         <% if (typeof errors != "undefined") { %>
             <ul>
            <% for(var i= 0; i < errors.length; i++) { %>

@@ -10,8 +10,17 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="/images/productos/<%= producto.image %> " class="d-block w-100" alt="<%= producto.product_name %> ">
+                            <img src="/images/productos/<%=producto.image%>" class="d-block w-100" alt="residentEvil3">
                             </div>
+                            <!-- <div class="carousel-item">
+                            <img src="\images\lucas\img\producto\imagen5.jpg" class="d-block w-100" alt="imagen1">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="\images\lucas\img\producto\imagen4.jpg" class="d-block w-100" alt="imagen2">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="\images\lucas\img\producto\imagen6.jpg" class="d-block w-100" alt="imagen3">
+                            </div> -->
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -25,18 +34,15 @@
                 </div>
                 <div class="col-12 col-sm-12 col-lg-4" id="producto">
                     <section>
-                        <p> Hola capos, cómo va?</p>
-                     
-                        <% let precioFinal = producto.price - (producto.price * producto.discount/100) %> 
-                        <% if(producto.discount > 0){ %>
-                        <span id="conDescuento">$<%= producto.price %> <%= producto.discount %>% </span>
-                        <span id="precio">$ <%= aMiles(precioFinal) %> </span>
-                        <% }else { %>
-                        <span id="precio">$ <%= aMiles(producto.price) %> </span>
-                        <% } %> 
+                        <h2><%=producto.product_name%></h2>
+                        <span id="precio">Precio $ <%=producto.price%></span>
+                        <span id="precio">Off: <%=producto.discount%>%</span>
+                       <% let precioFinal = producto.price - ((producto.discount*producto.price)/100)
+							precioFinal = Math.round(precioFinal) %>
+                        <span id="precio">Precio con descuento: <%=precioFinal%></span>
+                        
                         <span class="otros">Métodos de pago: Débito y Crédito</span>
                         <span class="otros">Envíos a Cápital Federal: Gratis</span>
-                        <span class="otros">Stock disponible: Si</span>
                         <form action="">
                             <div id="cantidad">
                                 <label for="stock">Cantidad:</label>
@@ -49,6 +55,7 @@
                             <button type="submit" id="comprar">Comprar Ahora</button>
                             <button type="submit" id="carrito">Agregar al Carrito</button>
                         </form>
+                        
                     </section>
                 </div>
             </div>
@@ -56,55 +63,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12" id="caracteristicas">
-                    <h2>Descripción</h2>
+                    <h2></h2>
                 </div>
-                <div class="col-12 col-sm-12 col-lg-12" id="caracteristicas">
-                    <p><%= producto.description %> </p>
-                </div>
-            </div>
-            <div class="row" id="metodos">
-                <div class="col-12">
-                    <span id="medios">Medios de pago</span>
-                </div>
-                <div class="col-12 col-sm-6" id="credito">
-                    <span class="tarjetas">Tarjetas de crédito</span>
-                    <span class="cuotas">Cuotas sin interes</span>
-                    <article id="credito1"></article>
-                    <article id="credito2"></article>
-                    <article id="credito3"></article>
-                </div>
-                <div class="col-12 col-sm-6" id="debito">
-                    <span class="tarjetas">Tarjetas de débito</span>
-                    <article id="debito1"></article>
-                    <article id="debito2"></article>
-                </div> 
-            </div>
-        </div>
-        <div class="container" id="sugerencias">
-            <div class="row">
-                <div class="col-12">
-                    <span>Quienes vieron este producto también compraron</span>
-                </div>    
-            </div>
-            <div class="row">
-                <div class="col-6 col-sm-3 col-lg-2">    
-                        <article id="sug1"></article>
-                </div>
-                <div class="col-6 col-sm-3 col-lg-2">       
-                        <article id="sug2"></article>
-                </div>
-                <div class="col-6 col-sm-3 col-lg-2">        
-                        <article id="sug3"></article>
-                </div>
-                <div class="col-6 col-sm-3 col-lg-2">
-                        <article id="sug4"></article>
-                </div>
-                <div class="col-6 col-sm-2 col-lg-2">
-                    <article id="sug5"></article>
-                </div>
-                <div class="col-6 col-sm-2 col-lg-2">
-                    <article id="sug6"></article>
-                </div>     
+                
             </div>
         </div>
     </div>

@@ -10,6 +10,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
+          <% if(!user || (user && user.is_admin == "no")) { %>
           <li class="nav-item">
             <a class="nav-link" href="#">Ofertas</a>
           </li>
@@ -28,16 +29,9 @@
               <a class="nav-link" href="#">Contactanos</a>
             </li>
           </li>
-          <%if(user == undefined ) {%>
           <li class="nav-item">
-            <a class="nav-link usuario-login" href="/ingreso-usuario">Ingresar</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link usuario-login" href="/registrate">Registrate</a>
-          </li>
-          <% } else {%>
-            <li class="nav-item dropdown">
+            <% if (user) { %>
+              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Perfil
               </a>
@@ -49,8 +43,40 @@
               </div>
               
             </li>
+            <% } else { %>
+            <a class="nav-link usuario-login" href="/ingreso-usuario">Ingresar</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link usuario-login" href="/registrate">Registrate</a>
+          </li>
 
           <% } %>
+        <% } else if (user.is_admin == "yes") { %> 
+          <li class="nav-item">
+            <a class="nav-link" href="/products">Ver productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/create">Subir productos</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contactanos</a>
+            </li>
+          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Perfil
+              </a>
+              <div class="dropdown-menu usuario-deslog" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/admin/">Panel de admin</a>
+                <a class="dropdown-item" href="/user/profile/<%=user.id%>">Ingresa a tu Perfil</a>
+                <form action="/user/profile/deslog/<%= user%>" method="POST">
+                <a class="dropdown-item desloguearse" href="#"><button type="submit">Cerrar Sesion</button></a>
+                </form>
+              </div>
+              
+            </li> 
+            <% } %>
           <ul class="navbar-nav barra-menu ocultar-carrito">
             <li class="nav-item">
               <a class="nav-link" href="/carrito">Carrito</a>

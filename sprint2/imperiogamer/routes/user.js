@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var userController = require("../controllers/userController");
+var productDetailUserController = require("../controllers/productDetailUserController");
 var userCheckLogin = require("../middlewares/userCheckLogin");
 var {check, validationResult, body} = require('express-validator');
 
 /* GET HOME. */
-router.get('/products',userController.listarProductos);
-router.get('/detail/:id',userController.mostrarDetalleProducto)
+router.get('/products', userController.listarProductos);
+router.get('/detail/:id',productDetailUserController.mostrarDetalleProducto)
 router.get('/profile/:id', userCheckLogin, userController.mostrarPerfil);
 router.post('/profile/edit/:id', [
   check('password').custom((value, { req }) => {
