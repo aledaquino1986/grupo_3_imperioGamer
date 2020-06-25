@@ -18,12 +18,20 @@ let homeController = {
       if (req.session.login != undefined) {
         var usuarioLogueado = req.session.login
       }
-      var populares = products.filter(function(producto){
-        return producto.codigo == "populares";
+      var populares;
+      var ofertas;
+      db.products.findAll({
+        where: {section: "populares"}
       })
-      var ofertas = products.filter(function(producto){
-        return producto.codigo == "ofertas";
+        .then(producto => {
+          populares = producto
+        });
+      db.products.findAll({
+        where: {section: "ofertas"}
       })
+        .then(producto => {
+          ofertas = producto
+        });
         res.render('index',{
           title: "Imperio Gamer",
           productos: products,

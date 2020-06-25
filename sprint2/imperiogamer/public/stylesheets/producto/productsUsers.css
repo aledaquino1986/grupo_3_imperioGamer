@@ -2,3 +2,10 @@
     text-align: center;
     margin-top: 10px;
 }
+div .card{
+    background-color: white;
+    color: black;
+}
+div .card span{
+    font-weight: bold;
+}

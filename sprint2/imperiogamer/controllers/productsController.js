@@ -115,8 +115,9 @@ let productDetailController = {
             prod_description: req.body.description,
             discount: req.body.discount,
             platform_id: req.body.plataforma,
-            language_id: 3,
+            language_id: req.body.idioma,
             category_id: req.body.category,
+            section: req.body.section,
             
             image: req.files[0].filename
         })
@@ -154,8 +155,9 @@ let productDetailController = {
             prod_description: req.body.description,
             discount: req.body.discount,
             platform_id: req.body.plataforma,
-            language_id: 3,
+            language_id: req.body.idioma,
             category_id: req.body.category,
+            section: req.body.section,
             image: req.files[0].filename
       }, 
 

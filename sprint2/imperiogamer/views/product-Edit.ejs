@@ -26,13 +26,13 @@
 
       <div class="row">
         <div class="col-4">
-          <label for="codigo">Codigo</label>
-          <input type="text" value="<%if( products.codigo != ""){ %><%= products.codigo %><% } %>" class="form-control is-invalid " id="codigo" name="codigo"  >
+          <label for="codigo">Sección</label>
+          <input type="text" value="<%= products.section %>" class="form-control is-invalid " id="codigo" name="section">
         </div>  
 
         <div class="col-8">
           <label for="titulo">Titulo</label>
-        <input type="text" value="<%if( products.producto_name != ""){ %><%= products.producto_name %><% } %>" class="form-control is-invalid" id="codigo" name="name" required>
+        <input type="text" value="<%= products.product_name %>" class="form-control is-invalid" id="codigo" name="name" required>
         </div>  
       </div>
 
@@ -55,42 +55,29 @@
         <div class="col-8">
           <label for="validationTextarea">Descripcion</label>
           <textarea class="form-control is-invalid" id="validationTextarea" name="description" required><%= products.description %></textarea>
-        </div>
-
-       <div class="col-4">
-          <label for="color">Color</label>
-          <div class="form-group">
-            <select class="custom-select" name="color"required>
-              <option value="">Seleccion tu color</option>
-              <option <%if( products.color == "Amarillo"){ %> selected <% } %>>Amarillo</option>
-              <option <%if( products.color == "Azul"){ %> selected <% } %>>Azul</option>
-              <option <%if( products.color == "Blanco"){ %> selected <% } %>>Blanco</option>
-              <option <%if( products.color == "Celeste"){ %>selected <% } %>>Celeste</option>
-              <option <%if( products.color == "Dorado"){ %>selected <% } %>>Dorado</option>
-              <option <%if( products.color == "Fucsia"){ %>selected <% } %>>Fucsia</option>
-              <option <%if( products.color == "Gris Claro"){ %>selected <% } %>>Gris Claro</option>
-              <option <%if( products.color == "Gris Oscuro"){ %>selected <% } %>>Gris Oscuro</option>
-              <option <%if( products.color == "Marron"){ %>selected <% } %>>Marron</option>
-              <option <%if( products.color == "Naranja"){ %>selected <% } %>>Naranja</option>
-              <option <%if( products.color == "Negro"){ %>selected <% } %>>Negro</option>
-              <option <%if( products.color == "Plateado"){ %>selected <% } %>>Plateado</option>
-              <option <%if( products.color == "Rojo"){ %>selected <% } %>>Rojo</option>
-              <option <%if( products.color == "Verde"){ %>selected <% } %>>Verde</option>
-              <option <%if( products.color == "Violeta"){ %>selected <% } %>>Violeta</option>
-              <option <%if( products.color == "otro"){ %>selected <% } %>>Otro</option>
-            </select>
-            <div class="invalid-feedback">Por favor Selecciona Uno</div>
-          </div>
-        </div>  
+        </div> 
 
         <div class="col-4">
-          <label for="proveedor">Proveedor</label>
+          <label for="plataforma">Plataforma</label>
           <div class="form-group">
-            <select class="custom-select" name="proveedor"required>
+            <select class="custom-select" name="plataforma"required>
               <option value="" >Seleccion el Proveedor</option>
               <option <%if( products.platform_id == 1){ %>selected <% } %>>Microsoft</option>
               <option <%if( products.platform_id == 2){ %>selected <% } %>>Nintendo</option>
               <option <%if( products.platform_id == 3){ %>selected <% } %>>Sony</option>
+            </select>
+            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
+          </div>
+        </div> 
+
+        <div class="col-4">
+          <label for="idioma">Idioma</label>
+          <div class="form-group">
+            <select class="custom-select" name="idioma"required>
+              <option value="" >Seleccion el Idioma</option>
+              <option <%if( products.platform_id == 1){ %>selected <% } %>>Español</option>
+              <option <%if( products.platform_id == 2){ %>selected <% } %>>Ingles</option>
+              <option <%if( products.platform_id == 3){ %>selected <% } %>>Chino</option>
             </select>
             <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
           </div>
@@ -105,21 +92,10 @@
       </div>
 
       <div class="row">
+ 
 
         <div class="col-4">
-          <label for="garantia">¿Garantia?</label>
-          <div class="form-group">
-            <select class="custom-select" name="garantia"required>
-              <option value="" >Seleccion Si tiene garantia</option>
-              <option <%if( products.garantia == "Si"){ %>selected <% } %>>Si</option>
-              <option <%if( products.garantia == "No"){ %>selected <% } %>>No</option>
-            </select>
-            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
-          </div>
-        </div>  
-
-        <div class="col-4">
-          <label for="Precio">Oferta</label>
+          <label for="Precio">Descuento</label>
           <input type="number" value="<%= products.discount %>" class="form-control is-invalid " id="oferta" name="discount"  required>
         </div> 
       </div>

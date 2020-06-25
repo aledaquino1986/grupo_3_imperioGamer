@@ -27,7 +27,8 @@ let homeController = {
       res.render('productsUsers',{
         title: "Imperio Gamer",
         productos: productos,
-        user: req.session.login
+        user: req.session.login,
+        aMiles: toThousand
     })
     },
 

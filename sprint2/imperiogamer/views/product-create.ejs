@@ -26,8 +26,8 @@
 
       <div class="row">
         <div class="col-4">
-          <label for="codigo">Codigo</label>
-          <input type="text" class="form-control is-invalid " id="codigo" name="codigo"  required>
+          <label for="codigo">Sección</label>
+          <input type="text" class="form-control is-invalid " id="codigo" name="section"  required>
         </div>  
 
         <div class="col-8">
@@ -57,31 +57,6 @@
           <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Ingresa Aqui la Descripcion" name="description" required></textarea>
         </div>
 
-        <div class="col-4">
-          <label for="color">Color</label>
-          <div class="form-group">
-            <select class="custom-select" name="color"required>
-              <option value="">Seleccion tu color</option>
-              <option >Amarillo</option>
-              <option >Azul</option>
-              <option >Blanco</option>
-              <option >Celeste</option>
-              <option >Dorado</option>
-              <option >Fucsia</option>
-              <option >Gris Claro</option>
-              <option >Gris Oscuro</option>
-              <option >Marron</option>
-              <option >Naranja</option>
-              <option >Negro</option>
-              <option >Plateado</option>
-              <option>Rojo</option>
-              <option >Verde</option>
-              <option >Violeta</option>
-              <option >Otro</option>
-            </select>
-            <div class="invalid-feedback">Por favor Selecciona Uno</div>
-          </div>
-        </div>  
 
         <div class="col-4">
           <label for="plataforma">Plataforma</label>
@@ -97,6 +72,19 @@
         </div> 
 
         <div class="col-4">
+          <label for="plataforma">Idioma</label>
+          <div class="form-group">
+            <select class="custom-select" name="idioma"required>
+              <option >Seleccion la Plataforma</option>
+              <option value="1">Español</option>
+              <option value="2">Ingles</option>
+              <option value="3">Chino</option>
+            </select>
+            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
+          </div>
+        </div> 
+
+        <div class="col-4">
           <label for="Precio">Precio</label>
           <input type="number" class="form-control is-invalid " id="Precio" name="price"  required>
         </div> 
@@ -105,21 +93,10 @@
       </div>
 
       <div class="row">
+ 
 
         <div class="col-4">
-          <label for="garantia">¿Garantia?</label>
-          <div class="form-group">
-            <select class="custom-select" name="garantia"required>
-              <option value="" >Seleccion Si tiene garantia</option>
-              <option >Si</option>
-              <option >No</option>
-            </select>
-            <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
-          </div>
-        </div>  
-
-        <div class="col-4">
-          <label for="Precio">Oferta</label>
+          <label for="Precio">Descuento</label>
           <input type="number" class="form-control is-invalid " id="oferta" name="discount"  required>
         </div> 
       </div>

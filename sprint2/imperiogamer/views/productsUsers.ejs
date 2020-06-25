@@ -8,14 +8,14 @@
           <div class="col-3">
             <a class="productUser" href="/user/detail/<%= producto.id %> ">
                 <div class="card" style="width: 18rem;">
-                    <h5 class="card-title"><%= producto.name %> </h5>
+                    <h4 class="card-title"><%= producto.name %> </h5>
                     <img src="/images/productos/<%= producto.image %>" class="card-img-top" alt="<%= producto.name %> ">
                     <div class="card-body">
                         <% if(producto.discount > 0){ %>
-                             <span>$<%= producto.price %> </span>
+                             <span>$<%= aMiles(producto.price) %> </span>
                              <span><%= producto.discount %>% </span>
                        <% } else { %>
-                            <span>$<%= producto.price %> </span>
+                            <span>$<%= aMiles(producto.price) %> </span>
                         <% } %> 
                      
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
