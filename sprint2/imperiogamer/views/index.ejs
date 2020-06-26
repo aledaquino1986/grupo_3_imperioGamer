@@ -40,14 +40,14 @@
 
     <div class="container">
       <div class="row">
-        <% for(var i = 0; i < 8; i++){ %> 
+        <% populares.forEach(function(populares){ %> 
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
           <div class="producto">
-            <h3 class="titulo"><%= populares[i].name %> </h3>
-            <a href="/user/detail/<%= populares[i].id %>"><img class="producto-img" src="/images/productos/<%= populares[i].image %>" alt="<%= populares[i].name %>"></a>
+            <h3 class="titulo"><%= populares.product_name %> </h3>
+            <a href="/user/detail/<%= populares.id %>"><img class="producto-img" src="/images/productos/<%= populares.image %>" alt="<%= populares.product_name %>"></a>
           </div>
         </div>
-      <% } %> 
+      <% }) %> 
     </div>
   </div>
   
@@ -57,14 +57,14 @@
 
   <div class="container">
     <div class="row">
-      <% for(var i = 0; i < 8; i++){ %> 
-      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-        <div class="producto">
-          <a href="/user/detail/<%= ofertas[i].id %>"><img class="producto-img" src="/images/productos/<%= ofertas[i].image %>" alt="<%= ofertas[i].name %>"></a>
-          <div class="ofertas"><span><%= ofertas[i].discount %> %</span></div>
+      <% ofertas.forEach(function(ofertas){ %> 
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="producto">
+            <h3 class="titulo"><%= ofertas.product_name %> </h3>
+            <a href="/user/detail/<%= ofertas.id %>"><img class="producto-img" src="/images/productos/<%= ofertas.image %>" alt="<%= populares.product_name %>"></a>
+          </div>
         </div>
-      </div>
-    <% } %> 
+      <% }) %> 
   </div>
 </div>
 

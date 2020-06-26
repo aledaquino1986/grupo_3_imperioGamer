@@ -7,7 +7,8 @@ let products = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' 
 
 const Op = Sequelize.Op
 
-
+let populares = 2;
+let ofertas;
 
 let homeController = {
 
@@ -18,27 +19,29 @@ let homeController = {
       if (req.session.login != undefined) {
         var usuarioLogueado = req.session.login
       }
-      var populares;
-      var ofertas;
+     
       db.products.findAll({
-        where: {section: "populares"}
+        where: {section: "populares"}, LIMIT: 8 
       })
-        .then(producto => {
-          populares = producto
-        });
-      db.products.findAll({
-        where: {section: "ofertas"}
-      })
-        .then(producto => {
-          ofertas = producto
-        });
-        res.render('index',{
-          title: "Imperio Gamer",
-          productos: products,
-          populares: populares,
-          ofertas: ofertas,
-          user: usuarioLogueado
+      .then(function(products){
+        populares = products
+        db.products.findAll({
+          where: {section: "ofertas" }, LIMIT: 8 ,
+          order: [["id","DESC"]],
         })
+        .then(function(products2){
+          ofertas = products2
+          res.render('index',{
+            title: "Imperio Gamer",
+            populares: populares,
+            ofertas: ofertas,
+            user: usuarioLogueado
+          })
+        })
+      })
+      
+      console.log(populares)
+      console.log(ofertas)
    },
 
    search: function(req, res) {

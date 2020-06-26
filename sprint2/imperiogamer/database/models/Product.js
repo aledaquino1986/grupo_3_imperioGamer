@@ -41,6 +41,10 @@ module.exports =(sequelize,dataType) => {
             type: dataType.STRING
         },
 
+        section:{
+            type: dataType.STRING
+        }
+
         
     },
     )
