@@ -21,7 +21,8 @@ let homeController = {
       }
      
       db.products.findAll({
-        where: {section: "populares"}, LIMIT: 8 
+        where: {section: "populares"}, LIMIT: 8 ,
+        order: [["id","DESC"]],
       })
       .then(function(products){
         populares = products
