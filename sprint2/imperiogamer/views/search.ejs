@@ -11,17 +11,17 @@
           <div class="col-3">
             <a class="productUser" href="/user/detail/<%= products.id %> ">
                 <div class="card" style="width: 18rem;">
-                    <h5 class="card-title"><%= products.name %> </h5>
+                    <h5 class="card-title"><%= products.product_name %> </h5>
                     <img src="/images/productos/<%= products.image %>" class="card-img-top" alt="<%= products.name %> ">
                     <div class="card-body">
                         <% if(products.discount > 0){ %>
-                             <span>$<%= products.price %> </span>
+                             <span>$<%= aMiles(Math.round(products.price)) %> </span>
                              <span><%= products.discount %>% </span>
                        <% } else { %>
-                            <span>$<%= products.price %> </span>
+                            <span>$<%= aMiles(Math.round(products.price)) %> </span>
                         <% } %> 
                      
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text"><%= products.prod_description %></p>
                     </div>
                   </div>
             </a>
