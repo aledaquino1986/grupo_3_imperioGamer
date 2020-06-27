@@ -35,11 +35,11 @@
                 <div class="col-12 col-sm-12 col-lg-4" id="producto">
                     <section>
                         <h2><%=producto.product_name%></h2>
-                        <span id="precio">Precio $ <%=producto.price%></span>
+                        <span id="precio">Precio $ <%=aMiles(producto.price)%></span>
                         <span id="precio">Off: <%=producto.discount%>%</span>
                        <% let precioFinal = producto.price - ((producto.discount*producto.price)/100)
-							precioFinal = Math.round(precioFinal) %>
-                        <span id="precio">Precio con descuento: <%=precioFinal%></span>
+							precioFinal = aMiles(Math.round(precioFinal)) %>
+                        <span id="precio">Precio con descuento: $<%=precioFinal%></span>
                         
                         <span class="otros">Métodos de pago: Débito y Crédito</span>
                         <span class="otros">Envíos a Cápital Federal: Gratis</span>

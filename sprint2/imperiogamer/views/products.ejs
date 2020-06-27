@@ -16,7 +16,7 @@
               <h5><%= products.name %> </h5>
               <img class="producto-img" src="/images/productos/<%= products.image %>" alt="<%= products.name %> ">
               <div class="precio">
-                <span>$<%= products.price %> </span>
+                <span>$<%= aMiles(products.price) %> </span>
                 <% if (products.discount > 0) { %>
                   <span><%= products.discount %>% OFF</span>
                 <% } %>

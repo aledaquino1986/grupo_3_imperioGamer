@@ -6,7 +6,7 @@ var userCheckLogin = require("../middlewares/userCheckLogin");
 var {check, validationResult, body} = require('express-validator');
 
 /* GET HOME. */
-router.get('/products', userController.listarProductos);
+router.get('/products', productDetailUserController.listarProductos);
 router.get('/detail/:id',productDetailUserController.mostrarDetalleProducto)
 router.get('/profile/:id', userCheckLogin, userController.mostrarPerfil);
 router.post('/profile/edit/:id', [

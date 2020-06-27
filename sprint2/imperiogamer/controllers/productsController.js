@@ -3,6 +3,7 @@ const path = require('path');
 const productosFilePath=path.join(__dirname,'../data/productos.json')
 let db = require('../database/models');
 const { title } = require('process');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let products = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 
 let productDetailController = {
@@ -20,7 +21,8 @@ let productDetailController = {
             return res.render('products', {
                 products: products,
                 title: "Listado Productos",
-                user: req.session.login
+                user: req.session.login,
+                aMiles : toThousand
             })
         })
         
@@ -34,7 +36,8 @@ let productDetailController = {
                 res.render("productDetailAdmin", {
                     title: product.product_name,
                     producto: product,
-                    user: req.session.login
+                    user: req.session.login,
+                    aMiles : toThousand
                 });
              })
     /*if(req.params.id != undefined){
