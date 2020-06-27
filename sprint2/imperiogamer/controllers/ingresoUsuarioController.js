@@ -51,6 +51,7 @@ let ingresoUsuarioController = {
             res.render("ingreso-usuario",{
                 title: "Ingresá a tu cuenta", 
                 errors: errors.errors,
+                user: req.session.login
             })
         }
         res.redirect('/user/profile/'+ resultado.dataValues.id)
@@ -58,6 +59,7 @@ let ingresoUsuarioController = {
             res.render("ingreso-usuario",{
                 title: "Ingresá a tu cuenta", 
                 errors: errors.errors,
+                user: req.session.login
             })
         }
     })
