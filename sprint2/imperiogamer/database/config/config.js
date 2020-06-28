@@ -1,8 +1,8 @@
 module.exports={
   "development": {
     "username": "root",
-    "password": "alealeale1",
-    "database": "imperiogamer",
+    "password": null,
+    "database": "imperio",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

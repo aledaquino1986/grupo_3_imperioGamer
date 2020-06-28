@@ -42,8 +42,7 @@ let homeController = {
         })
       })
       
-      console.log(populares)
-      console.log(ofertas)
+
    },
 
    search: function(req, res) {
@@ -60,6 +59,17 @@ let homeController = {
            })
     
   },
+
+  contacto: function(req,res){
+    res.render("contacto",{
+      title: "Contacto",
+      user: req.session.login
+    })
+  },
+
+  contactados: function(req,res){
+    res.send("Genial, ya enviamos tu consulta! :)")
+  }
 
 }
 

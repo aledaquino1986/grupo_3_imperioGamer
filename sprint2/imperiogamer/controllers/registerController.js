@@ -11,7 +11,8 @@ let registerController = {
     mostrarPaginaRegistro: function(req, res, next) {
         
         res.render('register',{
-            user: req.session.login
+            user: req.session.login,
+            title: "Registrate"
         });    
    },
    nuevoUsuario: function(req, res, next){
