@@ -45,7 +45,7 @@ function validarDireccion(direccionUsuario) {
 }
 
 function validarEmail(emailUsuario) {
-  if (emailUsuario === "" || email === null) {
+  if (emailUsuario === "" || emailUsuario === null) { 
     mensajes.push("Debe ingresar un correo electrónico válido.");
     inputRojo(email);
   } else {
@@ -73,7 +73,6 @@ function crearUl() {
 
 function crearLi() {
   let lista = document.querySelector("#lista");
-  console.log(lista);
   mensajes.forEach(function (element) {
     lista.innerHTML += `<li class="msg-error">${element}</li>`;
   });
@@ -90,11 +89,6 @@ form.addEventListener("submit", function (e) {
   if (mensajes.length > 0) {
     e.preventDefault();
     crearUl();
-    let ul = document.getElementById("lista");
-    ul.insertAdjacentHTML(
-      "beforebegin",
-      "<h4 class='mensaje-error'>Error</h4>"
-    );
     crearLi();
   }
 });

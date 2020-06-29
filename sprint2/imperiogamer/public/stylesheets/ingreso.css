@@ -60,3 +60,7 @@ small {
 .mensaje-error{
     text-align: center;
 }
+
+#lista {
+    list-style: none;
+}

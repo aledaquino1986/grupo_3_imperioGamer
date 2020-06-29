@@ -6,7 +6,6 @@ const errorEmail = document.querySelector("#error-email")
 const errorPassword = document.querySelector("#error-password")
 const errorDiv = document.querySelector(".error");
 
-console.log(errorEmail, errorPassword)
 
 
 let mensajes = [];
@@ -63,11 +62,6 @@ form.addEventListener("submit", function(e){
   if (mensajes.length > 0) {
   e.preventDefault()
   crearUl();
-    let ul = document.getElementById("lista");
-    ul.insertAdjacentHTML(
-      "beforebegin",
-      "<h4 class='mensaje-error'>Error</h4>"
-    );
     crearLi();
   }
 
