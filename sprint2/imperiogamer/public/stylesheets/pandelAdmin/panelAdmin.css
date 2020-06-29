@@ -152,6 +152,11 @@ p {
     #inicio {
         position: static;
     }
+
+    #listado{
+        position: relative;
+        top: 0px;
+    }
     
 }
 
@@ -170,6 +175,11 @@ p {
         top: 44px;
         
     }
+
+    #listado{
+        position: relative;
+        top: 0px;
+    }
 }
 
 
@@ -180,6 +190,11 @@ p {
         left: 260px;
         top: 50px;
         
+    }
+
+    #listado{
+        position: relative;
+        top: 0px;
     }
 }
 
@@ -192,9 +207,15 @@ p {
         top: 20px;
         
     }
+
+    #listado{
+        position: relative;
+        top: 0px;
+    }
+    
 }
 
-@media (max-width: 340px) {
+@media (max-width: 375px) {
         .images {
             position: relative;
             left: 165px;
