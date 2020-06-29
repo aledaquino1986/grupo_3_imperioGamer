@@ -69,8 +69,6 @@ function validarPassword(passwordUsuario) {
 
 function crearUl() {
   error.innerHTML = "<ul id= 'lista'></ul>";
-  console.log(error.innerHTML);
-  console.log(error.innerHTML == "<ul id= 'lista'></ul>");
 }
 
 function crearLi() {

@@ -40,3 +40,23 @@
 span.mgs-error{
     color: rgb(214, 11, 11);
 }
+
+small {
+    visibility: hidden;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.input-exito {
+  border-color: #2ecc71;
+}
+
+.error {
+    color: #e74c3c;;
+}
+
+.mensaje-error{
+    text-align: center;
+}
