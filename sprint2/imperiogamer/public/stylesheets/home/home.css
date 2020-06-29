@@ -203,11 +203,14 @@ div.titulo-ofertas h2{
     justify-content: space-between;
     position: relative;
 }
+.producto .titulo{
+    height: 40px;
+}
 .producto .ofertas{
     position: absolute;
     font-size: 20px;
     left: 5px;
-    top: 5px;
+    top: 50px;
     color: white;
     border: 1px white solid;
     border-radius: 90%;
