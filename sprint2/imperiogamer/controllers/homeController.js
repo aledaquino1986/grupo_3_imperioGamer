@@ -68,7 +68,10 @@ let homeController = {
   },
 
   contactados: function(req,res){
-    res.send("Genial, ya enviamos tu consulta! :)")
+    res.render("contactados",{
+      title: "Contacto",
+      user: req.session.login
+    })
   }
 
 }

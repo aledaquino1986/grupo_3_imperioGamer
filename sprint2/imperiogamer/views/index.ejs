@@ -52,7 +52,7 @@
   </div>
   
   <div class="titulo-ofertas">
-    <h2>OFERTAS</h2>
+    <h2 id="ttofertas">OFERTAS</h2>
   </div-titulo-ofertas>
 
   <div class="container">
@@ -62,6 +62,7 @@
           <div class="producto">
             <h3 class="titulo"><%= ofertas.product_name %> </h3>
             <a href="/user/detail/<%= ofertas.id %>"><img class="producto-img" src="/images/productos/<%= ofertas.image %>" alt="<%= populares.product_name %>"></a>
+            <div class="ofertas"><%= ofertas.discount%>%</div>
           </div>
         </div>
       <% }) %> 
