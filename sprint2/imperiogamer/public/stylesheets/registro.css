@@ -1,39 +1,65 @@
 body {
-    padding: 0px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    text-align: center;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(47,47,79,1) 48%, rgba(0,212,255,1) 100%);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
-  }
-form {
-    margin-top: 50px;
-    padding: 10px;
-    color: white;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(47, 47, 79, 1) 48%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 1);
 }
-form label{
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  form #nombre{
-    margin-right: 200px;
-  }
-  form .nombre{
-    width: 248px;
-  }
-  input{
-    height: 30px;
-    width: 500px;
-  }
-  #avatar{
-    width: 400px;
-    background-color: red;
-    display: none;
-  }
-  form button{
-      margin-top: 30px;
-  }
+form {
+  padding: 10px;
+  color: white;
+}
+form label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+form #nombre {
+  margin-right: 200px;
+}
+form .nombre {
+  width: 248px;
+}
+input {
+  height: 30px;
+  width: 500px;
+}
+#avatar {
+  width: 400px;
+  background-color: red;
+  display: none;
+}
+form button {
+  margin-top: 30px;
+}
+
+#lista {
+  list-style: none;
+  padding: 10px;
+  text-align: center;
+}
+
+#error {
+  color: red;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.input-exito {
+  border-color: #2ecc71;
+}
+
+.mensaje-error {
+  margin-top: 10px;
+}
