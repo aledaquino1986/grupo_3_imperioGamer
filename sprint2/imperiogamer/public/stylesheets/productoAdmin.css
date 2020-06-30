@@ -1,0 +1,36 @@
+h3{
+    color: rgb(2,0,36);
+    margin-bottom: 25px;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+}
+h5{
+    text-align: center;
+    height: 40px;
+    color: white;
+}
+div .precio{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(2,0,36);
+    background-color: white;
+    width: 300px;
+    margin-bottom: 40px;
+}
+div .categorias ul{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+div .categorias ul li{
+    text-decoration-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+div .categorias ul li a{
+    color: white;
+    text-decoration: none;
+}

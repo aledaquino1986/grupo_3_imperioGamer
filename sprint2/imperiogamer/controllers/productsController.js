@@ -15,14 +15,34 @@ let productDetailController = {
             title: "Listado Productos"
         });*/
 
-        db.products.findAll()
-        .then(function(products){
-            console.log(products)
-            return res.render('products', {
-                products: products,
-                title: "Listado Productos",
-                user: req.session.login,
-                aMiles : toThousand
+        db.products.findAll({where: {category_id: "1"}})
+        .then(function(juegos){
+            console.log("juegos ok")
+            db.products.findAll({where: {category_id: "2"}})
+            .then(function(consolas){
+                console.log("consolas ok")
+                db.products.findAll({where: {category_id: "3"}})
+                .then(function(pcGamer){
+                    console.log("pcGamer ok")
+                    db.products.findAll({where: {category_id: "4"}})
+                    .then(function(sillas){
+                        console.log("sillas ok")
+                        db.products.findAll({where: {category_id: "5"}})
+                        .then(function(accesorios){
+                            console.log("accesorios ok")
+                            return res.render('products', {
+                                juegos: juegos,
+                                consolas: consolas,
+                                pcGamer: pcGamer,
+                                sillas: sillas,
+                                accesorios: accesorios,
+                                title: "Listado Productos",
+                                user: req.session.login,
+                                aMiles : toThousand
+                            })
+                        })
+                    })
+                })
             })
         })
         
