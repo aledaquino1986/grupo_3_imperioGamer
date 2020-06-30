@@ -73,7 +73,6 @@ function validarPassword(passwordUsuario) {
     password.value = "";
   } else {
     inputVerde(password);
-    password.value = "";
   }
 }
 
