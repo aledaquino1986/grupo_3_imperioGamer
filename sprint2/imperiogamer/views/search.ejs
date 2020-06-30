@@ -12,7 +12,7 @@
             <a class="productUser" href="/user/detail/<%= products.id %> ">
                 <div class="card" style="width: 18rem;">
                     <h5 class="card-title"><%= products.product_name %> </h5>
-                    <img src="/images/productos/<%= products.image %>" class="card-img-top" alt="<%= products.name %> ">
+                    <img width="300" height="200" src="/images/productos/<%= products.image %>" class="card-img-top" alt="<%= products.name %> ">
                     <div class="card-body">
                         <% if(products.discount > 0){ %>
                              <span>$<%= aMiles(Math.round(products.price)) %> </span>
@@ -20,8 +20,14 @@
                        <% } else { %>
                             <span>$<%= aMiles(Math.round(products.price)) %> </span>
                         <% } %> 
+                        <% let descript = products.prod_description %>
+                        <% descript.split() %>
+                        <% let descript2 = "" %>
+                        <% for(var i = 0; i < 80; i++){ 
+                          descript2 += descript[i]
+                        } %>  
                      
-                      <p class="card-text"><%= products.prod_description %></p>
+                      <p class="card-text"><%= descript2 %>...</p>
                     </div>
                   </div>
             </a>
