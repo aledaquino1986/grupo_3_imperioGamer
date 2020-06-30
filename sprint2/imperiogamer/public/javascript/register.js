@@ -5,6 +5,8 @@ const direccion = document.querySelector("#direccion");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const error = document.querySelector("#error");
+const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 
 let mensajes = [];
 let input = document.querySelectorAll("input");
@@ -21,6 +23,8 @@ function validarNombre(nombreUsuario) {
   if (nombreUsuario === "" || nombreUsuario === null) {
     mensajes.push("Debe ingresar un nombre.");
     inputRojo(nombre);
+  } else if (nombreUsuario.length < 2) {
+    mensajes.push("El nombre debe tener al menos 2 caracteres");
   } else {
     inputVerde(nombre);
   }
@@ -30,8 +34,10 @@ function validarApellido(apellidoUsuario) {
   if (apellidoUsuario === "" || apellidoUsuario === null) {
     mensajes.push("Debe ingresar un apellido.");
     inputRojo(apellido);
+  } else if (apellidoUsuario.length < 2) {
+    mensajes.push("El apellido debe tener al menos 2 caracteres");
   } else {
-    inputVerde(apellido);
+    inputVerde(nombre);
   }
 }
 
@@ -47,6 +53,9 @@ function validarDireccion(direccionUsuario) {
 function validarEmail(emailUsuario) {
   if (emailUsuario === "" || emailUsuario === null) { 
     mensajes.push("Debe ingresar un correo electrónico válido.");
+    inputRojo(email);
+  } else if (!emailFormat.test(emailUsuario)) {
+    mensajes.push("El correo electrónico debe tener un formato válido.");
     inputRojo(email);
   } else {
     inputVerde(email);
@@ -64,6 +73,7 @@ function validarPassword(passwordUsuario) {
     password.value = "";
   } else {
     inputVerde(password);
+    password.value = "";
   }
 }
 

@@ -1,11 +1,10 @@
-
 const form = document.querySelector(" .ingreso-usuario")
 const email = document.querySelector("#email");
 const password = document.querySelector("#password")
 const errorEmail = document.querySelector("#error-email")
 const errorPassword = document.querySelector("#error-password")
 const errorDiv = document.querySelector(".error");
-
+const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 
 let mensajes = [];
@@ -19,9 +18,12 @@ function inputVerde(elemento) {
 }
 
 
-function validarEmail(emailUsuario){
-  if (emailUsuario === "" || emailUsuario === null) {
-    mensajes.push("Debe ingresar un correo electrónico.");
+function validarEmail(emailUsuario) {
+  if (emailUsuario === "" || emailUsuario === null) { 
+    mensajes.push("Debe ingresar un correo electrónico válido.");
+    inputRojo(email);
+  } else if (!emailFormat.test(emailUsuario)) {
+    mensajes.push("El correo electrónico debe tener un formato válido.");
     inputRojo(email);
   } else {
     inputVerde(email);
@@ -32,8 +34,10 @@ function validarPassword(passwordUsuario){
   if (passwordUsuario === "" || passwordUsuario === null) {
     mensajes.push("Debe ingresar una contraseña");
     inputRojo(password);
+    password.value = "";
   } else {
     inputVerde(password);
+    password.value = "";
   }
 }
 
