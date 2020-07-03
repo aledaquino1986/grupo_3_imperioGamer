@@ -3,8 +3,9 @@
     margin-top: 10px;
 }
 div .card{
-    background-color: white;
+    background-color: blanchedalmond;
     color: black;
+    margin-bottom: 20px;
 }
 div .card span{
     font-weight: bold;

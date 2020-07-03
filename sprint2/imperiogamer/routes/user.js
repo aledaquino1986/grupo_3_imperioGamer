@@ -7,6 +7,7 @@ var {check, validationResult, body} = require('express-validator');
 
 /* GET HOME. */
 router.get('/products', productDetailUserController.listarProductos);
+router.get('/products/:category_id',productDetailUserController.juegos);
 router.get('/detail/:id',productDetailUserController.mostrarDetalleProducto)
 router.get('/profile/:id', userCheckLogin, userController.mostrarPerfil);
 router.post('/profile/edit/:id', [
