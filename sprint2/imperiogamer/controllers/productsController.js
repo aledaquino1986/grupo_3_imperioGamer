@@ -100,7 +100,8 @@ let productDetailController = {
     mostrarCargaProd: function(req, res, next) {
         res.render('product-create',{
             products: products,
-            user: req.session.login
+            user: req.session.login,
+            title: "Cargar Producto"
         });
 
    },
@@ -162,7 +163,8 @@ let productDetailController = {
         db.products.findByPk(req.params.id).then(function(producto) {
             res.render('product-Edit', {
                 products: producto,
-                user: req.session.login
+                user: req.session.login,
+                title: "Panel Edit"
             });
         })
         
@@ -173,7 +175,7 @@ let productDetailController = {
         
       db.products.update({
           
-        product_name: req.body.name,
+        product_name: req.body.titulo,
             price: req.body.price,
             prod_description: req.body.description,
             discount: req.body.discount,

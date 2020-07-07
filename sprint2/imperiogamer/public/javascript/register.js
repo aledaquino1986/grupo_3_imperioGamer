@@ -6,6 +6,8 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const error = document.querySelector("#error");
 const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const avatarFile = document.querySelector("#avatar");
+const extensionesPermitidos =  /(\.jpg|\.jpeg|\.png|\.gif)$/i;
 let input = document.querySelectorAll("input");
 
 
@@ -71,6 +73,8 @@ let input = document.querySelectorAll("input");
       
       }
 
+
+
        if (emailUsuario === "" || emailUsuario === null) { 
          mensajes.push("Debe ingresar un correo electrónico válido.");
          inputRojo(email);
@@ -101,9 +105,15 @@ let input = document.querySelectorAll("input");
          inputVerde(password);
        }
      }
+
+     function validarExtensionArchivo(archivoUsuario) {
+       if (archivoUsuario != "" && !extensionesPermitidos.exec(archivoUsuario) ) {
+        mensajes.push("Solo puede subir archivos con formato jpg, jpeg, png o gif.");
+       }
+     }
      
      function crearUl() {
-       error.innerHTML = "<ul id= 'lista'></ul>";
+       body.innerHTML = "<ul id= 'lista'></ul>";
      }
      
      function crearLi() {
@@ -115,13 +125,13 @@ let input = document.querySelectorAll("input");
      }
      
      form.addEventListener("submit", function (e) {
-     
+
        validarNombre(nombre.value);
        validarApellido(apellido.value);
        validarDireccion(direccion.value);
        validarEmail(email.value);
        validarPassword(password.value);
-      
+      validarExtensionArchivo(avatarFile.value);
       
      
        if (mensajes.length > 0) {

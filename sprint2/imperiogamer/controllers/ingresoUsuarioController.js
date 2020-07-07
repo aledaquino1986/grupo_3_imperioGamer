@@ -43,8 +43,11 @@ let ingresoUsuarioController = {
               maxAge: tiempo,
             });
           }
-
-          res.redirect("/user/profile/" + resultado.dataValues.id);
+          if(req.session.login.is_admin == "yes"){
+            res.redirect("/admin")
+          } else{
+             res.redirect("/user/profile/" + resultado.dataValues.id);
+            }
         } else {
           res.render("ingreso-usuario", {
             title: "Ingresá a tu cuenta",

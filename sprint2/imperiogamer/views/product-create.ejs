@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="../stylesheets/product-create/product-create.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <title>Panel</title>
-</head>
+
+  <%- include('./partials/head') %>
+
 <body>
+  <%-include('./partials/header') %>
   <div class="container" >
-    <header>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <h1>Control De productos ImperioGamer!!</h1>
-            <img class="mando" src="../imagenes-carga-productos/mando.png" alt="mando">
-          </div>
-        </div>
-      </div>
-    </header>
+  
 
-    <h2>Informacion Del Producto</h2>
-    <form class="was-validated" enctype="multipart/form-data" method="POST" action="/products">
+    <h2 class="titulo">INFORMACION DEL PRODUCTO</h2>
+    <form class="createProduct" enctype="multipart/form-data" method="POST" action="/products">
 
-      <div class="row">
+    <div class="errors"></div>
+      
+      <div class="row input-form">
+        
         <div class="col-4">
           <label for="codigo">Sección</label>
-          <input type="text" class="form-control is-invalid " id="codigo" name="section"  required>
+          <input type="text" class="form-control section " id="codigo" name="section"  >
         </div>  
 
         <div class="col-8">
           <label for="titulo">Titulo</label>
-          <input type="text" class="form-control is-invalid" id="codigo" name="name" required>
+          <input type="text" class="form-control titulo" id="titulo" name="titulo" >
         </div>  
       </div>
 
-      <div class="row">
+      <div class="row input-form">
         <div class="col-4">
           <label for="categoria">Categoria</label>
-          
-            <select class="custom-select" name="category"required>
+            <select class="custom-select category " name="category">
               <option value="" >Seleccion la Categoria</option>
               <option value = "1">Juego</option>
               <option value = "2">Consola</option>
@@ -54,19 +43,20 @@
 
         <div class="col-8">
           <label for="validationTextarea">Descripcion</label>
-          <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Ingresa Aqui la Descripcion" name="description" required></textarea>
+          <textarea class="form-control description" id="validationTextarea" placeholder="Ingresa Aqui la Descripcion" name="description" ></textarea>
         </div>
 
 
         <div class="col-4">
           <label for="plataforma">Plataforma</label>
           <div class="form-group">
-            <select class="custom-select" name="plataforma"required>
-              <option >Seleccion la Plataforma</option>
+            <select class="custom-select plataforma" name="plataforma">
+              <option value="" >Seleccion la Plataforma</option>
               <option value="1">PlayStation</option>
               <option value="2">X-Box</option>
               <option value="3">PC</option>
             </select>
+            
             <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
           </div>
         </div> 
@@ -74,8 +64,8 @@
         <div class="col-4">
           <label for="plataforma">Idioma</label>
           <div class="form-group">
-            <select class="custom-select" name="idioma"required>
-              <option >Seleccion la Plataforma</option>
+            <select class="custom-select idioma" name="idioma">
+              <option value="">Seleccion la Plataforma</option>
               <option value="1">Español</option>
               <option value="2">Inglés</option>
               <option value="3">Japonés</option>
@@ -86,35 +76,32 @@
 
         <div class="col-4">
           <label for="Precio">Precio</label>
-          <input type="number" class="form-control is-invalid " id="Precio" name="price"  required>
+          <input type="number" class="form-control price" id="Precio" name="price"  >
         </div> 
 
           
       </div>
 
-      <div class="row">
- 
-
+      <div class="row input-form">
         <div class="col-4">
           <label for="Precio">Descuento</label>
-          <input type="number" class="form-control is-invalid " id="oferta" name="discount"  required>
+          <input type="number" class="form-control discount" id="oferta" name="discount"  >
         </div> 
+
+        <div class="col-4">
+          <label for="image">Imagenes</label>
+          <input class="image"type="file"  name="image" >
+      </div> 
       </div>
 
-      <div class="col-4">
-          <label for="image">Imagenes</label>
-          <input type="file"  name="image" required>
-      </div>   
 
-        <div class="container-bt col-4">
-            <button class="boton-enviar" type="submit">Guardar producto</button>
-        </div>
+      <div class=" row container-bt col-4">
+        <button class="bt-enviar"  type="submit">Guardar producto</button>
+       </div>
       
       
     </form>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </div> 
+    <%-include('./partials/scripts') %>
 </body>
 </html>

@@ -9,11 +9,20 @@ const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 let input = document.querySelectorAll("input");
 
 
-  
-     
-  let data;
+var  data = {
+  email: email.value
+};
+console.log(data)
 
-   
+email.addEventListener("blur", function (e) {
+   data.email = email.value
+  console.log("esta es data uno", data.email)
+  console.log(email.value)
+})
+
+console.log("esta es data dos", data)
+
+
  
 let options = {
   method: "POST",
@@ -96,7 +105,7 @@ let options = {
       } else if (!emailFormat.test(emailUsuario)) {
         mensajes.push("El correo electrónico debe tener un formato válido.");
         inputRojo(email);
-      } else if (emails == emailUsuario) {
+      } else if (emails.email == emailUsuario) {
        mensajes.push("El correo electrónico ya se encuentra en nuestra base de datos.");
        inputRojo(email);
       } else {
@@ -133,11 +142,11 @@ let options = {
       mensajes = [];
     }
      
+    
+     
     form.addEventListener("submit", function (e) {
-      data = {
-        email: email.value
-      }
-      
+
+     
       validarNombre(nombre.value);
       validarApellido(apellido.value);
       validarDireccion(direccion.value);
@@ -147,12 +156,16 @@ let options = {
       
       
       if (mensajes.length > 0) {
-      e.preventDefault();
-    
+     
+        e.preventDefault();
         crearUl();
         crearLi();
       }
   
     })
   
-  })
+ 
+
+})
+
+
