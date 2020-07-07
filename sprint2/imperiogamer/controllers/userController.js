@@ -1,9 +1,5 @@
 const fs = require('fs')
 const path = require('path');
-const usuariosFilePath=path.join(__dirname,'../data/usuarios.json')
-let users = JSON.parse(fs.readFileSync(usuariosFilePath,{ encoding: 'utf-8' }))
-const productosFilePath=path.join(__dirname,'../data/productos.json')
-let productos = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db = require('../database/models');
 let checkLogin = require('../middlewares/userCheckLogin')
@@ -99,47 +95,7 @@ let homeController = {
   })
    res.redirect("/user/profile/"+ req.params.id)
   
- 
   }
-
-
-/**********Funciona***********/
-
-    /*  let confirmado;
-
-
-
-   db.usuarios.findByPk(req.params.id)
-    .then(function(usuario){
-      console.log("este es el usuario:", usuario)
-      
-      if (usuario.first_name != req.body.first_name) {
-
-         confirmado = true;
-        } else {
-          confirmado = false;
-        }
-
-        if (confirmado == true ) {
-          db.usuarios.update({
-            first_name: req.body.first_name
-          },
-  
-          {
-            
-            where: {
-                id: req.params.id
-            }
-  
-          
-     
-          })
-
-
-        }
-        v
-  /**********Funciona**************/
-
 
   },
 

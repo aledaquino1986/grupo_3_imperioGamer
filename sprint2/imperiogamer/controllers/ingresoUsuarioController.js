@@ -1,10 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
-const usuarios = JSON.parse(
-  fs.readFileSync("../imperiogamer/data/usuarios.json", { encoding: "utf-8" })
-);
-const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 var { check, validationResult, body } = require("express-validator");
 const db = require("../database/models");
 
@@ -59,40 +55,7 @@ let ingresoUsuarioController = {
       }
     });
 
-    /*
-    let usuarioQueSeLoguea = usuarios.find(function (element) {
-        return element.email == req.body.email;
-    }) 
-
-    if (usuarioQueSeLoguea != undefined) {
-        if (bcrypt.compareSync(req.body.password, usuarioQueSeLoguea.contrasenia)) {
-            req.session.login = usuarioQueSeLoguea;
-            console.log(req.session.login)
-            if(req.body.check != undefined){
-                 //if checkbox tildado (creamos cookie) --> res.cookie("usuario logueado", "Usuarioid")
-                 let tiempo = 1000 * 60 * 60
-                res.cookie('recordame', usuarioQueSeLoguea.email,{ maxAge:tiempo})
-            }
-            res.redirect("/")
-        } else {
-            res.render("ingreso-usuario",{
-                title: "Ingresá a tu cuenta", 
-                errors: errors.errors,
-            })
-        }
-    } else {
-        
-        //console.log(errors)
-         res.render('ingreso-usuario',{
-            title: "Ingresá a tu cuenta",
-            errors: errors.errors
-        })
-    }
-
-   
-    //console.log(usuarioQueSeLoguea);
-    //console.log(usuarioQueSeLoguea.contrasenia);
-    */
+  
   },
 
   adminPanel: function (req, res, next) {

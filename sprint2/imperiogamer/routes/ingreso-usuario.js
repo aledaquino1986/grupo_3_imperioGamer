@@ -5,8 +5,6 @@ var userCheckLogin = require("../middlewares/userCheckLogin");
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const usuarios = JSON.parse(fs.readFileSync('../imperiogamer/data/usuarios.json',{encoding:'utf-8'}));
-const usuariosFilePath=path.join(__dirname,'../data/usuarios.json');
 const { check, validationResult, body} = require("express-validator");
 
  

@@ -113,7 +113,7 @@ let input = document.querySelectorAll("input");
      }
      
      function crearUl() {
-       body.innerHTML = "<ul id= 'lista'></ul>";
+       error.innerHTML = "<ul id= 'lista'></ul>";
      }
      
      function crearLi() {
