@@ -98,7 +98,7 @@ window.onload = function(){
             errors.push("El campo Direccion esta vacio");;
         } 
     }
-    console.log(ulErrors)
+   
     function crearUl(){
         
         ulErrors.innerHTML = "<ul class='lista errors'></ul>";

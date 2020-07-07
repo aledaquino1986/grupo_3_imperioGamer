@@ -1,11 +1,18 @@
 window.onload = function(){
 
-    let form = document.querySelector('form.editProfile');
+    let form = document.querySelector('form.createProduct');
     
    
     let section = document.querySelector('input.section');
     let titulo = document.querySelector('input.titulo');
-
+    let category = document.querySelector('select.category');
+    let description = document.querySelector('textarea.description');
+    let plataforma = document.querySelector('select.plataforma');
+    let idioma = document.querySelector('select.idioma');
+    let price = document.querySelector('input.price');
+    let discount = document.querySelector('input.discount');
+    let ulErrors = document.querySelector("div.errors")
+   
     
     let errors = []
 
@@ -37,73 +44,122 @@ window.onload = function(){
         }
     });
 
-    dni.addEventListener("blur",function(e){
-        if(dni.value){
-            inputVerde(dni)
+    category.addEventListener("blur",function(e){
+        if(category.value){
+            inputVerde(category)
         } else {
-            dni.classList.remove("input-exito");
-            inputRojo(dni)
+            category.classList.remove("input-exito");
+            inputRojo(category)
         }
     });
 
-    tel.addEventListener("blur",function(e){
-        if(tel.value){
-            inputVerde(tel)
+    description.addEventListener("blur",function(e){
+        if(description.value){
+            inputVerde(description)
         } else {
-            tel.classList.remove("input-exito");
-            inputRojo(tel)
+            description.classList.remove("input-exito");
+            inputRojo(description)
         }
     });
 
-    direccion.addEventListener("blur",function(e){
-        if(direccion.value){
-            inputVerde(direccion)
+    plataforma.addEventListener("blur",function(e){
+        if(plataforma.value){
+            inputVerde(plataforma)
         } else {
-            direccion.classList.remove("input-exito");
-            inputRojo(direccion)
+            plataforma.classList.remove("input-exito");
+            inputRojo(plataforma)
         }
     });
+
+    idioma.addEventListener("blur",function(e){
+        if(idioma.value){
+            inputVerde(idioma)
+        } else {
+            idioma.classList.remove("input-exito");
+            inputRojo(idioma)
+        }
+    });
+
+    price.addEventListener("blur",function(e){
+        if(price.value){
+            inputVerde(price)
+        } else {
+            price.classList.remove("input-exito");
+            inputRojo(price)
+        }
+    });
+
+    discount.addEventListener("blur",function(e){
+        if(discount.value){
+            inputVerde(discount)
+        } else {
+            discount.classList.remove("input-exito");
+            inputRojo(discount)
+        }
+    });
+
+   
+
+
+
 
     /*-------  Funciones del Sumbit ------- */
-    function validfirstName(section){
+    function validSection(section){
         if (section === "" || section === null) {
             errors.push("El campo Nombre esta vacio");
         } 
     }
 
-    function validLastName(last_name){
-        if (last_name === "" || last_name === null) {
-            errors.push("El campo Apellido esta vacio");
+    function validTitulo(titulo){
+        if (titulo === "" || titulo === null) {
+            errors.push("El campo Titulo esta vacio");
         } 
     }
 
-    function validDni(dni){
-        if (dni === "" || dni === null) {
-            errors.push("El campo DNI esta vacio");
+    function validCategory(category){
+        if (category === "" || category === null) {
+            errors.push("El campo Category esta vacio");
         } 
     }
 
-    function validTel(tel){
-        if (tel === "" || tel === null) {
-            errors.push("El campo Telefono esta vacio");
+    function validDescription(description){
+        if (description === "" || description === null) {
+            errors.push("El campo Descripcion esta vacio");
         } 
     }
 
-    function validDireccion(direccion){
-        if (direccion === "" || direccion === null) {
-            errors.push("El campo Direccion esta vacio");;
+    function validPlataforma(plataforma){
+        if (plataforma === "" || plataforma === null) {
+            errors.push("El campo Plataforma esta vacio");;
         } 
     }
-    console.log(ulErrors)
+
+    function validIdioma(idioma){
+        if (idioma === "" || idioma === null) {
+            errors.push("El campo Idioma esta vacio");;
+        } 
+    }
+
+    function validPrice(price){
+        if (price === "" || price === null) {
+            errors.push("El campo Price esta vacio");;
+        } 
+    }
+
+    function validDiscount(discount){
+        if (discount === "" || discount === null) {
+            errors.push("El campo Descuento esta vacio");;
+        } 
+    }
     function crearUl(){
         
-        ulErrors.innerHTML = "<ul class='lista'></ul>";
+        ulErrors.innerHTML = "<ul class='lista errors'></ul>";
     }
       
     function crearLi(){
         let lista = document.querySelector("ul.lista");
         errors.forEach(function (element) {
-        lista.innerHTML += `<li class="msg-error">${element}</li>`;
+        lista.innerHTML += `<li class="msg-error"><span>${element}</span></li>`;
     });
         errors = [];
     }
@@ -112,11 +168,14 @@ window.onload = function(){
     
    
     form.addEventListener("submit", function(e){
-        validfirstName(section.value);
-        validLastName(last_name.value);
-        validDni(dni.value);
-        validTel(tel.value);
-        validDireccion(direccion.value);
+        validSection(section.value);
+        validTitulo(titulo.value);
+        validCategory(category.value);
+        validPlataforma(plataforma.value);
+        validDescription(description.value);
+        validIdioma(idioma.value);
+        validPrice(price.value);
+        validDiscount(discount.value);
        if(errors.length > 0){
          e.preventDefault()
          crearUl();

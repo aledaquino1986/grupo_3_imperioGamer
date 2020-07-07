@@ -46,11 +46,11 @@ small {
 }
 
 .input-error {
-  border-color: #e74c3c;
+  border: #e74c3c 3px solid;
 }
 
 .input-exito {
-  border-color: #2ecc71;
+  border: #2ecc71 3px solid;
 }
 
 .error {
