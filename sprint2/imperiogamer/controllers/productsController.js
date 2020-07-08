@@ -70,12 +70,14 @@ let productDetailController = {
     },
 
     mostrarCargaProd: function(req, res, next) {
-        res.render('product-create',{
-            products: products,
-            user: req.session.login,
-            title: "Cargar Producto"
-        });
-
+        db.products.findByPk(req.params.id)
+        .then(function(product){
+            res.render('product-create',{
+                products: product,
+                user: req.session.login,
+                title: "Cargar Producto"
+            });
+        })
    },
 
    cargaProducto:function(req, res, next){

@@ -10,6 +10,8 @@ window.onload = function(){
     let tel = document.querySelector("input#tel")
     let direccion = document.querySelector("input#direccion")
     let ulErrors = document.querySelector("div.errors")
+    console.log(first_name)
+    console.log(last_name);
     
     let errors = []
 
