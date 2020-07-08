@@ -91,3 +91,28 @@ button.btn-edituser{
     font-size: 20px;
 }
 
+ul.errors{
+    list-style: none;
+}
+
+ul.errors li span{
+    display: block;
+    margin-top: 10px;
+    color: red;
+    
+}
+
+/*--------------- Validacion Front ------- */
+
+input.input-error{
+    border: 3px solid red;
+}
+
+input.input-exito{
+    border: 3px solid green;
+}
+
+
+
+
+
