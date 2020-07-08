@@ -120,14 +120,16 @@ let productDetailController = {
         
         db.products.findByPk(req.params.id).then(function(producto) {
            
-
-      let prodimage;
-    if(!req.file) {
+   
+      let prodImage;
+    if(req.file == undefined) {
         prodImage = producto.image
     } else {
         prodImage = req.files[0].filename
        
     }
+    console.log("entré")
+    console.log(req.files[0].filename)
 
       db.products.update({
 
@@ -140,7 +142,7 @@ let productDetailController = {
             language_id: req.body.idioma,
             category_id: req.body.category,
             section: req.body.section,
-            image: prodimage
+            image: req.files[0].filename
       }, 
 
       {
