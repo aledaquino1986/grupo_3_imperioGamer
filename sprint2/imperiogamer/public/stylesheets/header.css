@@ -70,3 +70,14 @@ div.usuario-deslog a.desloguearse button{
     cursor: pointer;
     outline: inherit;
 }
+.suma a{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sumaProd p{
+    color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+}

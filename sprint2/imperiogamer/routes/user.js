@@ -7,8 +7,10 @@ var {check, validationResult, body} = require('express-validator');
 
 /* GET HOME. */
 router.get('/products', productDetailUserController.listarProductos);
-router.get('/products/:category_id',productDetailUserController.juegos);
-router.get('/detail/:id',productDetailUserController.mostrarDetalleProducto)
+router.get('/products/:category_id',productDetailUserController.categorias);
+router.get('/detail/:id',productDetailUserController.mostrarDetalleProducto);
+router.post('/detail/:id',userCheckLogin, productDetailUserController.agregarCarrito);
+router.post('/detail/compra/:id',userCheckLogin, productDetailUserController.comprar);
 router.get('/profile/:id', userCheckLogin, userController.mostrarPerfil);
 router.post('/profile/edit/:id', [
   check('password').custom((value, { req }) => {

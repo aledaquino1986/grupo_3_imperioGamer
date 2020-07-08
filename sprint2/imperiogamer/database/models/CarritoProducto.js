@@ -21,6 +21,6 @@ module.exports =(sequelize,dataType) => {
         tableName: "carrito_producto",
         timestamps: false
     }
-    )
+    )   
     return CarritoProdcuto
 }

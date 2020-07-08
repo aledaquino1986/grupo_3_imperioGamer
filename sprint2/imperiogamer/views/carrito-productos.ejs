@@ -1,127 +1,72 @@
 <!DOCTYPE html>
 <html>
  <!-- head-->
- <%- include('./partials/headCarritoProductos') %>
+ <%- include('./partials/head') %>
+ <link rel="stylesheet" href="/stylesheets/carrito/carrito-productos.css">
  <!-- head-->
-<body>
-  <div class ="container"> 
-
-<!-- header navBar-->
-<%- include('./partials/headerCarrito') %>
-<!-- headernavBar-->  
-
-    
-    <main>
-        <section> 
-          
-          <div class="productos-container">
-        <article class= "productos">
-            <div class ="imagen-producto-container"> 
-                <img class="imagen-producto" src="\images\productos-usuario\resident-evi-3-ps4.PNG" alt="resident evil 3">
-
-                <div class="datos-producto">
-                    <span> Producto: Resident Evil 3</span><br>
-                    <span> Plataforma: PS4</span><br>
-                    <span>Precio: $6999</span><br>
-                    <span>Cantidad:</span>
-                    
-                    <input type="number" value="1" min="1" max="10" id = "number-button"> <br>
-                    <input class ="button" type="button" value="Eliminar producto" id="eliminar"></input>
-                </div>
-
-                <div id ="precio-producto"> 
-                    <span>Total</span>
-                    <span> $6999</span>
-                </div>
-            </div>
-          
-                
-    
-               
-          </article>
-
-
-        <article class= "productos">
-            <div class ="imagen-producto-container"> 
-                <img class= "imagen-producto" src="\images\productos-usuario\FINAL-FANTASY-VII-Remake-Deluxe-Edition.jpg" alt="Final Fantasy VII">
-
-                <div class="datos-producto">
-                    <span> Producto: Final Fantasy VII</span><br>
-                    <span> Plataforma: PS4</span><br>
-                    <span>Precio: $7500</span><br>
-                    <span>Cantidad:</span>
-                    <input type="number" value="1" min="1" max="10" id = "number-button"> <br>
-                    <input class ="button" type="button" value="Eliminar producto" id="eliminar"></input>
-                </div>
-
-                <div id ="precio-producto"> 
-                    <span>Total</span>
-                    <span> $7500 </span>
-                </div>
-            </div>
-               
-        </article>
-
-
-        <article class= "productos">
-          <div class ="imagen-producto-container"> 
-              <img class="imagen-producto" src="\images\productos-usuario\headset.jpg" alt="headset">
-
-              <div class="datos-producto">
-                  <span> Producto: Platinum Headset</span><br>
-                  <span> Plataforma: PS4</span><br>
-                  <span>Precio: $7500</span><br>
-                  <span>Cantidad:</span>
-                  <input type="number" value="1" min="1" max="10" id = "number-button"> <br>
-                  <input class ="button" type="button" value="Eliminar producto" id="eliminar"></input>
-              </div>
-
-              <div id ="precio-producto"> 
-                  <span>Total</span>
-                  <span> $7500 </span>
-              </div>
+  <body>
+    <%- include('./partials/header') %>
+    <div class ="container" id="div-cart"> 
+      <main class="row">
+        <% if(carrito.products.length > 0){ %>
+          <div class="col-12">
+            <h2>Hola <%= user.first_name%>, estos son tus productos: </h2>
           </div>
-             
-      </article>
-
-    
-      
+          <% let precio=0; let descuento=0; let total=0; %>
+            <%carrito.products.forEach(function(producto){%>
+              <div class="col-3">
+                <a class="productUser" href="/user/detail/<%= producto.id %> ">
+                    <div id="prod" class="card" style="width: 18rem;">
+                        <h5 id="titleProd" class="card-title"><strong><%= producto.product_name %></strong> </h5>
+                        <img width="300" height="200" src="/images/productos/<%= producto.image %>" class="card-img-top" alt="<%= producto.name %> ">
+                        <div class="card-body">
+                            <% precio += producto.price;%>
+                            <% descuento += (producto.price * producto.discount)/100;%>
+                            <% if(producto.discount > 0){ %>
+                                 <span>$<%= aMiles(producto.price) %> </span>
+                                 <span><%= producto.discount %>% </span>
+                           <% } else { %>
+                                <span>$<%= aMiles(producto.price) %> </span>
+                            <% } %> 
+                                <h6 id="cantProd"></h6>
+                          <form action="/carrito/tus-productos/<%= producto.id %>/<%= producto.carrito_producto.carrito_id %>" method="POST">
+                            <button type="submit">Eliminar producto</button>
+                          </form>
+                        </div>
+                      </div>
+                </a>
+              </div>
+            <% });%> 
+      </main>
+      <div id="total">
+              <% total = precio - descuento;%>
+          <h3 class="col-12"> La suma de tu carrito:</h3>
+            <div id="total-descuentos">
+              <ul>
+                <li><span><strong>Subtotal:</strong> $<%= aMiles(precio)%></span></li>
+                <li><span><strong>Descuentos:</strong> $<%= aMiles(descuento)%></span></li>
+                <li><span><strong>Total:</strong> $<%= aMiles(total)%></span></li>
+              </ul>
+            </div>
+              <form class="offset-44 col-8" action="/carrito/tus-productos/<%= carrito.products[0].carrito_producto.carrito_id%>" method="POST">
+                <button class="finalizar-transaccion">Finalizar pago</button>
+              </form>
+            
+  
       </div>
-
-     <aside id="total">
-  
-        <h3> Total</h3>
-
-          <div class="cupon">
-            <h4>¿Tenés códigos promocionales? </h4>
-            <input type="text" placeholder="Ingresalo acá" id="btn-aplicar" > 
-            <input type="button" value="Aplicar" class="button"> 
-           </div>
-
-           <div id="total-descuentos">
-            <span><strong> Subtotal:</strong> $22500 <span><br>
-              <span><strong>Descuentos:</strong> 0 <span> <br>
-                <hr>
-                <span><strong>Total:</strong> $20699<span><br>
-           </div>
-
-           <button class="finalizar-transaccion"> <a href="/carrito/tus-productos/datos-usuario"> Continuar con el pago </a></button> 
-
-           <div id="codigos">
-            <h6>¿Querés seguir comprando? </h6>
-            <input class ="button" type="button" value="Ver Más"></input> 
-           </div>
-
-        </aside>
-      </section>
-
+    <% } else { %>
+      <div class="col-12" id="texto-main"> 
+            <h2 class="offset-4 col-8"> ¡Tu carrito está vacío!</h2>
+            <img class="offset-3 col-5" width="300" height="200" src="\images\tarjetas-credito-carrito\carrito.png" alt ="hombre con carrito vacio">
+            <p class="offset-4 col-8"> No te pierdas lo último en entretenimiento digital. </p>   
+      </div>
+    <% } %>
       
-      
-    </main>
-    
+    </div>
 <!-- footer begins-->
-<%- include('./partials/footerCarrito') %>
-<!-- footer ends-->
-  
-    </body>
-  </html>
+<%- include('./partials/footer') %>
+<%- include('./partials/scripts') %>
+<script src="/javascript/carrito.js"></script>
+<!-- footer ends--> 
+  </body>
+</html>

@@ -45,6 +45,9 @@ let ingresoUsuarioController = {
           }
 
           res.redirect("/user/profile/" + resultado.dataValues.id);
+          db.carritos.create({
+            usuario_id: resultado.dataValues.id
+          })
         } else {
           res.render("ingreso-usuario", {
             title: "Ingresá a tu cuenta",
