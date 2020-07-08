@@ -82,14 +82,7 @@ let productDetailController = {
 
    cargaProducto:function(req, res, next){
     
-    
-    let prodimage;
-    if(req.file == undefined || req.file == null || req.file == []) {
-        prodImage = "unnamed.png"
-    } else {
-        prodImage = req.files[0].filename
-       
-    }
+
     
         db.products.create({
             product_name: req.body.name,
@@ -100,7 +93,7 @@ let productDetailController = {
             language_id: req.body.idioma,
             category_id: req.body.category,
             section: req.body.section,
-            image: prodImage
+            image: req.files[0].filename
         })
         res.redirect('/')
 
