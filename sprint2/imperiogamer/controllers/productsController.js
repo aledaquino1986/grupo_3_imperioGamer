@@ -81,8 +81,16 @@ let productDetailController = {
    },
 
    cargaProducto:function(req, res, next){
+    
+    
+    let prodimage;
+    if(req.file == undefined || req.file == null || req.file == []) {
+        prodImage = "unnamed.png"
+    } else {
+        prodImage = req.files[0].filename
        
-        
+    }
+    
         db.products.create({
             product_name: req.body.name,
             price: req.body.price,
@@ -92,8 +100,7 @@ let productDetailController = {
             language_id: req.body.idioma,
             category_id: req.body.category,
             section: req.body.section,
-            
-            image: req.files[0].filename
+            image: prodImage
         })
         res.redirect('/')
 
@@ -118,9 +125,21 @@ let productDetailController = {
 
     edit: function(req, res, next){
         
+        db.products.findByPk(req.params.id).then(function(producto) {
+           
+
+      let prodimage;
+    if(!req.file) {
+        prodImage = producto.image
+    } else {
+        prodImage = req.files[0].filename
+       
+    }
+
       db.products.update({
-          
-        product_name: req.body.titulo,
+
+
+        product_name: req.body.name,
             price: req.body.price,
             prod_description: req.body.description,
             discount: req.body.discount,
@@ -128,7 +147,7 @@ let productDetailController = {
             language_id: req.body.idioma,
             category_id: req.body.category,
             section: req.body.section,
-            image: req.files[0].filename
+            image: prodimage
       }, 
 
       {
@@ -142,7 +161,11 @@ let productDetailController = {
 
         res.redirect('/products/'+req.params.id)
         
-       
+    }) 
+            
+        
+    
+    
     }
 
 }

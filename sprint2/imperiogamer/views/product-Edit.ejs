@@ -9,7 +9,7 @@
   
 
     <h2 class="titulo">INFORMACION DEL PRODUCTO</h2>
-    <form class="createProduct" enctype="multipart/form-data" method="POST" action="/products">
+    <form class="createProduct" enctype="multipart/form-data" method="POST" action="/products/<%=products.id%>?_method=PUT">
 
     <div class="errors"></div>
       
@@ -22,7 +22,7 @@
 
         <div class="col-8">
           <label for="titulo">Titulo</label>
-          <input type="text" value="<%= products.product_name %>" class="form-control titulo" id="titulo" name="titulo" >
+          <input type="text" value="<%= products.product_name %>" class="form-control titulo" id="titulo" name="name" >
         </div>  
       </div>
 
@@ -51,9 +51,9 @@
           <label for="plataforma">Plataforma</label>
           <div class="form-group">
             <select class="custom-select plataforma" name="plataforma">
-              <option <%if( products.platform_id == 1){ %>selected <% } %>>PlayStation</option>
-              <option <%if( products.platform_id == 2){ %>selected <% } %>>X-Box</option>
-              <option <%if( products.platform_id == 3){ %>selected <% } %>>PC</option>
+              <option <%if( products.platform_id == 1){ %>selected <% } %> value= "1" >PlayStation</option>
+              <option <%if( products.platform_id == 2){ %>selected <% }  %> value= "2">XBOX</option>
+              <option <%if( products.platform_id == 3){ %>selected <% }  %> value= "3">PC</option>
             </select>
             
             <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
@@ -65,9 +65,9 @@
           <div class="form-group">
             <select class="custom-select idioma" name="idioma">
               <option value="">Seleccion la Plataforma</option>
-              <option <%if( products.platform_id == 1){ %>selected <% } %>>Español</option>
-              <option <%if( products.platform_id == 2){ %>selected <% } %>>Ingles</option>
-              <option <%if( products.platform_id == 3){ %>selected <% } %>>Chino</option>
+              <option <%if( products.platform_id == 1){ %>selected <% } %> value= "1">Español</option>
+              <option <%if( products.platform_id == 2){ %>selected <% } %> value= "2">Ingles</option>
+              <option <%if( products.platform_id == 3){ %>selected <% } %> value= "3">Japonés</option>
             </select>
             <div class="invalid-feedback">Por favor Selecciona Una Opcion</div>
           </div>
@@ -98,7 +98,7 @@
           <div class="col-4">
               <label for="image">Imagen</label><br>
               <img class="carga" src="/images/productos/<%= products.image %>" alt="<%= products.producto_name %>">
-              <input type="file" name="image">
+              <input type="file" name="image" >
           </div>  
     
           <% }%>

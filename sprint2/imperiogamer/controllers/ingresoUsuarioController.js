@@ -39,19 +39,11 @@ let ingresoUsuarioController = {
               maxAge: tiempo,
             });
           }
-<<<<<<< HEAD
 
           res.redirect("/user/profile/" + resultado.dataValues.id);
           db.carritos.create({
             usuario_id: resultado.dataValues.id
           })
-=======
-          if(req.session.login.is_admin == "yes"){
-            res.redirect("/admin")
-          } else{
-             res.redirect("/user/profile/" + resultado.dataValues.id);
-            }
->>>>>>> 747569e1666871c6cf3f625884107404a9f9e24e
         } else {
           res.render("ingreso-usuario", {
             title: "Ingresá a tu cuenta",
