@@ -27,6 +27,27 @@ button.bt-enviar{
     font-weight: bold;
 }
 
+@media(min-width: 0px) and (max-width:577px){
+
+    button.bt-enviar{
+        font-size: 19px;
+    }
+}
+
+@media(min-width: 578px) and (max-width:770px){
+
+    button.bt-enviar{
+        font-size: 19px;
+    }
+}
+
+@media(min-width: 769px) and (max-width:990px){
+
+    button.bt-enviar{
+        font-size: 19px;
+    }
+}
+
 div.historial{
     border: 2px solid rgb(26, 5, 119);
     height: 200px;
