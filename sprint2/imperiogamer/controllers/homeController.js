@@ -1,9 +1,7 @@
 const fs = require('fs')
 const path = require('path');
-const productosFilePath=path.join(__dirname,'../data/productos.json')
 let db = require('../database/models');
 const { Sequelize } = require('../database/models');
-let products = JSON.parse(fs.readFileSync(productosFilePath,{ encoding: 'utf-8' }))
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const Op = Sequelize.Op
