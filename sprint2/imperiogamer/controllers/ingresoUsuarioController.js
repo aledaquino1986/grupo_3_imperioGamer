@@ -25,7 +25,8 @@ let ingresoUsuarioController = {
     let errors = validationResult(req);
     let email = req.body.email;
 
-    db.usuarios.findOne({ where: { email: email } }).then(function (resultado) {
+    db.usuarios.findOne({ where: { email: email } })
+    .then(function (resultado) {
       if (resultado != null) {
         let password = req.body.password;
 
@@ -52,6 +53,12 @@ let ingresoUsuarioController = {
           });
         }
 
+      } else {
+        res.render("ingreso-usuario", {
+          title: "Ingresá a tu cuenta",
+          errors: errors.errors,
+          user: req.session.login,
+        });
       }
     });
 
