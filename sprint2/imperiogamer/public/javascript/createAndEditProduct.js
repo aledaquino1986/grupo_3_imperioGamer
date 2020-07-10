@@ -123,9 +123,9 @@ window.onload = function(){
     }
 
     function validDescription(description){
-        if (description === "" || description === null) {
-            errors.push("El campo Descripcion esta vacio");
-        } 
+        if(description.length < 30 || (description === "" || description === null)){
+            errors.push("El campo Descripcion debe tener mas de 30 caracteres")
+        }
     }
 
     function validPlataforma(plataforma){
@@ -151,6 +151,7 @@ window.onload = function(){
             errors.push("El campo Descuento esta vacio");;
         } 
     }
+
     function crearUl(){
         
         ulErrors.innerHTML = "<ul class='lista errors'></ul>";
@@ -163,9 +164,6 @@ window.onload = function(){
     });
         errors = [];
     }
-    
-
-    
    
     form.addEventListener("submit", function(e){
         validSection(section.value);

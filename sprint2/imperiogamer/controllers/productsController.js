@@ -3,10 +3,12 @@ const path = require('path');
 let db = require('../database/models');
 const { title } = require('process');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+var { check, validationResult, body } = require("express-validator");
 
 let productDetailController = {
     /*renderea la lista de productos del lado del ADMINiSTRADOR*/
     
+
     listadoDeProductos: function(req, res, next){
 
         db.products.findAll({where: {category_id: "1"}})
@@ -82,23 +84,40 @@ let productDetailController = {
 
    cargaProducto:function(req, res, next){
     
-
-    
-        db.products.create({
-            product_name: req.body.name,
-            price: req.body.price,
-            prod_description: req.body.description,
-            discount: req.body.discount,
-            platform_id: req.body.plataforma,
-            language_id: req.body.idioma,
-            category_id: req.body.category,
-            section: req.body.section,
-            image: req.files[0].filename
-        })
-        res.redirect('/')
-
+        let errors = validationResult(req);
         
+        if (!errors.isEmpty()) {
+            
+            res.render("product-create", {
+                title: "Cargar Producto",
+                errors: errors.errors,
+                user: req.session.login,
+            })
 
+         } else {
+
+            let image;
+
+            if(req.files.length == 0){
+                image = "sin-imagen.png"
+            }else{
+                image = req.files[0].filename
+            }
+            
+            db.products.create({
+                product_name: req.body.name,
+                price: req.body.price,
+                prod_description: req.body.description,
+                discount: req.body.discount,
+                platform_id: req.body.plataforma,
+                language_id: req.body.idioma,
+                category_id: req.body.category,
+                section: req.body.section,
+                image: image
+            })
+            
+            res.redirect('/')
+         }
     },
 
 
@@ -118,51 +137,56 @@ let productDetailController = {
 
     edit: function(req, res, next){
         
-        db.products.findByPk(req.params.id).then(function(producto) {
-           
-   
-      let prodImage;
-    if(req.file == undefined) {
-        prodImage = producto.image
-    } else {
-        prodImage = req.files[0].filename
-       
-    }
-    console.log("entré")
-    console.log(req.files[0].filename)
+        let errors = validationResult(req);
+        
+        
 
-      db.products.update({
+        db.products.findByPk(req.params.id)
+        .then(function(producto){
+        if (!errors.isEmpty()) {
+        
+            res.render("product-Edit", {
+                title: "Panel Edit",
+                products: producto,
+                errors: errors.errors,
+                user: req.session.login,
+            })
+
+        } else {
+
+            let image;
+
+            if(req.files.length == 0){
+                image = producto.image
+            }else{
+                image = req.files[0].filename
+            }
+
+            db.products.update({
+            product_name: req.body.name,
+                price: req.body.price,
+                prod_description: req.body.description,
+                discount: req.body.discount,
+                platform_id: req.body.plataforma,
+                language_id: req.body.idioma,
+                category_id: req.body.category,
+                section: req.body.section,
+                image: image
+            }, 
+
+            {
+            
+            where: {
+                id: req.params.id
+            }
 
 
-        product_name: req.body.name,
-            price: req.body.price,
-            prod_description: req.body.description,
-            discount: req.body.discount,
-            platform_id: req.body.plataforma,
-            language_id: req.body.idioma,
-            category_id: req.body.category,
-            section: req.body.section,
-            image: req.files[0].filename
-      }, 
-
-      {
-          
-        where: {
-            id: req.params.id
-        }
-
-
-      });
+            });
 
         res.redirect('/products/'+req.params.id)
-        
-    }) 
-            
-        
-    
-    
+        }
+        }); 
     }
-
 }
     
     module.exports = productDetailController
