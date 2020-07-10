@@ -42,26 +42,7 @@ let productCartControllers = {
             .then(db.carritos.destroy({where:{usuario_id: user_id}}))
             .then(db.carritos.create({usuario_id: user_id}))
             .then(res.redirect("/"));
-          },
-    /* Lleva a la vista donde el usuario agrega sus datos del usuario. Se accede por /carrito/tus-productos/datos-usuario/ */
-          agregarDatosUsuario: function(req, res, next) {
-            res.render('carrito-datos-usuario', {
-              title: "Agregá tus datos"
-          });
-          },
-/* Lleva a la vista de los productos del usuario. Se accede por /carrito/tus-productos/datos-usuario/confirmar-datos */
-            confirmarDatos: function(req, res, next) {
-            res.render('carrito-confirmar-datos', {
-              title: "Confirmá tus datos"
-          });
-          },
-/* Lleva a la vista de los productos del usuario. */
-            agradecerUsuario: function(req, res, next) {
-            res.render('carrito-gracias', {
-              title: "Gracias por tu compra"
-          });
           }
-
 }
 
 

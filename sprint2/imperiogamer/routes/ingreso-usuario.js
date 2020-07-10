@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var ingresoUsuarioController = require("../controllers/ingresoUsuarioController");
-var userCheckLogin = require("../middlewares/userCheckLogin");
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');

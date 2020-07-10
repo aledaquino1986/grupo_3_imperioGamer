@@ -39,7 +39,7 @@ app.use('/registrate', formularioRegistoRouter);
 app.use('/products', productsRouter);
 app.use("/user", userRouter)
 app.use('/admin',adminRouter)
-app.use("/api/usuario", apiUsuariosRouter)
+app.use("/api", apiUsuariosRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

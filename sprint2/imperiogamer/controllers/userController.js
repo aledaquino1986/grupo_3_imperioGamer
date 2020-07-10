@@ -8,26 +8,6 @@ const bcrypt = require('bcrypt');
 
 let homeController = {
 
-    mostrarDetalleProducto: function(req, res, next) {
-      let producto = productos.find(function(element) {
-        return element.id == req.params.id
-    });
-      res.render('productDetail', {
-        title: producto.name,
-        producto: producto,
-        aMiles: toThousand
-    });
-    
-    },
-    listarProductos: function(req, res, next){
-      res.render('productsUsers',{
-        title: "Imperio Gamer",
-        productos: productos,
-        user: req.session.login,
-        aMiles: toThousand
-    })
-    },
-
     mostrarPerfil: function(req, res, next) {
     db.usuarios.findByPk(req.params.id).then(function (usuario){
       res.render('profile',{

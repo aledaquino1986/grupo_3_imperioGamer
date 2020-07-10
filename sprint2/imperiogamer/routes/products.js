@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var productsController= require("../controllers/productsController");
-var userCheckLogin = require("../middlewares/userCheckLogin");
+var adminCheckLogin = require("../middlewares/adminCheck");
 var path = require('path')
 const multer = require('multer');
 var storage = multer.diskStorage({
@@ -15,15 +15,15 @@ var storage = multer.diskStorage({
 var upload = multer({storage:storage});
 /* GET listado productos para el admin. */
 
-router.get('/', userCheckLogin, productsController.listadoDeProductos);
+router.get('/', adminCheckLogin, productsController.listadoDeProductos);
 
-router.get('/create', userCheckLogin, productsController.mostrarCargaProd);
+router.get('/create', adminCheckLogin, productsController.mostrarCargaProd);
 router.post('/', upload.any(), productsController.cargaProducto);
 
-router.get('/:id', userCheckLogin, productsController.mostrarDetalleProducto);
+router.get('/:id', adminCheckLogin, productsController.mostrarDetalleProducto);
 router.delete('/:id', productsController.delete);
 
-router.get('/:id/edit', userCheckLogin, productsController.formEdit);
+router.get('/:id/edit', adminCheckLogin, productsController.formEdit);
 router.put('/:id',upload.any(), productsController.edit);
 
 
