@@ -36,6 +36,12 @@ router.post('/profile/edit/:id', [
     }
   }).withMessage("Para confirmar contraseña debe ingresar una en el campo correspondiente"),
 
+	check("first_name").isLength({min:1}).withMessage('El campo nombre esta  vacio'),
+	check("last_name").isLength({min:1}).withMessage('El campo apellido esta vacio'),
+	check("dni").isLength({min:1}).withMessage('El campo dni esta vacio'),
+  check("tel").isLength({min:1}).withMessage('El campo telefono esta vacio'),
+  check("direccion").isLength({min:1}).withMessage('El campo direccion esta vacio'),
+
 ],
  userController.editPerfil);
 
