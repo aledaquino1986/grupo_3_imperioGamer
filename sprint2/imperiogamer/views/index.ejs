@@ -14,15 +14,14 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner carrucel-imagenes">
-        <div class="carousel-item active">
-          <a href="#"><img src="./imagenes-home/residentevil3remake.png" class="d-block w-100" alt="..."></a> 
-        </div>
-        <div class="carousel-item">
-          <a href="#"><img src="./imagenes-home/halowallpaper.jpg" class="d-block w-100" alt="..."></a> 
-        </div>
-        <div class="carousel-item">
-          <a href="#"><img src="./imagenes-home/Destiny2wallpaper.jpg" class="d-block w-100" alt="..."></a> 
-        </div>
+          <div class="carousel-item active">
+            <a href="#"><img src="/images/productos/<%= banner[0].image %>" class="d-block w-100" alt="..."></a> 
+          </div>
+        <% for(var i = 1; i < banner.length; i++){ %>
+          <div class="carousel-item">
+            <a href="#"><img src="/images/productos/<%= banner[i].image %>" class="d-block w-100" alt="..."></a> 
+          </div>
+        <% }%>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
