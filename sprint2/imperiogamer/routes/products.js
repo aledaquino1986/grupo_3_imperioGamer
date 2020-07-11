@@ -18,11 +18,7 @@ var upload = multer({storage:storage});
 
 router.get('/', adminCheckLogin, productsController.listadoDeProductos);
 
-<<<<<<< HEAD
 router.get('/create', adminCheckLogin, productsController.mostrarCargaProd);
-router.post('/', upload.any(), productsController.cargaProducto);
-=======
-router.get('/create', userCheckLogin, productsController.mostrarCargaProd);
 router.post('/', upload.any(), [
 	check("section").isLength({min:1}).withMessage('El campo sección esta  vacio'),
 	check("name").isLength({min:1}).withMessage('El campo titulo esta  vacio'),
@@ -31,18 +27,13 @@ router.post('/', upload.any(), [
 	check("plataforma").isLength({min:1}).withMessage('El campo plataforma esta  vacio'),
 	check("idioma").isLength({min:1}).withMessage('El campo idioma esta vacio'),
 	check("price").isLength({min:1}).withMessage('El campo precio esta vacio'),
-	check("discount").isLength({min:1, max:100}).withMessage('El campo descuento tiene que estar entre 1 y 100'),
-  ],  productsController.cargaProducto);
->>>>>>> 0baaa16c146181ca9b7cc2b14dbaa91cb22402e5
+	check("discount").isLength({min:1, max:100}).withMessage('El campo descuento tiene que estar entre los valores 0 y 100'),
+  ], productsController.cargaProducto);
 
 router.get('/:id', adminCheckLogin, productsController.mostrarDetalleProducto);
 router.delete('/:id', productsController.delete);
 
-<<<<<<< HEAD
 router.get('/:id/edit', adminCheckLogin, productsController.formEdit);
-router.put('/:id',upload.any(), productsController.edit);
-=======
-router.get('/:id/edit', userCheckLogin, productsController.formEdit);
 router.put('/:id',upload.any(), [
 	check("section").isLength({min:1}).withMessage('El campo sección esta  vacio'),
 	check("name").isLength({min:1}).withMessage('El campo titulo esta  vacio'),
@@ -53,7 +44,6 @@ router.put('/:id',upload.any(), [
 	check("price").isLength({min:1}).withMessage('El campo precio esta vacio'),
 	check("discount").isLength({min:1, max:100}).withMessage('El campo descuento tiene que estar entre los valores 0 y 100'),
   ], productsController.edit);
->>>>>>> 0baaa16c146181ca9b7cc2b14dbaa91cb22402e5
 
 
 
