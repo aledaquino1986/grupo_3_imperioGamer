@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/search.css">
 
 <body>
 
     <%-include('./partials/header') %>
 
     <div class="row">
+      <% if (products.length > 0){ %>
         <%products.forEach(function(products){%>
           <div class="col-3">
             <a class="productUser" href="/user/detail/<%= products.id %> ">
@@ -29,11 +31,14 @@
                      
                       <p class="card-text"><%= descript2 %>...</p>
                     </div>
-                  </div>
+                </div>
             </a>
           </div>
         <% });%> 
-      </div>
+      <% } else {%>
+        <h2 id="no-encontrado" class="offset-2 col-10">No pudimos encontrar tu producto</h2>
+      <% } %>  
+    </div>
     <%-include('./partials/footer') %>
     <%-include('./partials/scripts') %>
 </body>

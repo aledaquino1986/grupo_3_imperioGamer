@@ -7,7 +7,7 @@ function userCheck(req,res,next){
     let user;
     if(req.session.login == undefined){
         user = req.session.login
-         res.redirect('/')
+         res.redirect('/ingreso-usuario')
     } else {
         next();
     }

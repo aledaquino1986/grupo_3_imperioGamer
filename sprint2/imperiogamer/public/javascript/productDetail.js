@@ -3,9 +3,28 @@ window.addEventListener("load",function(){});
 var cantProd;
 var carrito = document.querySelector(".log-cart");
 var sumaProd = document.querySelector(".sumaProd");
+var ingresar = document.querySelector("#ingresar");
+var agregar = document.querySelector('#carrito');
+var comprar = document.querySelector('#comprar');
 
 console.log(carrito);
 console.log(sumaProd);
+console.log(ingresar);
+if(ingresar != null){
+    carrito.addEventListener("click",function(event){
+        alert("Inicia session para ingresar a tu carrito")
+    })
+}
+if(ingresar != null){
+    agregar.addEventListener("click",function(event){
+        alert("Inicia session para agregar este producto al carrito")
+    })
+}
+if(ingresar != null){
+    comprar.addEventListener("click",function(event){
+        alert("Inicia session para comprar este producto")
+    })
+}
 
 
 fetch("http://localhost:3000/api/carritos")
