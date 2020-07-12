@@ -16,8 +16,9 @@ let homeController = {
 
   
     mostrarHome: function(req, res, next) {
+      var usuarioLogueado;
       if (req.session.login != undefined) {
-        var usuarioLogueado = req.session.login
+         usuarioLogueado = req.session.login
       }
      
       db.products.findAll({
@@ -37,13 +38,14 @@ let homeController = {
             order: [["id", "DESC"]]
           })
           .then(function(products3){
+            console.log(usuarioLogueado)
             banner = products3;
             res.render('index',{
               title: "Imperio Gamer",
               populares: populares,
               ofertas: ofertas,
               banner: banner,
-              user: usuarioLogueado
+              user: req.session.login
             })
           })
         })
