@@ -79,7 +79,22 @@ let homeController = {
       title: "Contacto",
       user: req.session.login
     })
-  }
+  },
+
+
+  politicas: function(req,res){
+    res.render("politicas",{
+      title: "Politicas de privacidad",
+      user: req.session.login
+    })
+  },
+
+  nosotros: function(req,res){
+    res.render("nosotros",{
+      title: "Nosotros",
+      user: req.session.login
+    })
+  },
 }
 
 

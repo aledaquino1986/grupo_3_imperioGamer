@@ -24,22 +24,29 @@
             </div>
         </div>
         <div class="offset-1 col-md-5">
-            <form action="/contacto"   id="registro-usuario" method="POST" enctype="multipart/form-data"> 
+
+            <div id="error"></div>
+            <form action="/contacto"   id="contacto" method="POST" enctype="multipart/form-data"> 
           
-                <label for="nombre" id="nombre">Nombre y Apellido</label>
+                <label for="nombre" class="nombre">Nombre y Apellido</label>
+                
                 <br>
-                <input type="text" name="nombre" class="nombre">
+                <input type="text" name="nombre" id="nombre">
+                <div id="error-nombre"></div>
                 <br>
                 <label for="mail">Email</label><br>
                 <input type="mail" name="email" id="email"><br>
+                <div id="error-email"></div>
                 <label for="comentario">Comentario</label><br>
                 <textarea name="comentario" id="comentario" cols="60" rows="5"></textarea><br>
+                <div id="error-comentario"></div>
               <button class="btn btn-primary">Enviar</button><br>
           </form>
         </div>
     </div>
-
+    
     <%- include('./partials/footer') %>
     <%- include('./partials/scripts') %>
+    <script src="/javascript/contactanos.js"></script>
 </body>
 </html>

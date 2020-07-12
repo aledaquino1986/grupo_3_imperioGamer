@@ -22,3 +22,8 @@ form{
 div .confirmacion h2{
     margin-bottom: 90px;
 }
+
+
+#error-nombre,#error-email, #error-comentario {
+    color: red
+}
