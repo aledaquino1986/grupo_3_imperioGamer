@@ -31,7 +31,7 @@
             <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
           </svg></label><br>
           <small>Haz click y selecciona tu Avatar</small>
-
+          <input type="file" name="avatar" id="avatar" ><br>
 
           <% if (typeof errors != "undefined") { %>
             <ul id ="error-back">
@@ -41,7 +41,7 @@
             </ul>
         <% } %> 
           <div id="error"></div>
-          <input type="file" name="avatar" id="avatar" ><br>
+          
           <label for="nombre"  >Nombre</label>
           <label for="apellido">Apellido</label><br>
           <svg class="bi bi-person-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

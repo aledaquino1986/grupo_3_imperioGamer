@@ -18,12 +18,13 @@ div.avatar{
 div.avatar img{
     display: block;
     margin: auto;
-    height: 220px;
-    width: 220px;
+    width: 120px;
+    height: 120px;
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
     background-size: 100% auto;
+    border: 7px solid #fff;
 }
 
 p.nameuser{

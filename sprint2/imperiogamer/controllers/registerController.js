@@ -29,12 +29,12 @@ let registerController = {
             let encriptado = bcrypt.hashSync(req.body.password, 10);
 
             let avatar;
-            if (req.file === undefined) {
+            if (!req.files) {
               avatar = "unnamed.png";
             } else {
               avatar = req.files[0].filename;
             }
-
+            
             db.usuarios
               .create({
                 first_name: req.body.nombre,
