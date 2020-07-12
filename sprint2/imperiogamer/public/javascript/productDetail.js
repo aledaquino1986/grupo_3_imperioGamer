@@ -12,17 +12,17 @@ console.log(sumaProd);
 console.log(ingresar);
 if(ingresar != null){
     carrito.addEventListener("click",function(event){
-        alert("Inicia session para ingresar a tu carrito")
+        alert("Inicia sesión para ingresar a tu carrito")
     })
 }
 if(ingresar != null){
     agregar.addEventListener("click",function(event){
-        alert("Inicia session para agregar este producto al carrito")
+        alert("Inicia sesión para agregar este producto al carrito")
     })
 }
 if(ingresar != null){
     comprar.addEventListener("click",function(event){
-        alert("Inicia session para comprar este producto")
+        alert("Inicia sesión para comprar este producto")
     })
 }
 

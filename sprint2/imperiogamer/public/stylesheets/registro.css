@@ -63,3 +63,9 @@ form button {
 .mensaje-error {
   margin-top: 10px;
 }
+
+#error-back {
+  color: red;
+  list-style-type: none;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}

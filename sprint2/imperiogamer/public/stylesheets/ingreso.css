@@ -54,7 +54,7 @@ small {
 }
 
 .error {
-    color: #e74c3c;;
+    color: #e74c3c;
 }
 
 .mensaje-error{
@@ -63,4 +63,9 @@ small {
 
 #lista {
     list-style: none;
+}
+
+#error-back {
+    color: #e74c3c;
+    list-style-type: none;
 }

@@ -23,13 +23,7 @@
         <%  } else if (user && user.is_admin == "yes") {  %>
          <h1>Creación de usuarios admin.</h1>
           <%  } %>
-        <% if (typeof errors != "undefined") { %>
-            <ul>
-           <% for(var i= 0; i < errors.length; i++) { %>
-             <li><%= errors[i].msg %></li>
-            <% } %>
-            </ul>
-        <% } %> 
+        
 
         
         <label for="avatar"><svg class="bi bi-person-square" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,6 +32,14 @@
           </svg></label><br>
           <small>Haz click y selecciona tu Avatar</small>
 
+
+          <% if (typeof errors != "undefined") { %>
+            <ul id ="error-back">
+           <% for(var i= 0; i < errors.length; i++) { %>
+             <li><%= errors[i].msg %></li>
+            <% } %>
+            </ul>
+        <% } %> 
           <div id="error"></div>
           <input type="file" name="avatar" id="avatar" ><br>
           <label for="nombre"  >Nombre</label>

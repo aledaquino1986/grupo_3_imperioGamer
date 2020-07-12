@@ -5,6 +5,7 @@ const errorEmail = document.querySelector("#error-email")
 const errorPassword = document.querySelector("#error-password")
 const errorDiv = document.querySelector(".error");
 const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const errorBack = document.querySelector("#error-back")
 
 
 let mensajes = [];
@@ -66,6 +67,7 @@ form.addEventListener("submit", function(e){
   e.preventDefault()
   crearUl();
     crearLi();
+    errorBack.remove();
   }
 
   
