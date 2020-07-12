@@ -6,8 +6,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const Op = Sequelize.Op
 
-let populares = 2;
+let populares;
 let ofertas;
+let banner;
 
 let homeController = {
 
@@ -31,11 +32,19 @@ let homeController = {
         })
         .then(function(products2){
           ofertas = products2
-          res.render('index',{
-            title: "Imperio Gamer",
-            populares: populares,
-            ofertas: ofertas,
-            user: usuarioLogueado
+          db.products.findAll({
+            where: {section: "banner"},
+            order: [["id", "DESC"]]
+          })
+          .then(function(products3){
+            banner = products3;
+            res.render('index',{
+              title: "Imperio Gamer",
+              populares: populares,
+              ofertas: ofertas,
+              banner: banner,
+              user: usuarioLogueado
+            })
           })
         })
       })
