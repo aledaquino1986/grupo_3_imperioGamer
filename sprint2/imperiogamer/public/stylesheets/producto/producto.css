@@ -90,3 +90,15 @@ div.producto h5{
         margin-top: 100px;
     }
 }
+
+.col-3 {
+    transition: 0.5s;
+}
+
+.col-3:hover {
+    transform: scale(1.05);
+ }
+
+.col-3 a{
+    text-decoration: none;
+}
