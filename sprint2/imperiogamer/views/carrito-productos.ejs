@@ -9,14 +9,14 @@
     <div class ="container" id="div-cart"> 
       <main class="row">
         <% if(carrito.products.length > 0){ %>
-          <div class="col-12">
+          <div class="col-12 titulo">
             <h2>Hola <%= user.first_name%>, estos son tus productos: </h2>
           </div>
           <% let precio=0; let descuento=0; let total=0; %>
             <%carrito.products.forEach(function(producto){%>
-              <div class="col-3">
-                <a class="productUser" href="/user/detail/<%= producto.id %> ">
-                    <div id="prod" class="card" style="width: 18rem;">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                  <div id="prod" class="card">
+                      <a class="productUser" href="/user/detail/<%= producto.id %> ">
                         <h5 id="titleProd" class="card-title"><strong><%= producto.product_name %></strong> </h5>
                         <img width="300" height="200" src="/images/productos/<%= producto.image %>" class="card-img-top" alt="<%= producto.name %> ">
                         <div class="card-body">
@@ -33,13 +33,14 @@
                             <button type="submit">Eliminar producto</button>
                           </form>
                         </div>
-                      </div>
-                </a>
+                      </a>
+                   </div>
               </div>
             <% });%> 
       </main>
-      <div id="total">
+      <div class="row" >
               <% total = precio - descuento;%>
+        <div class="col-xs-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-lg-3" id="total">
           <h3 class="col-12"> La suma de tu carrito:</h3>
             <div id="total-descuentos">
               <ul>
@@ -49,15 +50,14 @@
               </ul>
             </div>
               <form class="offset-44 col-8" action="/carrito/tus-productos/<%= carrito.products[0].carrito_producto.carrito_id%>" method="POST">
-                <button class="finalizar-transaccion">Finalizar pago</button>
+                <button type="sumbit" class="btn btn-success finalizar-transaccion ">Finalizar pago</button>
               </form>
-            
-  
+        </div>    
       </div>
     <% } else { %>
       <div class="col-12" id="texto-main"> 
             <h2 class="offset-4 col-8"> ¡Tu carrito está vacío!</h2>
-            <img class="offset-3 col-5" width="300" height="200" src="\images\tarjetas-credito-carrito\carrito.png" alt ="hombre con carrito vacio">
+            <img class="offset-3 col-5" width="300" height="200" src="\images\tarjetas-credito-carrito/carrito.png" alt ="hombre con carrito vacio">
             <p class="offset-4 col-8"> No te pierdas lo último en entretenimiento digital. </p>   
       </div>
     <% } %>
