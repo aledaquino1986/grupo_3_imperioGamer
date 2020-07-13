@@ -41,10 +41,17 @@ let ingresoUsuarioController = {
             });
           }
 
-          res.redirect("/user/profile/" + resultado.dataValues.id);
-          db.carritos.create({
-            usuario_id: resultado.dataValues.id
-          })
+          if(req.session.is_admin == "yes"){
+            db.carritos.create({
+              usuario_id: resultado.dataValues.id
+            })
+            res.redirect("/user/profile/" + resultado.dataValues.id);
+            }else{
+              db.carritos.create({
+                usuario_id: resultado.dataValues.id
+              })
+              res.redirect("/admin");
+            }
         } else {
           res.render("ingreso-usuario", {
             title: "Ingresá a tu cuenta",

@@ -51,10 +51,12 @@ let registerController = {
                 is_admin: "no",
               })
               .then(function (usuarioCreado) {
-                db.usuarios
-                  .findOne({ where: { email: email } })
+                db.usuarios.findOne({ where: { email: email } })
                   .then(function (resultado) {
                     req.session.login = resultado;
+                    db.carritos.create({
+                      usuario_id: resultado.dataValues.id
+                    })
                     res.redirect("/user/profile/" + req.session.login.id);
                   });
               });

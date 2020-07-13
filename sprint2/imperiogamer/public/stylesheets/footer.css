@@ -1,9 +1,21 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+
+    margin-bottom: 150px;
+}
+
 footer{
-    display: flex;
+
     justify-content: center;
     flex-direction: column;
     width: 100%;
     margin:0!important;
+    position: absolute;
+    bottom: 0;
     
     
 }
