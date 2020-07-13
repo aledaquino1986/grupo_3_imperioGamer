@@ -11,7 +11,11 @@
       <% if (products.length > 0){ %>
         <%products.forEach(function(products){%>
           <div class="col-3">
+            <% if ( user == undefined || user.is_admin == "no") { %>
             <a class="productUser" href="/user/detail/<%= products.id %> ">
+              <% } else if (user && user.is_admin == "yes")  { %>
+                <a class="productUser" href="/products/<%= products.id %> ">
+                  <%  } %>
                 <div class="card" style="width: 18rem;">
                     <h5 class="card-title"><%= products.product_name %> </h5>
                     <img width="300" height="200" src="/images/productos/<%= products.image %>" class="card-img-top" alt="<%= products.name %> ">
