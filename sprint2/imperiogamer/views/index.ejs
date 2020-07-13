@@ -46,7 +46,7 @@
             <% if ( user == undefined || user.is_admin == "no") { %>
               <a href="/user/detail/<%= populares.id %>"><img width="240" height="135" class="producto-img" src="/images/productos/<%= populares.image %>" alt="<%= populares.product_name %>"></a>
               <% } else if (user && user.is_admin == "yes")  { %>
-                <a href="/products/<%= populares.id %>"><img width="240" height="135" class="producto-img" src="/images/productos/<%= ofertas.image %>" alt="<%= populares.product_name %>"></a>
+                <a href="/products/<%= populares.id %>"><img width="240" height="135" class="producto-img" src="/images/productos/<%= populares.image %>" alt="<%= populares.product_name %>"></a>
                 <%  } %>
             </div>
         </div>
