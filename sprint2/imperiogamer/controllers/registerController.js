@@ -27,13 +27,14 @@ let registerController = {
         .then(function (resultado) {
           if (resultado == null) {
             let encriptado = bcrypt.hashSync(req.body.password, 10);
-
+            
             let avatar;
-            if (!req.files) {
-              avatar = "unnamed.png";
-            } else {
+            if (req.files[0] != undefined) {
               avatar = req.files[0].filename;
-            }
+              
+            } else {
+              avatar = "unnamed.png";
+            } 
             
             db.usuarios
               .create({
