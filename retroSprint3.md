@@ -4,7 +4,7 @@ Respecto a la retro del anterior Sprint, mejoramos muchas cosas como equipo, emp
 
 Comenzar a hacer: 
 
--Organizar mejor los tiempos para que los 3 estemos trabajando en horarios aproximados, eso mejoraría la velocidad de respuesta para despejar dudas. 
+-Implementar pair programming como forma de trabajo habitual además del codeo en solitario.  
 
 Hacer más:
 
