@@ -25,7 +25,7 @@ let homeController = {
     let errors = validationResult(req)
    let password; 
    let password2 = req.body.password2;
-
+   let avatar;
    
    if(!errors.isEmpty()){
      
@@ -54,26 +54,46 @@ let homeController = {
    } 
     
    
+   db.usuarios.findByPk(req.params.id)
+      .then(function(usuario){
+        if (req.files[0] != undefined) {
+        avatar = req.files[0].filename;
+        
+        } else {
+          avatar = usuario.avatar;
+        }
 
-   
-   db.usuarios.update({
-     first_name: req.body.first_name,
-     last_name: req.body.last_name,
-     dni: req.body.dni,
-     email: req.body.email,
-     tel: req.body.tel,
-     password: password,
-     direccion: req.body.direccion
-   },
-   
-   {
-            
-    where: {
-        id: req.params.id
-    }
+        db.usuarios.findByPk(req.params.id)
+        .then(function(usuario){
+        if (req.files[0] != undefined) {
+        avatar = req.files[0].filename;
+        
+        } else {
+          avatar = usuario.avatar;
+        } 
 
-  })
-   res.redirect("/user/profile/"+ req.params.id)
+        db.usuarios.update({
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          dni: req.body.dni,
+          email: req.body.email,
+          tel: req.body.tel,
+          password: password,
+          direccion: req.body.direccion,
+          avatar: avatar
+        },
+        
+        {
+                 
+         where: {
+             id: req.params.id
+         }
+     
+       })
+        res.redirect("/user/profile/"+ req.params.id)
+
+       })
+      })
   
   }
 

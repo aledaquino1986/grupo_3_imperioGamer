@@ -19,9 +19,16 @@ footer{
     
     
 }
-@media(min-width: 990px){
+@media(max-width: 990px){
+
+    body {
+
+        margin-bottom: 370px;
+    }
+
     footer{
         flex-direction: row;
+        
     }
 }
 footer article{
