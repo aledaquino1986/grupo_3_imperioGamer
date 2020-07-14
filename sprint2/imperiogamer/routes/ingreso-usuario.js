@@ -12,11 +12,7 @@ let email=
 /* GET página de logueo */
 router.get('/', ingresoUsuarioController.mostrarPaginaLogin); 
 router.post('/',[
-    check("email").isEmail().withMessage('Debe ingresar un mail valido'),
-    ],[
-
-    
-    body("email").custom((value, { req }) => {
+    check("email").isEmail().withMessage('Debe ingresar un mail válido').bail().custom((value, { req }) => {
       let email = req.body.email
       db.usuarios.findOne({where: {email: email}})
 
@@ -29,7 +25,8 @@ router.post('/',[
         return false
       })
       
-    }).withMessage("Email Incorrecto"),
+    }).withMessage('El email no coincide con la contraseña.'),
+    ],[
 
     body("password").custom((value, { req }) => {
       let password = req.body.password
@@ -41,7 +38,7 @@ router.post('/',[
 
         return false
       })
-    }).withMessage("Contraseña Invalida")
+    }).withMessage("Contraseña inválida")
 
 
 ], ingresoUsuarioController.login);
