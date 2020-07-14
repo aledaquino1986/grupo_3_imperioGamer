@@ -47,6 +47,5 @@ router.post('/',[
 ], ingresoUsuarioController.login);
 
 
-router.get('/panel-admin', ingresoUsuarioController.adminPanel); 
 
 module.exports = router;

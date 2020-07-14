@@ -70,11 +70,8 @@ let ingresoUsuarioController = {
     });
     //cierra el primer if
   
-  },
+  }
 
-  adminPanel: function (req, res, next) {
-    res.render("adminPanel");
-  },
 };
 
 module.exports = ingresoUsuarioController;
