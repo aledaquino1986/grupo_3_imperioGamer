@@ -61,7 +61,7 @@ let homeController = {
            .then(function(products) {
              res.render("search", {
                title: 'busqueda',
-               products:products,
+               productos:products,
                user: req.session.login,
                aMiles: toThousand
               })
