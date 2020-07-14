@@ -10,8 +10,6 @@ window.onload = function(){
     let tel = document.querySelector("input#tel")
     let direccion = document.querySelector("input#direccion")
     let ulErrors = document.querySelector("div.errors")
-    console.log(first_name)
-    console.log(last_name);
     
     let errors = []
 
@@ -24,6 +22,28 @@ window.onload = function(){
     }
 
     /* -------- Validacion en vivo ---------- */
+
+    password.addEventListener("blur",function(e){
+        if(password.value){
+            inputVerde(password)
+        } else {
+            password.classList.remove("input-exito");
+            inputRojo(password)
+            
+        }
+    })
+
+    password2.addEventListener("blur",function(e){
+        if(password2.value){
+            inputVerde(password2)
+        } else {
+            password2.classList.remove("input-exito");
+            inputRojo(password2)
+            
+        }
+    })
+
+
     first_name.addEventListener("blur",function(e){
         if(first_name.value){
             inputVerde(first_name)
@@ -71,11 +91,7 @@ window.onload = function(){
     });
 
     /*-------  Funciones del Sumbit ------- */
-    function validfirstName(first_name){
-        if (first_name === "" || first_name === null) {
-            errors.push("El campo Nombre esta vacio");
-        } 
-    }
+
 
     function validLastName(last_name){
         if (last_name === "" || last_name === null) {

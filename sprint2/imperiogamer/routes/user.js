@@ -29,24 +29,13 @@ router.post('/profile/edit/:id' , upload.any(), [
     if(value.length !== 0 && req.body.password !== 0) {
       if (value !== req.body.password2) {
         return false;
+      } else if(value.length >= 8){
+          return true;
+        }
       } else {
-        return true;
-      }  
-    } else {
       return true
     }
-  }).withMessage("Las contraseñas deben ser idénticas"),
-  check('password2').custom((value, { req }) => {
-    if(value.length !== 0 && req.body.password !== 0) {
-      if (value !== req.body.password) {
-        return false;
-      } else {
-        return true;
-      }  
-    } else {
-      return true
-    }
-  }).withMessage("Para confirmar contraseña debe ingresar una en el campo correspondiente"),
+  }).withMessage("Las contraseñas deben ser idénticas y tener mas de 8 caracteres"),
 
 	check("first_name").isLength({min:1}).withMessage('El campo nombre esta  vacio'),
 	check("last_name").isLength({min:1}).withMessage('El campo apellido esta vacio'),
