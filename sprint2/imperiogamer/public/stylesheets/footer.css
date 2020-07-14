@@ -23,13 +23,15 @@ footer{
 
     body {
 
-        margin-bottom: 370px;
+        margin-bottom: 400px;
+
     }
 
     footer{
         flex-direction: row;
         
     }
+     
 }
 footer article{
     display: flex;

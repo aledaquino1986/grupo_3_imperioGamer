@@ -9,7 +9,11 @@
             <%productos.forEach(function(producto){%>
               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                     <div class="card" >
+                      <% if (user == undefined || user.is_admin == "no") { %>
                       <a class="productUser" href="/user/detail/<%= producto.id %> ">
+                        <% } else if(user.is_admin == "yes") {  %>
+                          <a class="productUser" href="/products/<%= producto.id %> ">
+                            <% } %>
                         <h5 class="card-title"><strong><%= producto.product_name %></strong> </h5>
                         <img width="300" height="200" src="/images/productos/<%= producto.image %>" class="card-img-top" alt="<%= producto.name %> ">
                         <div class="card-body">

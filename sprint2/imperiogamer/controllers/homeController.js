@@ -22,13 +22,13 @@ let homeController = {
       }
      
       db.products.findAll({
-        where: {section: "populares"}, LIMIT: 8 ,
+        where: {section: "populares"}, limit: 8 ,
         order: [["id","DESC"]],
       })
       .then(function(products){
         populares = products
         db.products.findAll({
-          where: {section: "ofertas" }, LIMIT: 8 ,
+          where: {section: "ofertas" }, limit: 8 ,
           order: [["id","DESC"]],
         })
         .then(function(products2){

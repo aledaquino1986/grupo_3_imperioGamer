@@ -15,7 +15,12 @@
       </ol>
       <div class="carousel-inner carrucel-imagenes">
           <div class="carousel-item active">
+        
+            <% if ( user == undefined || user.is_admin == "no") { %>
             <a href="/user/detail/<%= banner[0].id %>"><img src="/images/productos/<%= banner[0].image %>" class="d-block w-100" alt="..."></a> 
+            <% } else if (user && user.is_admin == "yes") { %>
+              <a href="/products/<%= banner[0].id %>"><img src="/images/productos/<%= banner[0].image %>" class="d-block w-100" alt="..."></a>
+            <% } %>
           </div>
         <% for(var i = 1; i < banner.length; i++){ %>
           <div class="carousel-item">

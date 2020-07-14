@@ -48,6 +48,7 @@ const errorComentario = document.querySelector("#error-comentario")
        } else {
          inputVerde(email);
          errorEmail.innerHTML = ""
+         mensajes = []
        }
 
      }
@@ -73,9 +74,10 @@ console.log(nombre.value)
        validarNombre(nombre.value);
        validarEmail(email.value);
        validarComentario(comentario.value);
-      
+      console.log(mensajes)
        if (mensajes.length > 0) {
          e.preventDefault();
+         
        }
       
      });

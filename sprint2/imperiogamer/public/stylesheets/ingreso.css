@@ -1,6 +1,6 @@
-.usuario{
+.login{
     background: rgb(2,0,36);
-    background:linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(47,47,79,1) 48%, rgba(0,212,255,1) 100%);
+   color: white;
 }
 .ingreso-usuario{
     display: flex;
@@ -34,7 +34,7 @@
     padding-bottom: 7%;
 }
 .span-usuario a{
-    color: white;
+    color: blanchedalmond;
 }
 
 span.mgs-error{
@@ -69,3 +69,4 @@ small {
     color: #e74c3c;
     list-style-type: none;
 }
+
