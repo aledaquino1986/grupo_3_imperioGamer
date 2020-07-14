@@ -14,7 +14,7 @@
                       <div class="card-body">
                           <% if(producto.discount > 0){ %>
                               <span>$<%= aMiles(producto.price) %> </span>
-                              <span><%= producto.discount %>% </span>
+                              <span id="discount"><%= producto.discount %>% OFF</span>
                         <% } else { %>
                               <span>$<%= aMiles(producto.price) %> </span>
                           <% } %> 

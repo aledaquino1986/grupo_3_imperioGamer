@@ -30,9 +30,7 @@ let ingresoUsuarioController = {
       if (resultado != null) {
         let password = req.body.password;
 
-        if (
-          bcrypt.compareSync(req.body.password, resultado.dataValues.password)
-        ) {
+        if ( bcrypt.compareSync(password, resultado.dataValues.password)) {
           req.session.login = resultado.dataValues;
           if (req.body.check != undefined) {
             let tiempo = 1000 * 60 * 60;
@@ -40,18 +38,20 @@ let ingresoUsuarioController = {
               maxAge: tiempo,
             });
           }
-
-          if(req.session.is_admin == "yes"){
+          //cierra tercer if
+          if(resultado.dataValues.is_admin == "yes"){
+            console.log("Aca esta el resultado" + req.session.is_admin)
             db.carritos.create({
               usuario_id: resultado.dataValues.id
             })
-            res.redirect("/user/profile/" + resultado.dataValues.id);
+            res.redirect("/admin");
             }else{
               db.carritos.create({
                 usuario_id: resultado.dataValues.id
               })
-              res.redirect("/admin");
+              res.redirect("/user/profile/" + resultado.dataValues.id);
             }
+            //cierra el cuarto if
         } else {
           res.render("ingreso-usuario", {
             title: "Ingresá a tu cuenta",
@@ -59,7 +59,7 @@ let ingresoUsuarioController = {
             user: req.session.login,
           });
         }
-
+        //cierra el segundo if
       } else {
         res.render("ingreso-usuario", {
           title: "Ingresá a tu cuenta",
@@ -68,7 +68,7 @@ let ingresoUsuarioController = {
         });
       }
     });
-
+    //cierra el primer if
   
   },
 

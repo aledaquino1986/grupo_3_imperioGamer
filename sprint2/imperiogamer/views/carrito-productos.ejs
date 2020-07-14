@@ -24,7 +24,7 @@
                             <% descuento += (producto.price * producto.discount)/100;%>
                             <% if(producto.discount > 0){ %>
                                  <span>$<%= aMiles(producto.price) %> </span>
-                                 <span><%= producto.discount %>OFF% </span>
+                                 <span id="discount"><%= producto.discount %>% OFF</span>
                            <% } else { %>
                                 <span>$<%= aMiles(producto.price) %> </span>
                             <% } %> 
