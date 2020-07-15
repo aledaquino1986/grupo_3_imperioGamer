@@ -24,12 +24,10 @@
           <%juegos.forEach(function(juegos){%>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
               <div class="card" >
-
-                <a class="productAdmin" href="/products/<%= juegos.id %> ">
+                <a class="productAdmin" href="/user/detail/<%= juegos.id %> ">
                   <h5 class="card-title productTitle"><strong><%= juegos.product_name %></strong> </h5>
                   <img width="300" height="200" src="/images/productos/<%= juegos.image %>" class="card-img-top" alt="<%= juegos.name %> ">
                 </a>
-
                 <div class="card-body">
                   <form method="GET" action="/products/<%= juegos.id%>/edit">
                     <button type="sumbit" class="btn btn-editar">Editar</button>
@@ -50,15 +48,12 @@
           <h3 id="consolas">Consolas</h3>
         </div>
         <%consolas.forEach(function(consolas){%>
-
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
               <div class="card" >
-
-                <a class="productAdmin" href="/products/<%= consolas.id %> ">
+                <a class="productAdmin" href="/user/detail/<%= consolas.id %> ">
                   <h5 class="card-title productTitle"><strong><%= consolas.product_name %></strong> </h5>
                   <img width="300" height="200" src="/images/productos/<%= consolas.image %>" class="card-img-top" alt="<%= consolas.name %> ">
                 </a>
-
                 <div class="card-body">
                   <form method="GET" action="/products/<%= consolas.id%>/edit">
                     <button type="sumbit" class="btn btn-editar">Editar</button>
@@ -70,7 +65,6 @@
                 
             </div>
           </div>
-
         <% });%> 
       </div>
       <div class="row">
@@ -80,12 +74,10 @@
         <%pcGamer.forEach(function(gamer){%>
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div class="card" >
-
-              <a class="productAdmin" href="/products/<%= gamer.id %> ">
+              <a class="productAdmin" href="/user/detail/<%= gamer.id %> ">
                 <h5 class="card-title productTitle"><strong><%= gamer.product_name %></strong> </h5>
                 <img width="300" height="200" src="/images/productos/<%= gamer.image %>" class="card-img-top" alt="<%= gamer.name %> ">
               </a>
-
               <div class="card-body">
                 <form method="GET" action="/products/<%= gamer.id%>/edit">
                   <button type="sumbit" class="btn btn-editar">Editar</button>
@@ -106,12 +98,10 @@
         <%sillas.forEach(function(sillas){%>
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div class="card" >
-
-              <a class="productAdmin" href="/products/<%= sillas.id %> ">
+              <a class="productAdmin" href="/user/detail/<%= sillas.id %> ">
                 <h5 class="card-title productTitle"><strong><%= sillas.product_name %></strong> </h5>
                 <img width="300" height="200" src="/images/productos/<%= sillas.image %>" class="card-img-top" alt="<%= sillas.name %> ">
               </a>
-
               <div class="card-body">
                 <form method="GET" action="/products/<%= sillas.id%>/edit">
                   <button type="sumbit" class="btn btn-editar">Editar</button>
@@ -132,12 +122,10 @@
         <%accesorios.forEach(function(accesorios){%>
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div class="card" >
-
-              <a class="productAdmin" href="/products/<%= accesorios.id %> ">
+              <a class="productAdmin" href="/user/detail/<%= accesorios.id %> ">
                 <h5 class="card-title productTitle"><strong><%= accesorios.product_name %></strong> </h5>
                 <img width="300" height="200" src="/images/productos/<%= accesorios.image %>" class="card-img-top" alt="<%= accesorios.name %> ">
               </a>
-
               <div class="card-body">
                 <form method="GET" action="/products/<%= accesorios.id%>/edit">
                   <button type="sumbit" class="btn btn-editar">Editar</button>
