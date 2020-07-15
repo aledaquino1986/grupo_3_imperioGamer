@@ -41,7 +41,10 @@ let productCartControllers = {
             db.carritoProductos.destroy({where: {carrito_id: eliminar}})
             .then(db.carritos.destroy({where:{usuario_id: user_id}}))
             .then(db.carritos.create({usuario_id: user_id}))
-            .then(res.redirect("/"));
+            .then(res.render("gracias",{
+              title: "Tus productos",
+              user: user
+            }));
           }
 }
 
