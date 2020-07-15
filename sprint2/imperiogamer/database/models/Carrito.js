@@ -3,15 +3,8 @@ module.exports =(sequelize,dataType) => {
 
         usuario_id:{
             type: dataType.INTEGER
-        },
-
-        estado:{
-            type: dataType.STRING
-        },
-
-        total:{
-            type: dataType.INTEGER
         }
+        
     },
     {
         timestamps: false

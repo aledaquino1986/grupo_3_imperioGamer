@@ -44,25 +44,12 @@ module.exports =(sequelize,dataType) => {
             type: dataType.DATE
         },
 
-        localidad_id: {
-            type: dataType.INTEGER
-        },
-
-        provincia_id:{
-            type: dataType.INTEGER
-        },
-
         is_admin: {
             type: dataType.STRING
         }
     }
     )
     Usuario.associate = function(models){
-        Usuario.belongsTo(models.localidades,{
-            as:"localidad",
-            foreignKey: "localidad_id"
-        })
-
         Usuario.hasMany(models.carritos,{
             as:"carritos",
             foreignKey: "usuario_id"
