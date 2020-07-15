@@ -4,123 +4,154 @@
   <link href="/stylesheets/productoAdmin.css" rel="stylesheet">
   <body>
     <%- include('./partials/header') %>
-    
-    <div class="row">
-      <div class="col-12 categorias">
-        <ul>
-          <li><a href="#juegos">Juegos</a></li>
-          <li><a href="#consolas">Consolas</a></li>
-          <li><a href="#pcGamer">Pc Gamer</a></li>
-          <li><a href="#sillas">Sillas</a></li>
-          <li><a href="#accesorios">Accesorios</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 id="juegos">Juegos</h3>
-      </div>
-      <%juegos.forEach(function(juegos){%>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <a href="/products/<%= juegos.id %> ">
-            <div>
-              <h5><%= juegos.product_name %> </h5>
-              <img width="300" height="200" class="producto-img" src="/images/productos/<%= juegos.image %>" alt="<%= juegos.product_name %> ">
-              <div class="precio">
-                <span>$<%= aMiles(juegos.price) %> </span>
-                <% if (juegos.discount > 0) { %>
-                  <span><%= juegos.discount %>% OFF</span>
-                <% } %>
-              </div>
-            </div>
-          </a>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 categorias">
+          <ul>
+            <li><a href="#juegos">Juegos</a></li>
+            <li><a href="#consolas">Consolas</a></li>
+            <li><a href="#pcGamer">Pc Gamer</a></li>
+            <li><a href="#sillas">Sillas</a></li>
+            <li><a href="#accesorios">Accesorios</a></li>
+          </ul>
         </div>
-      <% });%> 
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 id="consolas">Consolas</h3>
       </div>
-      <%consolas.forEach(function(consolas){%>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <a href="/products/<%= consolas.id %> ">
-            <div>
-              <h5><%= consolas.product_name %> </h5>
-              <img width="300" height="200" class="producto-img" src="/images/productos/<%= consolas.image %>" alt="<%= consolas.product_name %> ">
-              <div class="precio">
-                <span>$<%= aMiles(consolas.price) %> </span>
-                <% if (consolas.discount > 0) { %>
-                  <span><%= consolas.discount %>% OFF</span>
-                <% } %>
-              </div>
-            </div>
-          </a>
+      <div class="row">
+        <div class="col-12">
+          <h3 id="juegos">Juegos</h3>
         </div>
-      <% });%> 
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 id="pcGamer">Pc Gamer</h3>
+
+          <%juegos.forEach(function(juegos){%>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="card" >
+
+                <a class="productAdmin" href="/user/detail/<%= juegos.id %> ">
+                  <h5 class="card-title productTitle"><strong><%= juegos.product_name %></strong> </h5>
+                  <img width="300" height="200" src="/images/productos/<%= juegos.image %>" class="card-img-top" alt="<%= juegos.name %> ">
+                </a>
+
+                <div class="card-body">
+                  <form method="GET" action="/products/<%= juegos.id%>/edit">
+                    <button type="sumbit" class="btn btn-editar">Editar</button>
+                  </form>
+                  <form action="/products/<%= juegos.id %>?_method=DELETE" method="POST">
+                    <button type="sumbit" class="btn btn-eliminar">Elminar</button>
+                  </form>
+                </div>
+                
+            </div>
+          </div>
+          <% });%> 
+
       </div>
-      <%pcGamer.forEach(function(gamer){%>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <a href="/products/<%= gamer.id %> ">
-            <div>
-              <h5><%= gamer.product_name %> </h5>
-              <img width="300" height="200" class="producto-img" src="/images/productos/<%= gamer.image %>" alt="<%= gamer.product_name %> ">
-              <div class="precio">
-                <span>$<%= aMiles(gamer.price) %> </span>
-                <% if (gamer.discount > 0) { %>
-                  <span><%= gamer.discount %>% OFF</span>
-                <% } %>
-              </div>
-            </div>
-          </a>
+
+      <div class="row">
+        <div class="col-12">
+          <h3 id="consolas">Consolas</h3>
         </div>
-      <% });%> 
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 id="sillas">Sillas</h3>
+        <%consolas.forEach(function(consolas){%>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="card" >
+
+                <a class="productAdmin" href="/user/detail/<%= consolas.id %> ">
+                  <h5 class="card-title productTitle"><strong><%= consolas.product_name %></strong> </h5>
+                  <img width="300" height="200" src="/images/productos/<%= consolas.image %>" class="card-img-top" alt="<%= consolas.name %> ">
+                </a>
+
+                <div class="card-body">
+                  <form method="GET" action="/products/<%= consolas.id%>/edit">
+                    <button type="sumbit" class="btn btn-editar">Editar</button>
+                  </form>
+                  <form action="/products/<%= consolas.id %>?_method=DELETE" method="POST">
+                    <button type="sumbit" class="btn btn-eliminar">Elminar</button>
+                  </form>
+                </div>
+                
+            </div>
+          </div>
+
+        <% });%> 
       </div>
-      <%sillas.forEach(function(sillas){%>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <a href="/products/<%= sillas.id %> ">
-            <div>
-              <h5><%= sillas.product_name %> </h5>
-              <img width="300" height="200" class="producto-img" src="/images/productos/<%= sillas.image %>" alt="<%= sillas.product_name %> ">
-              <div class="precio">
-                <span>$<%= aMiles(sillas.price) %> </span>
-                <% if (sillas.discount > 0) { %>
-                  <span><%= sillas.discount %>% OFF</span>
-                <% } %>
-              </div>
-            </div>
-          </a>
+      <div class="row">
+        <div class="col-12">
+          <h3 id="pcGamer">Pc Gamer</h3>
         </div>
-      <% });%> 
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h3 id="accesorios">Accesorios</h3>
+        <%pcGamer.forEach(function(gamer){%>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="card" >
+
+              <a class="productAdmin" href="/user/detail/<%= gamer.id %> ">
+                <h5 class="card-title productTitle"><strong><%= gamer.product_name %></strong> </h5>
+                <img width="300" height="200" src="/images/productos/<%= gamer.image %>" class="card-img-top" alt="<%= gamer.name %> ">
+              </a>
+
+              <div class="card-body">
+                <form method="GET" action="/products/<%= gamer.id%>/edit">
+                  <button type="sumbit" class="btn btn-editar">Editar</button>
+                </form>
+                <form action="/products/<%= gamer.id %>?_method=DELETE" method="POST">
+                  <button type="sumbit" class="btn btn-eliminar">Elminar</button>
+                </form>
+              </div>
+              
+          </div>
+        </div>
+        <% });%> 
       </div>
-      <%accesorios.forEach(function(acc){%>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <a href="/products/<%= acc.id %> ">
-            <div>
-              <h5><%= acc.product_name %> </h5>
-              <img width="300" height="200" class="producto-img" src="/images/productos/<%= acc.image %>" alt="<%= acc.product_name %> ">
-              <div class="precio">
-                <span>$<%= aMiles(acc.price) %> </span>
-                <% if (acc.discount > 0) { %>
-                  <span><%= acc.discount %>% OFF</span>
-                <% } %>
-              </div>
-            </div>
-          </a>
+      <div class="row">
+        <div class="col-12">
+          <h3 id="sillas">Sillas</h3>
         </div>
-      <% });%> 
-    </div>
+        <%sillas.forEach(function(sillas){%>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="card" >
+
+              <a class="productAdmin" href="/user/detail/<%= sillas.id %> ">
+                <h5 class="card-title productTitle"><strong><%= sillas.product_name %></strong> </h5>
+                <img width="300" height="200" src="/images/productos/<%= sillas.image %>" class="card-img-top" alt="<%= sillas.name %> ">
+              </a>
+
+              <div class="card-body">
+                <form method="GET" action="/products/<%= sillas.id%>/edit">
+                  <button type="sumbit" class="btn btn-editar">Editar</button>
+                </form>
+                <form action="/products/<%= sillas.id %>?_method=DELETE" method="POST">
+                  <button type="sumbit" class="btn btn-eliminar">Elminar</button>
+                </form>
+              </div>
+              
+          </div>
+        </div>
+        <% });%> 
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 id="accesorios">Accesorios</h3>
+        </div>
+        <%accesorios.forEach(function(accesorios){%>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="card" >
+
+              <a class="productAdmin" href="/user/detail/<%= accesorios.id %> ">
+                <h5 class="card-title productTitle"><strong><%= accesorios.product_name %></strong> </h5>
+                <img width="300" height="200" src="/images/productos/<%= accesorios.image %>" class="card-img-top" alt="<%= accesorios.name %> ">
+              </a>
+
+              <div class="card-body">
+                <form method="GET" action="/products/<%= accesorios.id%>/edit">
+                  <button type="sumbit" class="btn btn-editar">Editar</button>
+                </form>
+                <form action="/products/<%= accesorios.id %>?_method=DELETE" method="POST">
+                  <button type="sumbit" class="btn btn-eliminar">Elminar</button>
+                </form>
+              </div>
+              
+          </div>
+        </div>
+        <% });%> 
+      </div>
+  </div>
     <%- include('./partials/footer') %>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

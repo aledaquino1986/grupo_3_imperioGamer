@@ -150,7 +150,9 @@ div.titulo-secundario{
 }
 
 
-
+div.producto img.producto-img{
+    width: 100%;
+}
 div.producto img.producto-img:hover{
     opacity: 0.8;
 }
@@ -208,7 +210,7 @@ div.titulo-ofertas h2{
     position: absolute;
     font-size: 20px;
     left: 5px;
-    top: 50px;
+    top: 65px;
     color: white;
     border: 1px white solid;
     border-radius: 90%;
