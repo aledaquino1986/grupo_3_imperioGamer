@@ -16,11 +16,7 @@ module.exports = {
     operatorsAliases: false
   },
   production: {
-    username: "root",
-    password: "alealeale1",
-    database: "database_production",
-    host: "127.0.0.1",
-    dialect: "mysql",
-    operatorsAliases: false
+    use_env_variable: "JAWSDB_URL",
+    dialect: "mysql"
   }
 };
