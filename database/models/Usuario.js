@@ -1,60 +1,63 @@
-module.exports =(sequelize,dataType) => {
-    const Usuario = sequelize.define("usuarios",{
+module.exports = (sequelize, dataType) => {
+  const Usuario = sequelize.define("usuarios", {
+    id: {
+      type: dataType.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
 
-        first_name:{
-            type: dataType.STRING,
-            allowNull: false
-        },
+    first_name: {
+      type: dataType.STRING,
+      allowNull: false
+    },
 
-        last_name:{
-            type: dataType.STRING,
-            allowNull: false
-        },
+    last_name: {
+      type: dataType.STRING,
+      allowNull: false
+    },
 
-        dni:{
-            type: dataType.INTEGER,
-        },
+    dni: {
+      type: dataType.INTEGER
+    },
 
-        email:{
-            type: dataType.STRING,
-            allowNull: false
-        },
+    email: {
+      type: dataType.STRING,
+      allowNull: false
+    },
 
-        direccion:{
-            type: dataType.STRING,
-        },
+    direccion: {
+      type: dataType.STRING
+    },
 
-        tel:{
-            type: dataType.STRING,
-        },
+    tel: {
+      type: dataType.STRING
+    },
 
-        password:{
-            type: dataType.STRING,
-        },
+    password: {
+      type: dataType.STRING
+    },
 
-        avatar:{
-            type: dataType.STRING,
-        },
+    avatar: {
+      type: dataType.STRING
+    },
 
-        createdAt:{
-            type: dataType.DATE
-        },
+    createdAt: {
+      type: dataType.DATE
+    },
 
-        updatedAt:{
-            type: dataType.DATE
-        },
+    updatedAt: {
+      type: dataType.DATE
+    },
 
-        is_admin: {
-            type: dataType.STRING
-        }
+    is_admin: {
+      type: dataType.STRING
     }
-    )
-    Usuario.associate = function(models){
-        Usuario.hasMany(models.carritos,{
-            as:"carritos",
-            foreignKey: "usuario_id"
-        })
-    }
-    return Usuario
-}
-    
+  });
+  Usuario.associate = function (models) {
+    Usuario.hasMany(models.carritos, {
+      as: "carritos",
+      foreignKey: "usuario_id"
+    });
+  };
+  return Usuario;
+};
