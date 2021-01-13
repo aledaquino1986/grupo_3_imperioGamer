@@ -16,8 +16,6 @@ let ingresoUsuarioController = {
         title: "Ingresá a tu cuenta",
         user: req.session.login
       });
-
-      console.log("entré a user: " + user);
     }
   },
 

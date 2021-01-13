@@ -26,7 +26,6 @@ let homeController = {
 
     if (!errors.isEmpty()) {
       db.usuarios.findByPk(req.params.id).then(function (usuario) {
-        console.log("errors " + errors.errors[0].msg);
         res.render("profile", {
           title: usuario.first_name,
           usuario: usuario,

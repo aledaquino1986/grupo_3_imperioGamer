@@ -16,7 +16,7 @@ let registerAdminController = {
 
   registerAdmin: function (req, res, next) {
     let user = req.session.login;
-    console.log(typeof user);
+
     res.render("register", {
       title: "Ingresá a tu cuenta",
       user: user
