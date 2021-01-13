@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 var { check, validationResult, body } = require("express-validator");
 let db = require("../database/models");
 
@@ -9,7 +9,7 @@ let registerController = {
   mostrarPaginaRegistro: function (req, res, next) {
     res.render("register", {
       user: req.session.login,
-      title: "Registrate",
+      title: "Registrate"
     });
   },
   nuevoUsuario: function (req, res, next) {
@@ -19,7 +19,7 @@ let registerController = {
     if (!errors.isEmpty()) {
       return res.render("register", {
         errors: errors.errors,
-        user: req.session.login,
+        user: req.session.login
       });
     } else {
       db.usuarios
@@ -27,15 +27,14 @@ let registerController = {
         .then(function (resultado) {
           if (resultado == null) {
             let encriptado = bcrypt.hashSync(req.body.password, 10);
-            
+
             let avatar;
             if (req.files[0] != undefined) {
               avatar = req.files[0].filename;
-              
             } else {
               avatar = "unnamed.png";
-            } 
-            
+            }
+
             db.usuarios
               .create({
                 first_name: req.body.nombre,
@@ -48,15 +47,16 @@ let registerController = {
                 avatar: avatar,
                 localidad_id: 1,
                 provincia_id: 1,
-                is_admin: "no",
+                is_admin: "no"
               })
               .then(function (usuarioCreado) {
-                db.usuarios.findOne({ where: { email: email } })
+                db.usuarios
+                  .findOne({ where: { email: email } })
                   .then(function (resultado) {
                     req.session.login = resultado;
                     db.carritos.create({
                       usuario_id: resultado.dataValues.id
-                    })
+                    });
                     res.redirect("/user/profile/" + req.session.login.id);
                   });
               });
@@ -66,11 +66,11 @@ let registerController = {
             }
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.log(err);
         });
     }
-  },
+  }
 };
 
 module.exports = registerController;

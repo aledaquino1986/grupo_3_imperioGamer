@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 var { check, validationResult, body } = require("express-validator");
 const db = require("../database/models");
 
@@ -14,7 +14,7 @@ let ingresoUsuarioController = {
     } else {
       res.render("ingreso-usuario", {
         title: "Ingresá a tu cuenta",
-        user: req.session.login,
+        user: req.session.login
       });
 
       console.log("entré a user: " + user);
@@ -25,38 +25,37 @@ let ingresoUsuarioController = {
     let errors = validationResult(req);
     let email = req.body.email;
 
-    db.usuarios.findOne({ where: { email: email } })
-    .then(function (resultado) {
+    db.usuarios.findOne({ where: { email: email } }).then(function (resultado) {
       if (resultado != null) {
         let password = req.body.password;
 
-        if ( bcrypt.compareSync(password, resultado.dataValues.password)) {
+        if (bcrypt.compareSync(password, resultado.dataValues.password)) {
           req.session.login = resultado.dataValues;
           if (req.body.check != undefined) {
             let tiempo = 1000 * 60 * 60;
             res.cookie("recordame", resultado.dataValues.id, {
-              maxAge: tiempo,
+              maxAge: tiempo
             });
           }
           //cierra tercer if
-          if(resultado.dataValues.is_admin == "yes"){
-            console.log("Aca esta el resultado" + req.session.is_admin)
+          if (resultado.dataValues.is_admin == "yes") {
+            console.log("Aca esta el resultado" + req.session.is_admin);
             db.carritos.create({
               usuario_id: resultado.dataValues.id
-            })
+            });
             res.redirect("/admin");
-            }else{
-              db.carritos.create({
-                usuario_id: resultado.dataValues.id
-              })
-              res.redirect("/user/profile/" + resultado.dataValues.id);
-            }
-            //cierra el cuarto if
+          } else {
+            db.carritos.create({
+              usuario_id: resultado.dataValues.id
+            });
+            res.redirect("/user/profile/" + resultado.dataValues.id);
+          }
+          //cierra el cuarto if
         } else {
           res.render("ingreso-usuario", {
             title: "Ingresá a tu cuenta",
             errors: errors.errors,
-            user: req.session.login,
+            user: req.session.login
           });
         }
         //cierra el segundo if
@@ -64,14 +63,12 @@ let ingresoUsuarioController = {
         res.render("ingreso-usuario", {
           title: "Ingresá a tu cuenta",
           errors: errors.errors,
-          user: req.session.login,
+          user: req.session.login
         });
       }
     });
     //cierra el primer if
-  
   }
-
 };
 
 module.exports = ingresoUsuarioController;
