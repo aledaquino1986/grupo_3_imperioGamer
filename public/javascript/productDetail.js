@@ -17,7 +17,7 @@ if (ingresar != null) {
     alert("Inicia sesión para agregar este producto al carrito");
   });
 }
-if (ingresar != null) {
+if (ingresar != null && agregar != null) {
   comprar.addEventListener("click", function (event) {
     alert("Inicia sesión para comprar este producto");
   });
